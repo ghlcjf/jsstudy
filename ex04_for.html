@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 5px;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 5px;
+      width: 30px auto;
+      height: 10px;
+    }
+
+  </style>
+</head>
+<body>
+  
+
+
+
+  <script>
+    // document.write("<h2>안녕하세요</h2>");
+      //document.write를 이용해서 화면에 구구단을 출력해 봅시다.
+      //단 테이블을 이용해서 출력해 봅시다.
+    document.write("<h2>구구단</h2>");
+    
+    document.write("<table>");
+      document.write("<tr>");
+        for (let i=1;i<=9;i++) {
+          document.write("<td>");
+            document.write("***"+i+"단"+"***"+"<br>");
+            for (let j=1;j<=9;j++) {
+              document.write(+i+'x'+j+'='+(i*j)+"</br>");
+            }
+          document.write("</td>");
+        }
+    document.write("</tr>");
+    document.write("</table>");
+
+
+
+  </script>
+  
+</body>
+</html>
