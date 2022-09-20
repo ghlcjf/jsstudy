@@ -13,25 +13,32 @@
       text-align: center;
     }
     body {
-      width: 1000px;
+      width: 1200px;
       height: 700px;
       background-color: rgb(185, 209, 245);
       margin: auto;
       padding: 20px;
     }
-    header ul {
+    #box {
+      margin: auto;
+      width: 600px;
+      padding: 10px;
+      background-color: rgb(184, 200, 243);
+      border: 1px solid rgb(73, 73, 150);
+      padding: 20px;
+    }
+    ul {
       list-style: none;
-      width: 800px;
       margin: auto;
       padding: 10px;
     }
-    header ul li {
+    ul li {
       display: inline-block;
-      width:300px;
+      width: 250px;
       height: 100px;
       line-height: 100px;
       margin: auto;
-      border: 1px solid rgb(180, 180, 247);
+      border: 1px solid rgb(73, 73, 150);
       margin-top: 30px;
 
     }
@@ -43,28 +50,31 @@
   </style>
 </head>
 <body>
-  <header>
+  <div id="box">
     <h1>메인 페이지</h1>
     <ul>
       <li onclick="login()">로그인</li>
       <li onclick="signup()">회원가입</li>
       <li onclick="bulletinboard()">자유게시판</li>
-      <li><a href="">이미지 게시판</a></li>
+      <li onclick="imageP()">이미지 게시판</li>
     </ul>
 
-  </header>
+  </div>
 
 
 
   <script>
     function login() {
-      location.href = "loginpage.html"
+      location.href = "loginpage.html";
     }
     function signup(){
-      location.href = "signup.html"
+      location.href = "signup.html";
     }
     function bulletinboard() {
-      location.href = "bulletinboard.html"
+      location.href = "bulletinboard.html";
+    }
+    function imageP(){
+      location.href = "imagepage.html";
     }
   </script>
 </body>
