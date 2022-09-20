@@ -1,0 +1,247 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 1400px;
+  margin: 10px auto;
+  padding: 10px;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+#container_1 {
+  margin: 10px auto;
+  padding: 10px;
+  width: 1100px;
+}
+#loginbox {
+  width: 300px;
+  height: 30px;
+  padding: auto;
+  font-size: 10px;
+  border: 1px solid orangered;
+  border-bottom-left-radius: 20px;
+  float: right;
+  display: grid;
+  grid-template-columns:repeat(3,100px);
+}
+.loginbox {
+  line-height: 28px;
+  text-align: center;
+  border-right: 1px solid gray;
+}
+#container_1 #menu {
+  clear: both;
+}
+#loginbox div:last-of-type {
+  border-right: none;
+}
+#container_1 #menu ul {
+  list-style: none;
+  padding: 10px;
+  margin: 10px auto;
+  font-size: 0px;
+}
+#menu li {
+  display: inline-block;
+  width: 150px;
+  padding: 10px;
+  font-size: 15px;
+  text-align: center;
+}
+.hover_orange:hover, .hover_orange:focus {
+  border-width: 3px;
+  border-style: solid;
+  border-color: orangered;
+}
+.hover_orange {
+  border: 1px solid black;
+}
+.search input {
+  width: 100px;
+  margin: 5px auto;
+  padding: 5px;
+  border: 3px solid orangered;
+  border-radius: 20px;
+}
+.search {
+  padding: 0px;
+  } 
+#weather {
+  clear: both;
+}
+#weather p:first-of-type {
+  width: 100px;
+  margin: 10px;
+  float: left;
+  border: 2px solid #eee;
+}
+#weather p:last-of-type {
+  float: left;
+  width: 500px;
+  margin: 10px auto;
+  border: 2px solid #eee;
+}
+#sidebar {
+  clear: left;
+  float: left;
+  width: 100px;
+  margin-top: 30px;
+}
+.side {
+  float: left;
+  padding: 10px;
+}
+.side ul {
+  list-style: none;
+  font-size: 0px;
+}
+.side ul li {
+  width: 80px;
+  font-size: 10px;
+  padding: 5px;
+  height: 100px;
+  text-align: center;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+}
+.side ul li:not(li:first-of-type) {
+  border-top: none;
+}
+#promotion {
+  float: left;
+  width: 600px;
+  height: 400px;
+  padding: 10px;
+  margin: 5px;
+  margin-top: 44px;
+  border: 2px solid #eee;
+}
+#ad {
+  float: left;
+  width: 350px;
+  height: 400px;
+  padding: 10px;
+  margin: 5px;
+  margin-top: 44px;
+  border: 2px solid #eee;
+}
+#toolbar {
+  float: left;
+  width: 965px;
+  margin: 10px auto;
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 315px 130px 130px 130px 130px 130px;
+  grid-template-rows: 100px 100px 100px 100px; 
+  grid-template-areas: 
+  "box1 box2 box3 box4 box5 box6"
+  "box1 box7 box8 box9 box10 box11"
+  "box1 box12 box13 box14 box15 box16"
+  "box1 box17 box18 box19 box20 box21";
+}
+.box {
+  text-align: center;
+}
+.box1 {grid-area: box1;
+background-color: #eee;}
+.box2 {grid-area: box2;}
+.box3 {grid-area: box3;}
+.box4 {grid-area: box4;}
+.box5 {grid-area: box5;}
+.box6 {grid-area: box6;}
+.box7 {grid-area: box7;}
+.box8 {grid-area: box8;}
+.box9 {grid-area: box9;}
+.box10 {grid-area: box10;}
+.box11 {grid-area: box11;}
+.box12 {grid-area: box12;}
+.box13 {grid-area: box13;}
+.box14 {grid-area: box14;}
+.box15 {grid-area: box15;}
+.box16 {grid-area: box16;}
+.box17 {grid-area: box17;}
+.box18 {grid-area: box18;}
+.box19 {grid-area: box19;}
+.box20 {grid-area: box20;}
+.box21 {grid-area: box21;}
+
+#corona {
+  float: left;
+  width: 500px;
+  height: 200px;
+  margin: 5px;
+  padding: 10px;
+  border: 2px solid #eee;
+
+}
+#worknet {
+  float: right;
+  border: 2px solid #eee;
+  width: 450px;
+  height: 500px;
+  margin: 5px;
+  padding: 10px;
+}
+#news {
+  float: right;
+  border: 2px solid #eee;
+  width: 500px;
+  height: 290px;
+  margin: 5px;
+  margin-right: 15px;
+  padding: 10px;
+}
+footer {
+  clear: both;
+}
+footer hr{
+  clear: both;
+  margin-top: 30px;
+}
+#footer_menu {
+  margin-top: 5px;
+  background-color:gray;
+  height: 100px;
+}
+#footer_menu #f_m_1 {
+  list-style: none;
+  height: 100px;
+  text-align: center;
+}
+#f_m_1 li {
+  display: inline-block;
+  line-height: 100px;
+  margin-right: 20px;
+}
+#f_m_1 li a {
+  color: white;
+}
+#footer_logo {
+  float: left;
+  width: 200px;
+  height: 70px;
+  margin: 10px;
+  border: 2px solid #eee;
+}
+#footer_info {
+  float: left;
+  width: 640px;
+  margin: 10px auto;
+  font-size: 13px;
+}
+.small {
+  font-size: 11px;
+  font-style: italic;
+}
+#footer_logo_2 {
+  float: right;
+  width: 200px;
+  height: 70px;
+  margin: 10px;
+
+}

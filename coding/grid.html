@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #wrapper {
+      width: 600px;
+      display: grid;
+      grid-template-columns: 200px 200px 200px;
+      grid-template-rows: 100px;
+    }
+    .items {
+      padding: 10px;
+      background-color: #eee;
+      width: auto;
+    }
+    .items:nth-child(odd) { /*odd 홀수번째 자식요소, evn 짝수번째 자식요소*/
+      background-color: #bbb;
+    }
+  </style>
+</head>
+<body>
+  <div id="wrapper">
+    <div class="items">sadjhfkjadshfkjhasdkjfhjskadhfjksahdfjkshadkjfhsdakjfhkjsdhfkljshdafkljshdafkljhsdakjfhskdajhfjsdafasd</div>
+    <div class="items">jskdaflksdajfklsdaj;flkjsd;flkjsdafkskdaflksdajflksdjafkljsdlfkjsdkljf</div>
+    <div class="items">sdjhkagkljlkjddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</div>
+    <div class="items">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+    <div class="items">cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc</div>
+  </div>
+  
+</body>
+</html>

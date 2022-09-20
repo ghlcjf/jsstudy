@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      /* border: 1px solid red; */
+    }
+    #navi ul {
+      width: 605px;
+      padding: 10px;
+      margin: 10px auto;
+      list-style: none;
+      text-align: center;
+    }
+    #navi ul li {
+      display: inline-block;
+      float: left;
+      padding: 10px;
+      width: 91px;
+      background-color: blanchedalmond;
+      background-clip: border-box;
+      border-right: 1px solid black;
+      text-align: center;
+      /* box-shadow: 1px 1px 1px 1px black; */
+    }
+    #navi li:hover, li:focus {
+      background-color: black;
+      color: white;
+    }
+    #navi li:last-of-type {
+      border: none;
+    }
+    #navi li:last-of-type:hover, li:last-of-type:focus {
+      background-color: red;
+    }
+
+  </style>
+</head>
+<body>
+  <div>
+    <nav id="navi">
+      <ul>
+        <li>메뉴1</li>
+        <li>메뉴2</li>
+        <li>메뉴3</li>
+        <li>메뉴4</li>
+        <li>메뉴5</li>
+        <li>메뉴6</li>
+      </ul>
+    </nav>
+  </div>
+  
+</body>
+</html>

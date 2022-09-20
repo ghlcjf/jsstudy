@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let name = "박정우";
+    let age = 30;
+    function hello(name,age) {
+      alert(name+'님 안녕?');
+      alert('나이는 '+age+'살');
+    }
+    // 함수는 항상 실행되는 것이 아니다.
+    hello(name,age); // 함수의 이름을 호출하면 그때 함수가 실행된다.
+    // 함수에 넣는 값 -> 인자 또는 파라미터
+    // 파라미터 값을 저장할 변수(name,age) -> 매개변수 
+
+
+    function adder1(a,b) { // 덧셈 기능 => 숫자 두 개를 입력받아 더한다.
+      alert(a+'+'+b+'='+(a+b));
+
+    } 
+    let result1 = adder1(3,5);
+    console.log('adder1 함수 계산 결과 :'+result1)
+    // 활용할 수 있는 데이터가 없는 함수 => 반환이 없는 함수
+
+    function adder2(a,b) {
+      return(a+b);
+    }
+    let result2 = adder2(4,6);
+    // 반환이 있는 함수
+    console.log('adder2 함수 계산 결과 : '+result2)
+
+
+
+    //-------------------------------------------------------------------
+    // 함수도 데이터로써 사용 가능하다.
+    // 데이터는 어떻게 사용하죠?
+    // => 함수도 변수에 담아서 사용 가능하다.
+    let greeting = hello;
+    // hello(); 이렇게 쓰면 동작한 후 그 값을 greeting에 담아라
+    // hello; 이렇게 쓰면 함수 자체를 그냥 데이터로써 담기는 것
+    // 변수 greeting도 이젠 함수로 동작된다.
+    greeting('평강공주',19);
+
+
+    // 이름 없는 함수 => 변수에 담는 순간 변수 이름이 곧 함수 이름
+    let area = function(a,b) {
+      return(a*b);
+    }
+
+    console.log('넓이 : '+area(3,5));
+
+
+
+    // 변수의 범위 : {중괄호 내부에 선언된 변수는 그 안에서만 사용 가능}
+    // {중괄호} 없이 선언된 변수를 전역변수 -> HTML 어디서든 사용 가능
+    // {중괄호} 내부에 선언된 변수를 지역변수,로컬변수 -> {중괄호} 안에서만 사용 가능
+
+
+    // 자바스크립트 : 호이스팅 => 제거하기 나온 타입 let
+    // 변수의 '선언'을 끌어올리는 기능.
+
+    console.log(str+'님 반갑습니다.');
+
+    var str = "온달장군";
+    // let str = "온달장군"; 호이스팅 미작동 => 에러.
+
+    // 선언만 끌어올릴 뿐 그 안에 담긴 글자까지는 안 나옴.
+
+
+
+    const num = 10;
+    // const => 상수를 나타내는 타입. 한 번 지정되면 바뀌지 않는 수
+    num = 20;
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>

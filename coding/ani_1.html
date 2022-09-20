@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #container {
+      width: 500px;
+      margin: 20px auto;
+      text-align: center;
+    }
+    .box {
+      width: 100px;
+      height: 100px;
+      float: left;
+      margin: 50px;
+    }
+    #box1 {
+      background-color: greenyellow;
+      border: 1px solid transparent;
+      animation-name: shape;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+    #box2 {
+      background-color: blueviolet;
+      border: 1px solid transparent; 
+      animation-name: rotate;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+    @keyframes shape {/*애니메이션 정의*/
+      from {
+        border: 1px solid transparent;
+      }
+      to {
+        border: 2px solid black;
+        border-radius: 50%;
+        transform: rotatey(900deg);
+      }
+    }
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(900deg);
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div class="box" id="box1"></div>
+    <div class="box" id="box2"></div>
+  </div>
+  
+</body>
+</html>

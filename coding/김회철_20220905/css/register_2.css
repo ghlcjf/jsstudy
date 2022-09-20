@@ -1,0 +1,204 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+#container_1 {
+  margin: 10px auto;
+  padding: 10px;
+  width: 1100px;
+}
+#loginbox {
+  width: 300px;
+  height: 30px;
+  padding: auto;
+  font-size: 10px;
+  border: 1px solid orangered;
+  border-bottom-left-radius: 20px;
+  float: right;
+  display: grid;
+  grid-template-columns:repeat(3,100px);
+}
+.loginbox {
+  line-height: 28px;
+  text-align: center;
+  border-right: 1px solid gray;
+}
+#container_1 #menu {
+  clear: both;
+}
+#loginbox div:last-of-type {
+  border-right: none;
+}
+#container_1 #menu ul {
+  list-style: none;
+  padding: 10px;
+  margin: 10px auto;
+  font-size: 0px;
+}
+#menu li {
+  display: inline-block;
+  width: 150px;
+  padding: 10px;
+  font-size: 15px;
+  text-align: center;
+  /* border-right: 1px solid black;*/
+  /* border-bottom-color: orangered;  */
+}
+.hover_orange:hover, .hover_orange:focus {
+  border-width: 3px;
+  border-style: solid;
+  border-color: orangered;
+}
+.hover_orange {
+  border: 1px solid black;
+}
+.search input {
+  width: 100px;
+  margin: 5px auto;
+  padding: 5px;
+  border: 3px solid orangered;
+  border-radius: 20px;
+}
+.search {
+  padding: 0px;
+  } 
+#weather {
+  clear: both;
+}
+#weather p:first-of-type {
+  width: 100px;
+  margin: 10px;
+  float: left;
+  border: 2px solid #eee;
+}
+#weather p:last-of-type {
+  float: left;
+  width: 500px;
+  margin: 10px auto;
+  border: 2px solid #eee;
+}
+#container_2 {
+  clear: both;
+  width: 600px;
+  margin: 10px auto;
+  margin-top: 30px;
+  padding: 10px;
+  border: 2px solid orangered;
+}
+table {
+  border: 1px solid gray;
+  border-collapse: collapse;
+}
+th, td {
+  border: 1px solid gray;
+  padding: 5px;
+}
+th {
+  width: 150px;
+}
+td {
+  width: 425px;
+}
+hr {
+  margin: 10px;
+}
+fieldset {
+  padding: 10px;
+  border: none;
+}
+h1, p {
+  margin: 10px;
+}
+ul {
+  list-style: none;
+}
+ul li {
+  text-align: left;
+}
+.red {
+  color: red;
+}
+#basic label, #privacy label {
+  width: 200px;
+  text-align: center;
+  /* height: 100px; */
+  display: inline-block;
+  background-color: #eee;
+  border-right: 1px solid gray;
+  border-left: 1px solid gray;
+  /* float: left; */
+} 
+#last {
+  text-align: center;
+}
+#reg_y {
+  background-color: orangered;
+  color: white;
+  border: 1px solid black;
+}
+#reg_n {
+  background-color: gray;
+  color: white;
+  border: 1px solid black;
+}
+#reg_y, #reg_n {
+  width: 70px;
+  height: 30px;
+  margin: 20px auto;
+}
+footer {
+  clear: both;
+  width: 1100px;
+  margin: auto;
+}
+footer hr{
+  clear: both;
+  margin-top: 30px;
+}
+#footer_menu {
+  margin-top: 5px;
+  background-color:gray;
+  height: 100px;
+}
+#footer_menu #f_m_1 {
+  list-style: none;
+  height: 100px;
+  text-align: center;
+}
+#f_m_1 li {
+  display: inline-block;
+  line-height: 100px;
+  margin-right: 20px;
+}
+#f_m_1 li a {
+  color: white;
+}
+#footer_logo {
+  float: left;
+  width: 200px;
+  height: 70px;
+  margin: 10px;
+  border: 2px solid #eee;
+}
+#footer_info {
+  float: left;
+  width: 640px;
+  margin: 10px auto;
+  font-size: 13px;
+}
+.small {
+  font-size: 11px;
+  font-style: italic;
+}
+#footer_logo_2 {
+  float: right;
+  width: 200px;
+  height: 70px;
+  margin: 10px;
+
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>주문서 작성하기</title>
+</head>
+<body>
+  <h1>상품 주문서</h1>
+  <form>
+    <fieldset>
+      <legend>개인 정보</legend>
+      <ul>
+        <li>
+          <label for="user_name">이름</label>
+          <input type="text" id="user_name" placeholder="여백없이 입력">
+        </li>
+        <li>
+          <label for="user_phone">연락처</label>
+          <input type="tel" id="user_phone" placeholder="연락가능한 번호">
+        </li>
+      </ul>
+    </fieldset>
+    <fieldset>
+      <legend>배송지 정보</legend>
+      <ul>
+        <li>
+          <label for="user_add">주소</label>
+          <input type="text" id="user_add">
+        </li>
+        <li>
+          <label for="user_tel">전화번호</label>
+          <input type="tel" id="user_tel">
+        </li>
+        <li>
+          <label for="user_memo">메모</label>
+          <textarea id="user_memo" cols="40" rows="4"></textarea>
+        </li>
+      </ul>
+    </fieldset>
+    <fieldset>
+      <legend>주문 정보</legend>
+      <ul>
+        <li>
+          <label for="GA">
+            <input type="checkbox" value="guate" id="GA">과테말라 안티구아 (100g)
+            <input type="number" value="0" min="0" max="10">개
+          </label>
+        </li>
+        <li>
+          <label for="IM">
+            <input type="checkbox" value="indo" id="IM">인도네시아 만델링 (100g)
+            <input type="number" value="0" min="0" max="10">개
+          </label>
+        </li>
+        <li>
+          <label for="TB"><input type="checkbox" value="tam" id="TB">탐나는도다(블렌딩) (100g)</label>
+          <label><input type="number" value="0" min="0" max="10">개</label>
+        </li>
+      </ul>
+    </fieldset>
+    <input type="submit" value="주문하기">
+    <input type="reset" value="다시 작성">
+  </form>
+  
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      width: 800px;
+      margin: 0 auto;
+    }
+    .navi {
+      width: 800px;
+      height: 60px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #ccc;
+      margin: 20px auto;
+    }
+    .navi ul {
+      list-style: none;
+      padding-top: 10px;
+      padding-bottom: 5px;
+    }
+    .navi ul li {
+      float: left;
+      width: 150px;
+      padding: 10px;
+    }
+    .navi a:link, .navi a:visited {
+      display: block;
+      font-size: 14px;
+      color: #000;
+      padding: 10px;
+      text-decoration: none;
+      text-align: center;
+    }
+    .navi a:hover, .navi a:focus {
+      background-color: #222;
+      color: #fff;
+    }
+    .navi a:active {
+      background-color: #f00;
+    }
+    #container_2 {
+      background-color: #fff;
+      width: 400px;
+      margin: 30px auto;
+      padding: 20px;
+      border: 1px solid black;
+    }
+    #container_2 legend {
+      font-size: 16px;
+      font-weight: bold;
+      padding-left: 5px;
+      padding-bottom: 10px;
+    }
+    #container_2 fieldset {
+      border: 1px solid black;
+      margin-bottom: 30px;
+    }
+    #container_2 ul li {
+      line-height: 30px;
+	    list-style-type: none;
+	    padding: 5px 10px;
+	    margin-bottom: 2px;
+    }
+    #container_2 fieldset:first-of-type label {
+      float: left;
+      font-size: 13px;
+      width: 60px;
+      /* border: 1px solid red; */
+    }
+    /* #container_2 label[for=name] ,label[for=tel] {
+      float: left;
+      font-size: 13px;
+      width: 50px;
+    } */
+    #container_2 input:checked + label {
+      color: red;
+      font-weight: bold;
+    }
+    #container_2 input[type=submit] {
+      border: 1px solid #222;
+      border-radius: 20px;
+      display: block;
+      font: 16px;
+      letter-spacing: 1px;
+      margin: 10px auto;
+      padding: 7px 25px;
+    }
+    /* #container_2 input[type=text], input[type=tel] {
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      padding: 5px;
+      width: 200px;
+    } */
+    #container_2 input:not([type=radio]) {
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      padding: 5px;
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav class="navi">
+      <ul>
+        <li><a href="navi_ps.html#intro">이용 안내</a></li>
+        <li><a href="navi_ps.html#room">객실 소개</a></li>
+        <li><a href="navi_ps.html#reservation">예약 방법 및 요금</a></li>
+        <li><a href="#container_2">예약하기</a></li>
+      </ul>
+    </nav>
+    <div id="container_2">
+      <form>
+       <fieldset id="boxing1">
+        <legend>개인 정보</legend>
+        <ul>
+          <li>
+            <label for="user_name">이름</label>
+            <input type="text" id="user_name" required>
+          </li>
+          <li>
+            <label for="user_tel">연락처</label>
+            <input type="tel" id="user_tel">
+          </li>
+        </ul>
+       </fieldset>
+       <fieldset id="boxing2">
+        <legend>객실 형태</legend>
+        <ul>
+          <li>
+            <input type="radio" id="room1" value="basic" name="room"> 
+            <label for="room1">기본형 (최대 2인)</label>
+          </li>
+          <li>
+            <input type="radio" id="room2" value="family" name="room"> 
+            <label for="room2">가족형(최대 8인)</label>
+            
+          </li>
+        </ul>
+       </fieldset>
+        <input type="submit" value="제출">
+      </form>
+    </div>
+
+
+  </div>
+  
+</body>
+</html>

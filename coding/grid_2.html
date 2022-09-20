@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #wrapper {
+      width: 600px;
+      display: grid;
+      /* grid-template-columns: 200px 200px 200px; */
+      /* grid-template-columns: 2fr 1fr 2fr; */
+      grid-template-columns: repeat(6,1fr);
+      /* grid-template-rows: 100px; */
+      grid-template-rows: minmax(100px,auto);
+    }
+    .items {
+      padding: 10px;
+      background-color: #eee;
+    }
+    .items:nth-child(odd) { /*odd 홀수번째 자식요소, evn 짝수번째 자식요소*/
+      background-color: #bbb;
+    }
+  </style>
+</head>
+<body>
+  <div id="wrapper">
+    <div class="items">뉴욕타임스(NYT) 등에 따르면 유럽 국가 관리들은 그동안 러시아가 가스 공급을 완전히 차단할 가능성에 대비해 왔기에 공급을 제한하더라도 이번 겨울을 보내는 데 문제가 없다고 말했다.</div>
+    <div class="items">뉴욕타임스(NYT) 등에 따르면 유럽 국가 관리들은 그동안 러시아가 가스 공급을 완전히 차단할 가능성에 대비해 왔기에 공급을 제한하더라도 이번 겨울을 보내는 데 문제가 없다고 말했다.</div>
+    <div class="items">뉴욕타임스(NYT) 등에 따르면 유럽 국가 관리들은 그동안 러시아가 가스 공급을 완전히 차단할 가능성에 대비해 왔기에 공급을 제한하더라도 이번 겨울을 보내는 데 문제가 없다고 말했다.</div>
+    <div class="items">뉴욕타임스(NYT) 등에 따르면 유럽 국가 관리들은 그동안 러시아가 가스 공급을 완전히 차단할 가능성에 대비해 왔기에 공급을 제한하더라도 이번 겨울을 보내는 데 문제가 없다고 말했다.</div>
+    <div class="items">뉴욕타임스(NYT) 등에 따르면 유럽 국가 관리들은 그동안 러시아가 가스 공급을 완전히 차단할 가능성에 대비해 왔기에 공급을 제한하더라도 이번 겨울을 보내는 데 문제가 없다고 말했다.</div>
+  </div>
+  
+</body>
+</html>

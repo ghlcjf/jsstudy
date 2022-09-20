@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>테이블 스타일</title>
+  <style>
+    table {
+      caption-side: bottom;
+      border: 1px solid black;
+      border-collapse: collapse;
+      margin: 10px;
+    }
+    th, td {
+      border: 1px dotted black;
+      text-align: center;
+      padding: 10px;
+    }
+    .sub {
+      background-color: #eee;
+    }/* 클래스 지정하기 전에 thead로 색 지정해 줘도 됨, 
+    콜에 클래스 지정하면 한번만 해도 됨*/
+    .wid {
+      width: 100px;
+    }
+  </style>
+</head>
+<body>
+  <table >
+    <caption>선물용과 가정용 상품 구성</caption>
+    <colgroup>
+      <col>
+      <col>
+      <col span="2">
+      <!-- <col style="width:150px;">
+      <col style="width:150px;"> -->
+    </colgroup>
+    <thead class="sub">
+      <tr>
+        <th>용도</th>
+        <th>중량</th>
+        <th class="wid">갯수</th>
+        <th class="wid">가격</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="sub" rowspan="2">선물용</td>
+        <td>3kg</td>
+        <td>11~16과</td>
+        <td>25,000원</td>
+      </tr>
+      <tr>
+        <td>5kg</td>
+        <td>18~26과</td>
+        <td>52,000원</td>
+      </tr>
+      <tr>
+        <td class="sub" rowspan="2">가정용</td>
+        <td>3kg</td>
+        <td>11~16과</td>
+        <td>30,000원</td>
+      </tr>
+      <tr>
+        <td>5kg</td>
+        <td>18~26과</td>
+        <td>47,000원</td>
+      </tr>
+    </tbody>
+  </table>
+  
+</body>
+</html>

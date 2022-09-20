@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2 onclick="check()">화면 구현</h2>
+  <p>범위<br>
+  <ol>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>Javascript</li>
+  </ol>
+  </p>
+  <p>
+    <h3>HTML</h3>
+    FORM 태그, 버튼, 입력창, 체크박스, 선택메뉴<br>
+    테이블~~<br>
+
+    회원가입, 로그인, 게시판<br>
+  </p>
+  <p>
+    <h3>CSS</h3>
+    가운데 정렬, 색, 웹폰트, 기본 레이아웃
+  </p>
+  <p>
+    <h3>Javascript</h3>
+    함수+이벤트(클릭이벤트)<br>
+    <input type="button" value="버튼" onclick="check()">
+    <form action="">
+      이름 : <input type="text" name="name" id="name" value="둘리"><br>
+      나이 : <input type="number" name="age" id="age" value=""><br>
+      비밀번호 : <input type="password" name="pwd" id="pwd"><br>
+      비밀번호 확인 : <input type="password" name="pwdchk" id="pwdchk"><br>
+      <input type="submit" value="확인" onclick="return testcheck()">
+      <input type="reset" value="취소">
+
+    </form>
+  </p>
+  <p>
+    <h3>구구단</h3>
+    <input type="number" name="gugudan" id="gugudan" value="">
+    <input type="button" value="구구단 구하기" onclick="gugudan()">
+    <div id="danResult">구구단</div>
+  </p>
+
+  <p>
+    <h3>페이지 이동</h3>
+    <button onclick="naver()">네이버로 이동</button>
+  </p>
+
+
+
+  <script>
+    let naver = function(){
+      let n = confirm('네이버로 이동하시겠습니까?');
+      if(n){
+        // location.href = 'https://www.naver.com';
+        location.href = '../ex_05_function.html';
+      }
+    }
+
+    function gugudan(){
+      let dan = document.getElementById('gugudan').value;
+      let result = "***"+dan+"단 *** <br>";
+
+      for(let i=1;i<10;i++) {
+        result += dan+"x"+i+"="+(dan*i)+"<br>";
+      }
+      // result에는 구구단이 문자열로 저장
+      let div = document.getElementById('danResult');
+      // div 변수에 <div id="danResult">구구단</div> 이게 들어옴
+      div.innerHTML = result;
+      // innerHTML => 태그의 컨텐트
+    }
+
+
+
+
+    function testcheck(){
+      let age = document.getElementById('age').value;
+      if(age > 18){
+        alert('성인입니다.');
+        return true; // 함수 내부의 return은 함수를 끝내라
+                     // return 데이터 (변수, 리터럴~~); 데이터를 함수의 결과로 내보내라
+      }else{
+        alert('미성년입니다.');
+        return false;
+      }
+     
+      
+    }
+    // 자바스크립트와 HTML은 침범할 수 없는 다른 영역
+    // 자바스크립트에서 HTML을 제어하려면 [HTML:문서(document)]를 가져와야 한다.
+    //                                  HTML의 구성요소 => 태그 => '문서 객체'
+
+
+
+
+
+
+    function check(){
+      // alert('버튼을 눌렀습니다.');
+      let age = document.getElementById('age').value;
+      // age = <input type="number" name="age" id="age" value="">
+      console.log(age);
+    }
+
+
+  </script>
+</body>
+</html>

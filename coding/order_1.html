@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>레드향 주문하기</title>
+  <!-- <style>
+    h1 {
+      background-color: coral;
+      color: black;
+    }
+  </style> -->
+  <link rel="stylesheet" href="CSS/order_style.css">
+</head>
+<body>
+  <h1>레드향 주문하기</h1>
+  <form action="">
+    <fieldset>
+      <legend>상품 선택</legend>
+      <p><b>주문할 상품을 선택해 주세요.</b></p>
+      <ul>
+        <li>
+          <label><input type="checkbox" value="s_3">선물용 3kg</label>
+          <input type="number" min="0" max="5" value="1">개 (최대 5개)
+        </li>
+        <li>
+          <label><input type="checkbox" value="s_5">선물용 5kg</label>
+          <input type="number" min="0" max="3" value="1">개 (최대 3개)
+        </li>
+      </ul>
+
+      <ul>
+        <li>
+          <label><input type="checkbox" value="f_3">가정용 3kg</label>
+          <input type="range" min="0" max="5" value="1">개 (최대 5개)
+        </li>
+        <li>
+          <label><input type="checkbox" value="f_3">가정용 3kg</label>
+          <input type="range" min="0" max="3" value="1">개 (최대 3개)
+        </li>
+      </ul>
+      <p><b>포장 선택</b></p>
+      <ul>
+        <li><label><input type="radio" value="yes" name="gift">선물 포장</label></li>
+        <li><label><input type="radio" value="no" name="gift">선물 포장 안 함</label></li>
+      </ul>
+
+      <!-- <input type="search" value="상품명"> -->
+    </fieldset>
+    <fieldset>
+      <legend>배송 정보</legend>
+      <ul>
+        <li>
+          <label for="user_name">이름</label>
+          <input type="text" id="user_name" autofocus required>
+        </li>
+        <li>
+          <label for="user_addr">배송 주소</label>
+          <input type="text" id="user_addr" placeholder="주소입니다" required>
+        </li>
+        <li>
+          <label for="user_email">이메일</label>
+          <input type="email" id="user_email" required>
+        </li>
+        <li>
+          <label for="user_phone">연락처</label>
+          <input type="tel" id="user_phone" required>
+        </li>
+        <li>
+          <label for="home">홈페이지</label>
+          <input type="url" id="home" placeholder="없으면 작성하지 않으셔도 됩니다.">
+        </li>
+        <li>
+          <label for="send_date">배송 희망 날짜</label>
+          <input type="week" id="send_date" required>
+        </li>
+        <li>
+          <label for="send_time">배송 희망 시간</label>
+          <input type="datetime-local" id="send_time">
+        </li>
+        <li>
+          <label for="user_memo">메모</label>
+          <textarea id="user_memo" cols="40" rows="4"></textarea>
+        </li>
+      </ul>
+    </fieldset>
+    <fieldset>
+      <legend>반품 정보</legend>
+      <p>만일 수령한 상품에 문제가 있다면 즉시 <b>반품 신청</b>해 주세요.</p>
+      <p>반품 신청시 상품의 상태를 사진으로 첨부해 주세요.</p>
+      <hr>
+      <input type="file">
+    </fieldset>
+    <button type="submit">주문하기</button>
+    <button type="reset">취소하기</button>
+    
+  </form>
+
+</body>
+</html>

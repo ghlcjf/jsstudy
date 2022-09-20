@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>박스 모델</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    div {
+      width: 600px;
+      height: 200px;
+      border: 2px solid rgb(238, 192, 192);
+      margin: 20px 0px;
+    }
+    .box1 {
+      /width: 300px;
+      height: 100px;
+      /*box-shadow: 2px -2px 5px 0px;*/
+      border-style: dashed;
+      border-bottom-style: double;
+      border-width: thick thin;
+      border-color: blue;
+    }
+    .box2 {
+      width: 300px;
+      height: 100px;
+      /* box-shadow: 5px 5px 15px 5px blue; */
+      border-style: double;
+      /*border-width: 10px; */
+      border-width: thick thin thin;
+      border-left-color: greenyellow;
+    }
+    .box3 {
+      width: 300px;
+      height: 100px;
+      border-style: groove;
+      border-width: 10px 5px 5px 10px;
+      border-bottom-color: red;
+    }
+    .box4 {
+
+    }
+  </style>
+</head>
+<body>
+  <div class="box1"></div>
+  <div class="box2"></div>
+  <div class="box3"></div>
+  <div class="box4"></div>
+  
+</body>
+</html>

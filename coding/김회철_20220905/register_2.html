@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>회원가입 페이지</title>
+  <link rel="stylesheet" href="css/register_2.css">
+</head>
+<body>
+  <div id="container_1">
+    <header>
+      <div id="loginbox">
+        <div class="loginbox"><a href="loginpage.html#container_1">로그인</a></div>
+        <div class="loginbox"><a href="register_2.html#container_1">회원가입</a></div>
+        <div class="loginbox"><a href="#">마이페이지</a></div>
+      </div>
+      <div id="menu">
+        <ul>
+          <li class="logo"><a href="index.html#container_1"><img src="images/logo.png" alt="화성시 로고 이미지" width="110px" height="40px"></a></li>
+          <li class="hover_orange"><a href="#">정보공개</a></li>
+          <li class="hover_orange"><a href="#">시민참여</a></li>
+          <li class="hover_orange"><a href="#">민원</a></li>
+          <li class="hover_orange"><a href="#">행정정보</a></li>
+          <li class="hover_orange"><a href="#">화성시 소개</a></li>
+          <li class="search">
+            <form action="">
+              <input type="search" placeholder="검색">
+            </form>
+          </li>
+        </ul>
+        <hr color="orangered"> 
+      </div>
+      <div id="weather">
+        <p>날씨</p>
+        <p>화성시 주요 뉴스</p>
+      </div>
+    </header>
+  </div>
+  <div id="container_2">
+    <h1>회원가입을 환영합니다.</h1>
+    <p><span class="red">* 화성시 대표홈페이지 회원가입 및 로그인 관련 문의 :031-5189-7122</span></p>
+    <p><span class="red">* 회원가입 오류시 브라우저 설정에서 팝업 허용 또는 사이트를 추가해주세요.</span></p>
+    <form action="">
+      <div id="basic">
+        <h3>기본 정보 입력</h3>
+        <ul>
+          <li>원활한 서비스 이용과 온라인 상에서의 익명 사용자로 인한 피해 등을 방지하기 위하여 회원 ID에 대한 실명제를 시행하고 있습니다.</li>
+          <li>귀하의 정보는 동의 없이 공개되지 않으며, 개인정보보호정책에 의해 보호받고 있습니다.</li>
+          <li class="red">* 필수 입력 항목</li>
+        </ul>
+        <table>
+          <tr>
+            <th>아이디 <span class="red">*</th>
+            <td>
+              <input type="text" id="user_id" required placeholder="중복확인을 눌러주세요">
+              <input type="button" value="중복확인">
+              <p>아이디는 8 ~ 16자 이내의 영문 소문자, 숫자로 가능합니다.<br>
+                중복체크는 중복체크 팝업에서 사용하기를 눌러주셔야 합니다.<br>
+                완료되면 '중복체크가 완료되었습니다.'라고 출력됩니다.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <th>비밀번호 입력 <span class="red">*</span></th>
+            <td>
+              <input type="password" id="user_password_1" required>
+              <p>비밀번호는 9 ~ 16자까지 입력하여야 합니다.<br>
+                영문, 숫자, 특수문자( ! @ $ % ^ & * 만 허용)로 반드시 1개 이상 사용하여야 합니다.<br>
+                영문은 대소문자를 구분합니다.<br>
+                동일한 문자를 3번 이상 사용할 수 없습니다.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <th>비밀번호 확인 <span class="red">*</span></th>
+            <td>
+              <input type="password" id="user_password_2" required>
+              <p>재확인을 위해서 입력하신 비밀번호를 다시 한번 입력해 주세요.</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <hr color="orangered">
+      <div id="privacy">
+        <h3>개인 정보 입력</h3>
+        <table>
+          <tr>
+            <th>이름 <span class="red">*</span></th>
+            <td><input type="text" id="user_name" required></td>
+          </tr>
+          <tr>
+            <th>주소 <span class="red">*</span></th>
+            <td>
+              <input type="text" id="user_address" required>
+              <button type="button">주소 검색</button>
+            </td>
+          </tr>
+          <tr>
+            <th>E-mail <span class="red">*</span></th>
+            <td>
+              <input type="text" id="user_mail" required> @ 
+              <input type="text" list="mail">
+              <datalist id="mail">
+                <option value="naver.com">naver.com</option>
+                <option value="daum.com">daum.com</option>
+                <option value="gmail.com">gmail.com</option>
+              </datalist>
+            </td>
+          </tr>
+          <tr>
+            <th>휴대폰 번호 <span class="red">*</span></th>
+            <td>
+              <select id="phonehead">
+                <option value="010">010</option>
+                <option value="011">011</option>
+              </select>
+              <input type="tel" id="user_phone" required>
+            </td>
+          </tr>
+          <tr>
+            <th>전화 번호</th>
+            <td>
+              <select id="telhead">
+                <option value="02">02</option>
+                <option value="031">031</option>
+                <option value="032">032</option>
+              </select>
+              <input type="tel" id="user_tel">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <hr color="orangered">
+      <div id="custom">
+        <h3>맞춤형 서비스 제공</h3>
+        <textarea rows="20" cols="77" readonly></textarea>
+        <hr color="orangered">
+        <table>
+          <tr>
+            <th>서비스 제공</th>
+            <td>
+              <input type="radio" name="service" id="service_yes" value="yes">
+              <label for="service_yes">동의함</label>
+              <input type="radio" name="service" id="service_no" value="no">
+              <label for="service_no">동의안함</label>
+            </td>
+          </tr>
+          <tr>
+            <th>관심 분야</th>
+            <td>
+              <ul>
+                <li>
+                  <input type="checkbox" value="ch1" id="ch_1">
+                  <label for="ch_1">안전ㆍ긴급재난</label>
+                </li>
+                <li>
+                  <input type="checkbox" value="ch2" id="ch_2">
+                  <label for="ch_2">세무ㆍ민원처리</label>
+                </li>
+                <li>
+                  <input type="checkbox" value="ch3" id="ch_3">
+                  <label for="ch_3">교육ㆍ문화</label>
+                </li>
+                <li>
+                  <input type="checkbox" value="ch4" id="ch_4">
+                  <label for="ch_4">복지ㆍ보건환경</label>
+                </li>
+                <li>
+                  <input type="checkbox" value="ch5" id="ch_5">
+                  <label for="ch_5">일자리ㆍ경제산업ㆍ농촌</label>
+                </li>
+                <li>
+                  <input type="checkbox" value="ch6" id="ch_6">
+                  <label for="ch_6">건설ㆍ교통</label>
+                </li>
+                <li>
+                  <input type="checkbox" value="ch7" id="ch_7">
+                  <label for="ch_7">도시ㆍ주택ㆍ상하수도</label>
+                </li>
+                <li>
+                  <input type="checkbox" value="ch8" id="ch_8">
+                  <label for="ch_8">행사ㆍ시정홍보</label>
+                </li>
+                <li>
+                  <input type="checkbox" value="ch9" id="ch_9">
+                  <label for="ch_9">기타</label>
+                  <input type="text" placeholder="기타">
+                </li>
+              </ul>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <hr color="orangered">
+      <div id="last">
+        <fieldset>
+          <input type="submit" value="확인" id="reg_y" >
+          <input type="reset" value="취소" id="reg_n">
+        </fieldset>
+      </div>
+    </form>
+  </div>
+  <div id="footer">
+    <footer>
+      <hr color="orangered">
+      <div id="footer_menu">
+        <ul id="f_m_1">
+          <li><a href="#">개인정보처리방침</a></li>
+          <li><a href="#">이메일무단수집거부</a></li>
+          <li><a href="#">저작권정책</a></li>
+          <li><a href="#">시청오시는길</a></li>
+          <li><a href="#">직원전화번호부</a></li>
+          <li><a href="#">원격지원서비스</a></li>
+        </ul>
+      </div>
+      <div id="footer_logo">
+        <img src="images/footer_logo.gif" alt="푸터로고" width="200px" height="70px">
+      </div>
+      <div id="footer_info">
+        <p>(우)18274 경기도 화성시 남양읍 시청로 159<br>
+          Copyright (c) 2019 by hwaseong city all rights reserved.<br><br>
+          <span class="small">본 홈페이지는 게시된 이메일주소의 자동수집을 거부하며 
+          이를 위반할 시 정보통신망법에 의해 처벌됨을 유념하시기 바랍니다.</span></p>
+      </div>
+      <div id="footer_logo_2">
+        <img src="images/footer_logo2.jpg" alt="푸터로고2" width="200px" height="70px">
+      </div>
+    </footer>
+  </div>
+  
+</body>
+</html>
