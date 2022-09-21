@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  text-align: center;
+  font-family: 'Do Hyeon', sans-serif;
+}
+body {
+  width: 1200px;
+  height: 700px;
+  background-color: rgb(185, 209, 245);
+  margin: auto;
+  padding: 20px;
+}
+h1 {
+  margin: 20px;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+ul {
+  list-style: none;
+}
+li {
+  display: inline-block;
+  width: 15px;
+}
+button {
+  display: block;
+  background-color: rgba(23, 10, 95, 0.76);
+  color: white;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 3px;
+  width: 150px;
+  height: 30px;
+  margin: auto;
+  margin-right: 20px;
+}
+#box {
+  margin: auto;
+  width: 1000px;
+  padding: 10px;
+  background-color: rgb(184, 200, 243);
+  border: 1px solid rgb(73, 73, 150);
+}
+#wrapper {
+  width: 900px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3,3fr);
+  grid-template-rows: repeat(3,250px);
+  grid-template-areas: 
+  "box1 box2 box3"
+  "box4 box5 box6"
+  "box7 box8 box9"
+}
+.wholeBox {
+  padding: 10px;
+}
+.box1{
+  grid-area: box1;
+}
+.box2{
+  grid-area: box2;
+}
+.box3{
+  grid-area: box3;
+}
+.box4{
+  grid-area: box4;
+}
+.box5{
+  grid-area: box5;
+}
+.box6{
+  grid-area: box6;
+}
+.box7{
+  grid-area: box7;
+}
+.box8{
+  grid-area: box8;
+}
+.box9{
+  grid-area: box9;
+}
+img {
+  width: 250px;
+  height: 200px;
+}
+p {
+  clear: both;
+}

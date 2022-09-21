@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>구구단</title>
+  <link rel="stylesheet" href="css/gugudan.css">
+</head>
+<body>
+  <div id="box">
+    <h1>구구단 출력페이지</h1>
+      <p>1부터 9까지 원하는 숫자를 입력한  뒤 '확인' 버튼을 눌러주세요. </p>
+      <select id="gugudan">
+        <option value="1">1단</option>
+        <option value="2">2단</option>
+        <option value="3">3단</option>
+        <option value="4">4단</option>
+        <option value="5" selected>5단</option>
+        <option value="6">6단</option>
+        <option value="7">7단</option>
+        <option value="8">8단</option>
+        <option value="9">9단</option>
+      </select>
+      <input type="button" value="확인" onclick="return gugudan()" class="button">
+      <div id="guguResult">구구단 출력</div>
+      <button onclick="imageP()">목록가기</button>
+  </div>
+  <script src="./JS/gugudan.js"></script>
+</body>
+</html>

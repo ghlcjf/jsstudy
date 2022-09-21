@@ -5,92 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>회원가입</title>
-  <style>
-    * {
-      padding: 0px;
-      margin: 0px;
-      box-sizing: border-box;
-      text-align: center;
-    }
-    body {
-      width: 1200px;
-      background-color: rgb(185, 209, 245);
-      margin: auto;
-      padding: 10px;
-    }
-    #box {
-      margin: auto;
-      width: 1000px;
-      padding: 10px;
-      background-color: rgb(184, 200, 243);
-      border: 1px solid rgb(73, 73, 150);
-      padding: 20px;
-    }
-    h1 {
-      margin: 20px;
-    }
-    p {
-      margin: 10px;
-    }
-    .container {
-      width: 450px;
-      display: inline-block;
-      padding: 10px;
-    }
-    table {
-      border: 1px solid rgb(73, 73, 150);
-      border-collapse: collapse;
-      padding: 10px;
-    }
-    th, td {
-      padding: 10px;
-      height: 89px;
-      border: 1px solid rgb(73, 73, 150);
-    }
-    th {
-      width: 150px;
-      
-    }
-    td {
-      width: 300px;
-    }
-    span {
-      color: red;
-    }
-    .gender {
-      margin-right: 20px;
-    }
-    ul {
-      list-style: none;
-    }
-    li {
-      display: inline-block;
-    }
-    input, textarea {
-      text-align: left;
-      padding: 2px;
-    }
-    .button {
-      background-color: rgba(23, 10, 95, 0.76);
-      color: white;
-      border: 1px solid white;
-      padding: 3px;
-      width: 150px;
-      height: 30px;
-      margin: auto;
-      text-align: center;
-    }
-    button {
-      background-color: rgba(23, 10, 95, 0.76);
-      color: white;
-      border: 1px solid white;
-      padding: 3px;
-      width: 150px;
-      height: 30px;
-      margin: auto;
-    }
-
-  </style>
+  <link rel="stylesheet" href="css/signup.css">
 </head>
 <body>
   <div id="box">
@@ -102,40 +17,39 @@
           <tr>
             <th>아이디 <span>*</span></th>
             <td>
-              <input type="text" name="user_id" id="user_id">
+              <input type="text" name="user_id" id="user_id" placeholder="필수 입력 사항입니다">
             </td>
           </tr>
           <tr>
             <th>비밀번호 <span>*</span></th>
             <td>
-              <input type="password" name="user_pw" id="user_pw">
+              <input type="password" name="user_pw" id="user_pw" placeholder="필수 입력 사항입니다">
             </td>
           </tr>
           <tr>
             <th>비밀번호 확인 <span>*</span></th>
             <td>
-              <input type="password" name="user_pwch" id="user_pwch">
+              <input type="password" name="user_pwch" id="user_pwch" placeholder="필수 입력 사항입니다">
             </td>
           </tr>
           <tr>
             <th>이름 <span>*</span></th>
             <td>
-              <input type="text" name="user_name" id="user_name">
+              <input type="text" name="user_name" id="user_name" placeholder="필수 입력 사항입니다">
             </td>
           </tr>
           <tr>
             <th>이메일 <span>*</span></th>
             <td>
-              <input type="email" name="user_email" id="user_email">
+              <input type="email" name="user_email" id="user_email" placeholder="필수 입력 사항입니다">
             </td>
           </tr>
           <tr>
             <th>전화번호 <span>*</span></th>
             <td>
-              <input type="tel" name="user_tel" id="user_tel">
+              <input type="tel" name="user_tel" id="user_tel" placeholder="필수 입력 사항입니다">
             </td>
           </tr>
-        
         </table>
       </div>
       <div class="container">
@@ -199,41 +113,7 @@
       </ul>
     </form>
   </div>  
-  <script>
-    function subm(){
-      let id = document.getElementById('user_id').value;
-      let pw = document.getElementById('user_pw').value;
-      let pwch = document.getElementById('user_pwch').value;
-      let name = document.getElementById('user_name').value;
-      let email = document.getElementById('user_email').value;
-      let tel = document.getElementById('user_tel').value;
-      if(id!="" && pw!="" && pwch==pw && pwch!="" && name!="" && email!="" && tel!=""){
-        location.href = './mainpage.html';
-        
-      } else if(id==""){
-        alert('아이디를 입력해주세요');
-        return false;
-      }else if(pw==""){
-        alert('비밀번호를 입력해주세요');
-        return false;
-      }else if(pwch==""){
-        alert('확인 비밀번호를 입력해주세요')
-        return false;
-      }else if(pw!=pwch){
-        alert('비밀번호를 다시 확인해주세요');
-        return false;
-      }else if(name==""){
-        alert('이름을 입력해주세요')
-        return false;
-      }else if(email==""){
-        alert('이메일을 입력해주세요')
-        return false;
-      }else if(tel==""){
-        alert('전화번호를 입력해주세요')
-        return false;
-      }
-    }
-  </script>
+  <script src="./JS/signup.js"></script>
   
 </body>
 </html>

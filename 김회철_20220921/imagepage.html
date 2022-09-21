@@ -5,104 +5,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>이미지 게시판</title>
-  <style>
-    * {
-      padding: 0px;
-      margin: 0px;
-      box-sizing: border-box;
-      text-align: center;
-    }
-    body {
-      width: 1200px;
-      height: 700px;
-      background-color: rgb(185, 209, 245);
-      margin: auto;
-      padding: 20px;
-    }
-    h1 {
-      margin: 20px;
-    }
-    a {
-      text-decoration: none;
-      color: black;
-    }
-    ul {
-      list-style: none;
-    }
-    li {
-      display: inline-block;
-      width: 15px;
-    }
-    button {
-      float: right;
-      background-color: rgba(23, 10, 95, 0.76);
-      color: white;
-      border: 1px solid white;
-      padding: 3px;
-      width: 150px;
-      height: 30px;
-    }
-    #box {
-      margin: auto;
-      width: 1000px;
-      padding: 10px;
-      background-color: rgb(184, 200, 243);
-      border: 1px solid rgb(73, 73, 150);
-    }
-    #wrapper {
-      width: 900px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(3,3fr);
-      grid-template-rows: repeat(3,250px);
-      grid-template-areas: 
-      "box1 box2 box3"
-      "box4 box5 box6"
-      "box7 box8 box9"
-    }
-    .wholeBox {
-      padding: 10px;
-    }
-    .box1{
-      grid-area: box1;
-    }
-    .box2{
-      grid-area: box2;
-    }
-    .box3{
-      grid-area: box3;
-    }
-    .box4{
-      grid-area: box4;
-    }
-    .box5{
-      grid-area: box5;
-    }
-    .box6{
-      grid-area: box6;
-    }
-    .box7{
-      grid-area: box7;
-    }
-    .box8{
-      grid-area: box8;
-    }
-    .box9{
-      grid-area: box9;
-    }
-    img {
-      width: 250px;
-      height: 200px;
-    }
-    p {
-      clear: both;
-    }
-  </style>
+  <link rel="stylesheet" href="css/imagepage.css">
 </head>
 <body>
   <div id="box">
     <h1>이미지 게시판</h1>  
-    <div id="wrapper">
+    <div id="wrapper" onclick="gugu()">
       <div class="wholeBox box1">
         <img src="images/bg1.jpg" alt="사진1">
         <p><a href="">그림 1</a></p>
@@ -152,16 +60,10 @@
       <li><a href="">》</a></li>
     </ul>
     <form action="">
-      <button type="button" onclick="main()">메뉴화면 돌아가기</button>
+      <button type="button" onclick="main()">메인화면 돌아가기</button>
     </form>
-    <p></p>
   </div>
   
-  <script>
-    function main(){
-      alert('메인화면으로 이동합니다.')
-      location.href = "mainpage.html";
-    }
-  </script>
+  <script src="./JS/imagepage.js"></script>
 </body>
 </html>
