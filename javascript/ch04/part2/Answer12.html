@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 임의의 두 수를 입력받아서 두 수 사이의 합을 구하세요
+
+
+    let a = prompt('첫 번째 원하는 수 입력');
+    let b = prompt('두 번째 원하는 수 입력');
+
+    let c = 0;
+
+    if(a>b){
+      c=a;
+      a=b;
+      b=c;
+    }
+
+    let sum = 0;
+
+    while(a<=b){
+      sum+=a*1;
+      a++;
+    }
+
+    console.log("두 수 사이의 합 : "+sum);
+  </script>
+</body>
+</html>

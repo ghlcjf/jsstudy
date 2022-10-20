@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    // 연산자 Java와의 차이점
+
+    // 산술연산 +, -, *, /, % -> 정수/실수 구분 없이 계산되기 때문에
+    let a = 7/2; // 정수 7을 정수 2로 나눴는데 3.5라는 실수 반환
+    console.log(a);
+
+    // 비교연산 ==, !=
+    let a1 = 'Hello';
+    console.log(a1=="Hello"); // true 반환
+
+
+    // 비교 -> 타입이 달라도 알아서 타입을 맞춰서 비교
+    
+    //      1) 숫자와 문자 비교 => 알아서 숫자로 변환 후 비교
+    console.log(1=='1'); // true 반환
+    
+    //      2) 논리값(true,false) => 숫자로 변환 후 비교 (true=1, false=0)
+    console.log(1==true) // true 반환
+    // while문에서 무한 반복 돌릴 때 while(1) 이런 식으로도 사용 가능
+
+    // 타입까지 비교하고 싶을 때 ===
+    console.log(1==='1'); // false 반환 (type이 달라서)
+
+
+
+    // 삼항연산
+
+    let a2 = 20;
+    (a2==20)?alert('20이 맞습니다.'):alert('20이 아닙니다.');
+
+  </script>
+  
+</body>
+</html>

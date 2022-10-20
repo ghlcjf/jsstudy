@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //가로 길이가 3이고 세로 길이가 6인 사각형의 넓이 계산 출력
+
+    let width = 3;
+    let height = 6;
+
+    let area = width*height;
+    console.log("넓이 : "+area)
+
+
+    // 가로 길이가 6이고 세로 길이가 3인 삼격형의 넓이를 계산 출력
+
+    let width1 = 6;
+    let height1 = 3;
+
+    let area1 = (width1*height1)/2;
+
+    console.log("삼각형의 넓이 : "+area1)
+
+
+    // 286초를 분초 형식으로 변환
+    let time = 286;
+
+    let minute = Math.floor(time/60);
+    // 올림은 Math.ceil() , 반올림은 Math.round()
+    let second = time%60;
+    console.log(minute+"분"+second+"초")
+
+    // 198일을 월일 형식으로 변환 [한달은 30일]
+
+    let day = 198;
+
+    let month = Math.floor(day/30);
+    let date = day%30;
+
+    console.log(month+"월"+date+"일")
+
+
+
+  </script>
+  
+</body>
+</html>

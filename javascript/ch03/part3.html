@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 사과를 담는 데 필요한 바구니의 수를 구하는 프로그램을 작성하세요.
+
+    let apple = 123;
+    let size = 20;
+    let pocket = Math.ceil(apple/size);
+
+    console.log("바구니의 개수 : "+pocket);
+
+
+    // 어떤 정수의 값에서 일의 자리 숫자를 5로 바꾸는 코드를 작성하세요
+    // ex) 222 => 225로, 888 => 885
+
+    let num = 187;
+
+    let five = (Math.floor(num/10)*10)+5;
+
+    console.log('1의 자리를 5로 바꾸면 : '+ five);
+
+
+    // 어떤 정수보다 값이 크면서도 가장 가까운 10의 배수에서 
+    // 변수 값을 뺀 나머지를 구하는 프로그램을 작성하세요
+    // ex) 24 => 30-24 = 6
+
+    num = 8549;
+    ten = Math.ceil(num/10)*10;
+    let x = ten-num;
+    console.log("나머지 : "+x);
+
+    
+
+
+
+  </script>
+  
+</body>
+</html>

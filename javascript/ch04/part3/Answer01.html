@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 별찍기
+
+    for(let i=1;i<=5;i++){
+      for(let j=1;j<=5;j++){
+        document.write('*');
+      }
+      document.write('<br>')
+    }
+
+    // 계단식 별찍기
+    for(let i=1;i<=5;i++){
+      for(let j=1;j<=i;j++){
+        document.write('*');
+      }
+      document.write('<br>')
+    }
+
+    // 역계단식 별찍기
+
+    for(let i=1;i<=5;i++){
+      for(let j=5;j>=i;j--){
+        document.write('*');
+      }
+      document.write('<br>')
+    }
+    document.write('=============================');
+    document.write('<br>');
+    // 삼각형 별 찍기
+    for(let i=1;i<=5;i++){
+      for(let j=1;j<=i;j++){
+        if(i>3){
+          break;
+        }
+        document.write('*');
+      }
+      
+      for(let j=3;j>=i;j--){
+        if(i<=2){
+          continue;
+        }
+        document.write('*');
+      }
+      document.write('<br>');
+      
+    }
+  </script>
+</body>
+</html>

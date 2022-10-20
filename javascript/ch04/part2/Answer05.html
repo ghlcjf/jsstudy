@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //컴퓨터와 진행하는 가위바위보
+
+    // 이기면 오늘 저녁은 치킨이닭
+    // 비기면 그런 날도 있지
+    // 지면 니가 졌어ㅠ
+
+
+    let comNum = Math.floor(Math.random()*3);
+    console.log(comNum);
+    let com = "";
+    if(comNum==0){
+      com = '가위';
+    }else if(comNum==1){
+      com = '바위';
+    }else if(comNum==2){
+      com = '보';
+    }
+
+    console.log("테스트용 : "+com);
+    let user = prompt('가위바위보!');
+
+    switch(user){
+      case "가위":
+        if(com=='가위'){
+          alert("그런 날도 있지;");
+        }else if(com=='바위'){
+          alert('니가 졌어ㅠ')
+        }else if(com=='보'){
+          alert('오늘 저녁은 치맥이닭!')
+        }
+        break;
+      case "바위":
+      if(com=='가위'){
+          alert("오늘 저녁은 치맥이닭!");
+        }else if(com=='바위'){
+          alert('그런 날도 있지;')
+        }else if(com=='보'){
+          alert('니가 졌어 ㅠ')
+        }
+      break;
+      case "보":
+      if(com=='가위'){
+          alert("니가 졌어ㅠ");
+        }else if(com=='바위'){
+          alert('오늘 저녁은 치맥이닭;')
+        }else if(com=='보'){
+          alert('그런 날도 있지;')
+        }
+      break;
+      default:
+        alert('똑바로 내라');
+    }
+
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 제어구문 : 조건과 반복
+    // 조건 : if, switch
+    // 반복 : while, do~while, for
+
+    let age = prompt('나이를 입력하세요');
+    // DOM 전엔 데이터 입력을 prompt로 처리하는 게 편할걸?
+
+    if(age>=60){
+      console.log('노약자 무료');
+    }else if(age>=20){
+      console.log('일반 요금');
+    }else if(age>=13){
+      console.log('청소년 요금');
+    }else if(age>=8){
+      console.log('어린이 요금');
+    }else{
+      console.log('유아 무료');
+    }
+
+    let lang = prompt('주 종족이 무엇인가요?');
+
+    switch(lang){
+      case "GDI":
+        console.log('국제방위기구');
+        break;
+      case "NOD":
+        console.log('형제단');
+        break;
+      case "Screen":
+        console.log('외계인');
+        break;
+      default :
+      console.log('케인')
+    }
+
+    //--------------------------------------------------------
+    // 반복 while
+    console.log('---while---');
+    let i = 0;
+    while(i<10){
+      i++;
+      console.log('i : '+i);
+     
+    }
+
+
+    console.log('---do~while---');
+
+    let j = 0;
+    do{
+      j++;
+      console.log('j : '+j);
+    }while(j<10);
+
+
+    console.log('---for---');
+
+    for(let k=1;k<=10;k++){
+      console.log('k : '+k);
+    }
+
+    //----------------------------------------------------------
+    // break, continue
+    console.log('---break---');
+    for(let k=1;k<=10;k++){
+      console.log('k : '+k);
+      if(k==5){
+        break;
+      }
+    }
+
+    
+
+    console.log('---continue---');
+    l:for(let k=1;k<=10;k++){
+      if(k==5){
+        continue l;
+      }
+      console.log('k : '+k);
+    }
+  </script>
+  
+</body>
+</html>

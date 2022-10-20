@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 10부터 100까지 숫자 중 1의 자리 숫자와 10의 자리 숫자가 짝수인 수 출력
+
+    let x = [];
+
+    for(let i=10;i<=100;i++){
+      if(i%2==0&&(Math.floor(i&10))%2==0){
+        x.push(i);
+      }
+    }
+
+    console.log("1의 자리와 10의 자리가 짝수인 수 : "+x);
+
+
+
+  </script>
+</body>
+</html>

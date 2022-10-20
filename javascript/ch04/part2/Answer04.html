@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 컴퓨터가 임의의 숫자 0~2까지 생성한 뒤 0~2사이의
+    // 숫자를 입력해서 일치하면 '일치'
+    // 일치하지 않으면 '불일치'
+
+    // 예를 들어 97~99까지의 숫자 출력을 원하면
+    // Math.floor(Math.random()*((최대값+1)-(최소값))+(최소값));
+
+    let num = Math.floor(Math.random()*(3-0)+0);
+    console.log('테스트용 : '+num)
+
+    let user = prompt('0~2 중 원하는 숫자 하나 입력해');
+
+    if(num==user){
+      alert('일치')
+    }else{
+      alert('불일치')
+    }
+
+
+
+
+
+  </script>
+</body>
+</html>
