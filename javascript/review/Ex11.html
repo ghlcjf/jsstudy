@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0px;
+      padding: 0px;
+    }
+    #pannel{
+      background-color: azure;
+      width: 100vw;
+      position: fixed;
+      top: 0px;
+    }
+    #box{
+      width: 5000px; /*화면 상의 보이는 가로 길이의 100%*/ 
+      height: 5000px;
+      background-color: burlywood;
+    }
+  </style>
+</head>
+<body>
+  <div id="pannel">
+    <button type="button" onclick="openWindow()">새창 열기</button>
+    <button type="button" onclick="moveWindow()">새창 이동</button>
+    <button type="button" onclick="resizeWindow()">크기 변경</button>
+    <button type="button" onclick="closeWindow()">창 닫기</button>
+    
+    
+    <button type="button" onclick="openInterval()">인터벌 켜기</button>
+    <button type="button" onclick="closeInterval()">인터벌 끄기</button>
+    <button type="button" onclick="openTimeout()">타임아웃 켜기</button>
+    <button type="button" onclick="closeTimeout()">타임아웃 끄기</button>
+    <button type="button" onclick="downScroll()">아래로 스크롤 끌기</button>
+    <button type="button" onclick="rightScroll()">오른쪽으로 스크롤 끌기</button>
+  </div>
+  <div id="box">
+
+  </div>
+
+
+  <script>
+    // ***** [DOM] : Document Object Model : 문서 객체 모델
+    
+    
+    // [BOM] : Browser Object Model
+    // 브라우저에서 웹문서(HTML)를 읽기 위해서 어떤 작업이 필요한가
+    //    1) 브라우저를 켜야 한다.
+    //    2) 브라우저가 켜졌을 때 자동적으로 생성되는 개체 : Window
+    //       브라우저에 포함된 객체
+    //        window - History  : 사이트 방문 기록 제어 (앞으로 가기,뒤로 가기) ┐  
+    //               ┗ Location : 주소 입력창 제어                            │
+    //               ┗ Screen   : 화면 제어                                   == > Browser Object Model 
+    //               ┗ Navigator: 브라우저 정보                               │
+    //               ┗ Document                                              ┘
+    //
+    // [window] 객체
+    window.alert('경고창');
+    window.console.log('콘솔 출력');
+    let w;
+    function openWindow(){
+      w = window.open('','','width=300px, height = 300px'); // 새창 열기 메서드
+    }
+    function moveWindow(){ // 창 이동
+      w.moveBy(10,10); // 현재 위치에서 10,10씩 이동
+      // w.moveTo(100,100); 화면 상의 100,100로 이동
+    }
+    function resizeWindow(){ // 크기 변경
+      // w.resizeBy(20,20); // 현재 크기에서 20,20씩 증가
+      w.resizeTo(200,200); // 현재 크기를 200,200로 변경
+    }
+    function closeWindow(){ //  창 닫기
+      
+      w.close(); 
+    }
+
+    let a;
+    function openInterval(){
+      a= window.setInterval(function(){
+        console.log('인터벌 실행');
+      },2000) ; // 2초마다 함수 실행
+    }
+
+
+  function closeInterval(){
+    window.clearInterval(a);
+  }
+
+  let b;
+  function openTimeout(){
+    b = window.setTimeout(function(){
+      console.log('타임아웃 실행');
+    },5000);
+  }
+
+  function closeTimeout(){
+    window.clearTimeout(b);
+  }
+
+
+  function downScroll(){
+    window.scrollBy(0,1000);
+  }
+
+
+  function rightScroll(){
+    window.scrollBy(100,0);
+  }
+
+
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button type="button" onclick="second()">2초</button>
+  <button type="button" onclick="secondClose()">2초닫기</button>
+  <script>
+    let w;
+    let a;
+    let b;
+
+
+    function second(){
+      a = window.setInterval(function(){
+        w = window.open('','','width = 200px, height = 200px');
+        b = window.setTimeout(function(){
+          w.close();
+        },2000)
+      },4000)
+      
+    }
+
+
+    function secondClose(){
+      window.clearInterval(a);
+    }
+  </script>
+</body>
+</html>

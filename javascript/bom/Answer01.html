@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button type="button" onclick="ageInput()">나이 입력하기</button>
+
+  <script>
+    let sum = 0;
+    let run = true;
+    let x;
+    let y;
+
+
+    function ageInput(){
+      x = window.setInterval(function(){
+        y = prompt('나이를 입력해 주세요');
+        if(y=='끝'){
+          window.clearInterval(x);
+          window.setTimeout(function(){
+            console.log("요금 : "+sum);
+            sum=0;
+          },5000)
+          
+        }else{
+          // console.log(y);
+          if(y>=60){
+            sum+=0;
+          }else if(20<=y&&y<60){
+            sum+=3000;
+          }else if(13<=y&&y<20){
+            sum+=1000;
+          }else if(y<13){
+            sum+=0;
+          }else{
+            console.log('잘못 입력하셨습니다.');
+          }
+        }
+      })
+    }
+   
+
+  </script>
+</body>
+</html>

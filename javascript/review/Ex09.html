@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // [객체] : 
+    //    [자바] : 클래스 => '인스턴스' (관련있는 정보의 집합체)
+    //    [javascript] : 여러가지 정보를 저장하는 집합체 ** 배열과 유사 (인덱스)
+    //                 : {키 : 값, 키 : 값} ~~~
+
+
+    let a1 = {}; // 아무 key도 없는 객체
+    let a2 = {name:'홍길동',
+              age:23,
+              adrress:'경남 하동군',
+              phone:'010-1234-5678'};          
+    // 키:값  => 프로퍼티 (속성)
+
+    // 값을 어떻게 추가/변경/삭제할 것인가
+
+    // 1) [조회] 값을 어떻게 꺼내서 사용할 것인가
+    //    첫 번째 방식 : 변수['key']
+    console.log(a2['name']);
+
+    //    두 번째 방식 : 변수.key
+    console.log(a2.phone);
+
+    // 2) [삽입] 새로운 키와 값을 어떻게 추가할 것인가
+    console.log(a2.major);
+
+    a2.major = '응용소프트웨어 웹툰과';
+
+    console.log(a2.major);
+
+    // 3) [변경] 기존의 키에 새로운 값으로 어떻게 변경할 것인가
+
+    a2.major = '전통 빅데이터과';
+
+    console.log(a2.major);
+    a2['major'] = '호텔조리과';
+    console.log(a2.major);
+
+
+    // 4) [삭제] 저장된 키와 값을 어떻게 지울 것인가
+
+    delete a2.major;
+
+    console.log(a2.major);
+
+
+    // 객체 안에 키가 있는지 없는지 알고 싶을 때
+    // 'name' in a2   a2 객체 안에 name이라는 key가 있는가
+
+    if('name' in a2){
+      console.log(a2.name);
+    }
+
+
+    if('major' in a2){
+      console.log(a2.major);
+    }else{
+      console.log('선택한 전공 과목이 없습니다');
+    }
+
+    //-------------------------------------------------------------
+
+    let a3 = a2;
+
+    a3.adrress = '전남 구례군';
+    console.log(a3.adrress);
+    console.log(a2.adrress);
+    
+    //-------------------------------------------------------------
+    // javascript는 클래스라는 것이 없다.
+    //    => 클래스와 비슷한 역할을 하는 폼?포맷?을 사용 : 생성자
+    //    => 역할 : 필요한 정보를 받아서 객체를 생성하는 역할.
+
+
+
+
+    function Student(name,age,adrress,phone){ // 생성자는 이름이 대문자로 시작
+      this.name = name;
+      this.age = age;
+      this.adrress = adrress;
+      this.phone = phone;
+    }
+
+    // 외부로부터 필요한 데이터를 전달(매개)받아 내부의 키 값을 채운 새로운 객체를 생성
+
+    // 생성자로 새로운 객체를 만들어 봅시다.
+    let a4 = new Student('루피','19','밀짚모자해적단','010-5169-1541');
+
+    console.log(a4.name);
+    console.log(a4.age);
+    console.log(a4.adrress);
+    console.log(a4.phone);
+
+    a4.major = '고무고무열매';
+    console.log(a4.major);
+
+
+    let a5 = new Student('로우','22','하트해적단','010-8851-9265');
+    console.log(a5);
+
+
+    //-----------------------------------------------------------------------------
+    // 메서드 : 인스턴스 내부에 만들어지는 함수
+
+    function Score(kor,eng,math){ // this 꼭 붙여야 됨
+      this.kor = kor;
+      this.eng = eng;
+      this.math = math;
+      // 총점을 구하는 메서드
+      this.sum = function(){
+        return this.kor + this.eng + this.math;
+      }
+      this.avg = function(){
+        return Math.round((this.sum()/3)*10)/10;
+      }
+    }
+
+    let a6 = new Score(82,79,90);
+    console.log('총점 : '+a6.sum());
+    console.log('평균 : '+a6.avg());
+
+
+
+
+    //---------------------------------------------------------------------------
+    // 메서드 : javascript에서 키에 대한 값 데이터로 존재
+    //  ** 단점 : 메모리 낭비가 심하다
+
+    // 어차피 기능으로만 존재하는 메서드를 
+    // 한 생성자로부터 생성되는 모든 객체가 
+    // 공유하는 공통의 공간에 저장함으로 자원 낭비를 줄여봅시다.
+    // => 공통의 공간 : 프로토타입
+
+
+    function Score2(kor,eng,math){ // this 꼭 붙여야 됨
+      this.kor = kor;
+      this.eng = eng;
+      this.math = math;
+      
+    }
+
+    Score2.prototype.sum = function(){
+      return this.kor + this.eng + this.math;
+    }
+    Score2.prototype.avg = function(){
+      return (this.sum()/3);
+    }
+
+
+
+
+    let a7 = new Score2(67,75,69);
+
+    console.log('총점 : '+a7.sum());
+    console.log('평균 : '+a7.avg());
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>

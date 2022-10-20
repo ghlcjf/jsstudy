@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button type="button" onclick="openWindow()">창 열기</button>
+  <button type="button" onclick="modifyWindow()">창 변경</button>
+  <button type="button" onclick="moveWindow()">창 이동</button>
+  <button type="button" onclick="closeWindow()">5초 후 창 닫기</button>
+  <button type="button" onclick="hundred()">100창</button>
+  <button type="button" onclick="compase()">창동서남북</button>
+
+  <script>
+    let w;
+    function openWindow(){
+      w = window.open('','','width = 200px, height = 200px');
+    }
+
+    function modifyWindow(){
+      w.resizeTo(300,300);
+    }
+
+    function moveWindow(){
+      w.moveBy(-100,150);
+    }
+
+    function closeWindow(){
+      window.setTimeout(function(){
+        w.close(w);
+      },5000)
+    }
+    let i = 1;
+    function hundred(){
+      if(i==1){
+        window.open('','','width = 100px, height = 100px');
+      }else if(i==2){
+        window.open('','','width = 200px, height = 200px');
+      }else if(i==3){
+        window.open('','','width = 300px, height = 300px');
+      }else if(i==4){
+        window.open('','','width = 400px, height = 400px');
+      }else{
+        window.open('','','width = 100px, height = 100px');
+        i=1;
+      }
+      i++;
+    }
+    
+    let j=1;
+    function compase(){
+      if(j==1){
+       w.moveBy(-100,'');
+      }else if(j==2){
+        w.moveBy('',100);
+      }else if(j==3){
+        w.moveBy(100,'');
+      }else if(j==4){
+        w.moveBy('',-100);
+      }else{
+        w.moveBy(-100,'');
+        j=1;
+      }
+      j++;
+    }
+
+
+  
+  </script>
+</body>
+</html>

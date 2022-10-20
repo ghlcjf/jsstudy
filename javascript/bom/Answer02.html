@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button type="button" onclick="createAcc()">계좌 생성하기</button>
+  <button type="button" onclick="checkAcc()">계좌 조회하기</button>
+  <button type="button" onclick="deposit()">입금하기</button>
+  <button type="button" onclick="withdraw()">출금하기</button>
+
+  <script>
+    // 계좌번호, 예금주, 초기 입금액을 입력받아서 계좌를 생성하는
+    // 버튼을 만들어 보세요.
+
+    function Account(acc,name,money){
+      this.acc = acc;
+      this.name = name;
+      this.money = money;
+    }
+
+    let a;
+    let myAcc = [];
+
+    function createAcc(){
+      let acc = prompt('계좌번호를 입력해 주세요.');
+      let name = prompt('이름을 입력해 주세요.');
+      let money = parseInt(prompt('초기 입금액을 입력해 주세요.'));
+      myAcc.push(new Account(acc,name,money));
+      console.log(myAcc[0]);
+    }
+    
+
+    function checkAcc(){
+      let userAcc = prompt('계좌번호를 입력해 주세요');
+      for(let i=0;i<myAcc.length;i++){
+        if(myAcc[i].acc==userAcc){
+          console.log(myAcc[i].name+'님의 현재 잔액은 '+myAcc[i].money+'원입니다.');
+          return;
+        }
+      }
+     
+      console.log('잘못 입력하셨습니다\n확인 후 다시 입력해 주세요')
+        
+    }
+
+    function deposit(){
+      let userAcc = prompt('계좌번호를 입력해 주세요');
+      for(let i=0;i<myAcc.length;i++){
+        if(myAcc[i].acc==userAcc){
+          let money = parseInt(prompt('입금하실 금액을 입력해 주세요'));
+          myAcc[i].money=myAcc[i].money+money;
+          console.log(myAcc[i].name+'님의 현재 잔액은 '+myAcc[i].money+'원입니다.');
+          return;
+        }
+      }
+      console.log('잘못 입력하셨습니다\n확인 후 다시 입력해 주세요')
+    }
+
+
+    function withdraw(){
+      let userAcc = prompt('계좌번호를 입력해 주세요');
+      for(let i=0;i<myAcc.length;i++){
+        if(myAcc[i].acc==userAcc){
+          let money = parseInt(prompt('출금하실 금액을 입력해 주세요'));
+          if(myAcc[i].money<money){
+            console.log('잔액이 부족합니다');
+            return;
+          }else{
+            myAcc[i].money=myAcc[i].money-money;
+            console.log('출금이 완료되었습니다.');
+            console.log(myAcc[i].name+'님의 현재 잔액은 '+myAcc[i].money+'원입니다.');
+            
+            return;
+          }
+          
+        }
+      }
+      console.log('잘못 입력하셨습니다\n확인 후 다시 입력해 주세요')
+    }
+
+  </script>
+</body>
+</html>
