@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>성적 관리 사이트 </h1>
+  <p>이름과 성적을 입력한 뒤 입력하기 버튼을 눌러주세요</p>
+  <form action="#" id="frm1">
+    <label for="name">이름 : <input type="text" name="name" id="name"></label><br>
+    <label for="kor">국어 : <input type="text" name="kor" id="kor"></label><br>
+    <label for="eng">영어 : <input type="text" name="eng" id="eng"></label><br>
+    <label for="math">수학 : <input type="text" name="math" id="math"></label><br>
+    <button type="button" onclick="scorein()">성적 입력하기</button>
+  </form>
+  <h1>성적 조회하기</h1>
+  <p>이름을 입력하고 성적 조회 버튼을 눌러주세요</p>
+  <form action="#" id="frm2">
+    <label for="name2">이름<input type="text" name="name2" id="name2"></label>
+    <button type="button" onclick="scorech()">성적 조회하기</button>
+  </form>
+  <div id="scoreResult">당신의 성적은?</div>
+  <script>
+    
+    
+    let sum1;
+    let avg1;
+    function Student(kor,eng,math){
+      this.kor = kor;
+      this.eng = eng;
+      this.math = math;
+      this.sum = kor+eng+math;
+      this.avg = this.sum/3;
+    }
+   
+
+    function scorein(){
+      let f = document.forms.frm1;
+      let name = f.name.value;
+      if(name in Student){
+        alert('중복된 이름입니다.\n다른 이름을 사용해주세요.');
+      }else{
+        let kor = parseInt(f.kor.value);
+        let eng = parseInt(f.eng.value);
+        let math = parseInt(f.math.value);
+        Student[name] = new Student(kor,eng,math);
+        console.log(Student[name]);
+        f.name.value = '';
+        f.kor.value = '';
+        f.eng.value = '';
+        f.math.value = '';
+      }
+    }
+
+    function scorech(){
+      let f = document.forms.frm2;
+      let name = f.name2.value;
+      if(name in Student){
+        let result = '---'+name+'님의 성적입니다.---<br>';
+        result += '국어 점수: '+Student[name].kor+'<br>';
+        result += '영어 점수: '+Student[name].eng+'<br>';
+        result += '수학 점수: '+Student[name].math+'<br>';
+        result += '총     점: '+Student[name].sum+'<br>';
+        result += '평     균: '+Student[name].avg+'<br>';
+        let div = document.getElementById('scoreResult');
+        f.name2.value = '';
+        div.innerHTML = result;
+      }else{
+        alert('입력하신 이름을 찾을 수 없습니다.');
+      }
+    }
+  </script>
+  
+</body>
+</html>
