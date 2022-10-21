@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button type="button" onclick="naver()">네이버 가기</button>
+  <!--버튼을 누르면 naver()가 실행되고 주소창에 location.href에 적은 문자열을 주소창에 입력-->
+  
+  <button type="button" onclick="pageReload()">페이지 새로고침</button>
+  <button type="button" onclick="naverReplace()">네이버 이동</button>
+
+  <script>
+    // location 객체 => 주소창을 제어할 때 사용
+
+    // 주소의 개념
+    // https://www.naver.com:8080/news/sports/ex01?a=1&b=2~~~
+    // 
+    // https, http(웹문서) : 프로토콜(뒤에 오는 주소로부터 웹문서를 받겠다는 약속,규약??)
+    // www.naver.com : 호스트 == 도메인 | 주소를 보고 서버 컴퓨터를 찾아가는 것
+    // 8080 : 포트 번호 | 웹 문서를 찾아서 응답하기 위한 프로그램(웹서버)의 포트번호를 적어야 연결 가능?
+    //      : 이미 잘 알려진 포트 번호들이 있음 (well known) http : 80 / https : 443 / 
+    // news/sports/ex01 : path(패스) == 서버 컴퓨터 안의 파일? 경로
+    // a=1&b=2~~~ : 전달할 데이터 == 쿼리스트링
+    
+    // location에서 가장 자주 사용하는 프로퍼티 : href
+
+    function naver(){
+      location.href = 'https://www.naver.com';
+      // href는 프로퍼티 => 방문 기록이 남는다
+    }
+
+    function pageReload(){
+      location.reload();
+    }
+
+    function naverReplace(){
+      location.replace('https://naver.com');
+      // href와 차이점 : replace는 함수 => 방문 기록이 안 남는다.
+    }
+
+  </script>
+
+
+</body>
+</html>

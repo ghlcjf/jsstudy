@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>세 번째 페이지</h1>
+  <a href="./Ex12_4.html">다음 페이지</a>
+  <button type="button" onclick="backPage()">뒤로 가기</button>
+  <button type="button" onclick="nextPage()">앞으로 가기</button>
+  <button type="button" onclick="doubleback()">뒤로 두 번 가기</button>
+  <script>
+    function backPage(){
+      history.back(); 
+    }
+    function nextPage(){
+      history.forward();
+    }
+    function doubleback(){
+      history.go(-2); // 뒤로 두 칸, 그냥 2로 적으면 앞으로 두 칸.
+    }
+  </script>
+</body>
+</html>

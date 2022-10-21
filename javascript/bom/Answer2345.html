@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button type="button" onclick="createAccount()">계좌 생성</button>
+  <button type="button" onclick="checkBalance()">예금 조회</button>
+  <button type="button" onclick="deposit()">예금 입금</button>
+  <button type="button" onclick="withdraw()">예금 출금</button>
+  <script>
+    let accList = []; // 정보를 저장할 배열 생성
+
+    function Account(accNum,name,balance){ // 생성자
+      this.accNum = accNum;
+      this.name = name;
+      this.balance = balance;
+    }
+
+    function createAccount(){
+      let name = prompt('예금주 이름을 입력해 주세요.');
+      let accNum = prompt('계좌 번호를 입력해 주세요.');
+      let balance = Number(prompt('초기 입금액을 입력해 주세요.'));
+
+      accList.push(new Account(accNum,name,balance));
+    }
+    function checkAccNum(){
+      let accNum = prompt('계좌 번호를 입력해 주세요.');
+      let flag = -1;
+      for(let i=0;i<accList.length;i++){
+        if(accList[i].accNum==accNum){
+          flag = i;
+          return flag;
+        }
+      }
+      if(flag==-1){
+        alert('해당 계좌를 찾을 수 없습니다. \n확인 후 다시 시도해 주세요');
+        return flag;
+      }
+    }
+    function checkBalance(){
+      let flag = checkAccNum();
+      if(flag==-1){
+        return;
+      }else{
+        alert(accList[flag].name+'님의 현재 잔액은 '+accList[flag].balance+'원입니다.');
+      
+      }
+    }
+    function deposit(){
+      let flag = checkAccNum();
+      if(flag==-1){
+        return;
+      }else{
+        let money = Number(prompt('입금하실 금액을 입력해 주세요.'));
+        accList[flag].balance+=money;
+        
+        alert(money+'원 입금이 완료되었습니다\n'+accList[flag].name+'님의 현재 잔액은 '+accList[flag].balance+'원입니다.');
+      
+      }
+    }
+    function withdraw(){
+      let flag = checkAccNum();
+      if(flag==-1){
+        return;
+      }else{
+        let money = Number(prompt('출금하실 금액을 입력해 주세요.'));
+        if((accList[flag].balance-money)<0){
+          alert('잔액이 부족합니다.');
+        }else{
+          accList[flag].balance-=money;
+        
+        alert(money+'원 출금이 완료되었습니다\n'+accList[flag].name+'님의 현재 잔액은 '+accList[flag].balance+'원입니다.');
+        }
+        
+      
+      }
+    }
+
+  </script>
+  
+</body>
+</html>

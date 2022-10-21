@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p id="p1">안녕</p>
+  
+  <script>
+    // [DOM] document => HTML 태그 하나하나를 객체화시켜서 처리하는 내용
+
+    window.onload = function(){  // window의 모든 내용이 load가 되면 실행되는 이벤트
+      // 이벤트는 dom 문서 구축이 완료되면 실행되기 때문에 이제 a2가 잘 출력 된다
+      let a1 = document.getElementById('p1');
+      let a2 = document.getElementById('p2');
+      console.log(a1);
+      console.log(a2);
+    }
+  </script>
+  <p id="p2">안녕</p>
+</body>
+</html>

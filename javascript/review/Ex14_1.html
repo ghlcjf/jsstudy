@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <form action="#" id="frm1">
+    이름 : <input type="text" name="username" id="username"><br>
+    취미 : <br>
+    <input type="checkbox" name="hobby" id="movie" value="movie" checked>영화감상<br>
+    <input type="checkbox" name="hobby" id="game" value="game">게임<br>
+    <input type="checkbox" name="hobby" id="fishing" value="fishing">낚시<br>
+    성별 : <br>
+    <input type="radio" name="gender" id="male" value="male">남
+    <input type="radio" name="gender" id="female" value="female" checked>여 <br>
+    직업 : <br>
+    <select name="job" id="job">
+      <option value="front">프론트엔드 개발자</option>
+      <option value="back">백엔드 개발자</option>
+      <option value="full">풀스택 개발자</option>
+    </select><br>
+    하고싶은말 : <br>
+    <textarea name="will" id="will" cols="30" rows="10"></textarea>
+    <button type="button" onclick="takeData()">데이터 읽어오기</button>
+    <button type="button" onclick="fillData()">데이터 채워넣기</button>
+  </form>
+  <script>
+    function takeData(){
+      let f = document.forms.frm1; // f에 frm 폼 태그 전체 내용이 담김
+      
+      let name = f.username.value; // input text의 값을 읽어온다
+      console.log('이름 : '+name);
+
+      let hobby = []; // 체크박스는 checked 속성을 통해 boolean 타입으로 반환 받을 수 있다
+      if(f.movie.checked){ // 체크 : T / 아니면 : F
+        hobby.push(f.movie.value);
+      }
+      if(f.game.checked){
+        hobby.push(f.game.value);
+      }
+      if(f.fishing.checked){
+        hobby.push(f.fishing.value);
+      }
+      console.log('취미 : '+hobby);
+
+      let gender;
+      if(f.female.checked){
+        gender = f.female.value;
+      }else if(f.male.checked){
+        gender = f.male.value;
+      }else{
+        gender = '자웅동체?';
+      }
+      console.log('성별 : '+gender);
+
+      let job = f.job.value;
+      console.log("직업 : "+job);
+
+      let will = f.will.value;
+      console.log('하고 싶은 말 : '+will)
+    }
+    function fillData(){
+      let f = document.forms.frm1;
+      f.username.value = '고길동';
+      f.game.checked = 1;
+      f.male.checked = 1;
+      f.job.selectedIndex = 1;
+      f.will.value = '뭘봐';
+    }
+  </script>
+</body>
+</html>

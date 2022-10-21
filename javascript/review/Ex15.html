@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /*CSS 작성*/
+    #a{
+      background-color: aqua;
+      border-top-width: 1px;
+      border-top-color: black;
+      border-top-style: solid;
+    }
+    .a{
+      color: lime;
+    }
+    .b{
+      background-color: crimson;
+    }
+    .c{
+      font-size: xx-large;
+    }
+    .d{
+      background-color: black;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <button type="button" onclick="a()">A</button>
+  <button type="button" onclick="b()">B</button>
+  <button type="button" onclick="c()">C</button>
+  <button type="button" onclick="d()">D</button>
+  <button type="button" onclick="remove()">제거</button>
+  <p>안녕하세요 1 </p>
+  <p class="a">안녕하세요 2 </p>
+  <p class="b">안녕하세요 3 </p>
+  <p class="c">안녕하세요 4 </p>
+  <p class="a b">안녕하세요 5 </p>
+  <p class="a c">안녕하세요 6 </p>
+  <p class="b c">안녕하세요 7 </p>
+  <p class="a b c">안녕하세요 8 </p>
+  
+  
+
+  <script>
+    // javascript로 CSS 효과 적용하기
+    // 1) 인라인 스타일 속성 적용
+      // let p1 = document.getElementsByTagName('p')[0];
+      // p1.style.color = 'red';
+      // p1.style.backgroundColor = 'aqua';
+      
+    // 2) class 속성을 이용한 방법
+      function a(){
+        let p1 = document.getElementsByTagName('p')[0];
+        let p1cl = p1.classList;
+        p1cl.add('a'); // 클래스 리스트에 a클래스 값을 추가
+        // p1cl.remove('a'); // 클래스 리스트에 a클래스 값을 제거
+
+      }
+      
+      function b(){
+        let p1 = document.getElementsByTagName('p')[0];
+        let p1cl = p1.classList;
+        p1cl.add('b'); // 클래스 리스트에 b클래스 값을 추가
+        // p1cl.remove('a'); // 클래스 리스트에 b클래스 값을 제거
+
+      }
+      function c(){
+        let p1 = document.getElementsByTagName('p')[0];
+        let p1cl = p1.classList;
+        p1cl.add('c'); // 클래스 리스트에 c클래스 값을 추가
+        // p1cl.remove('a'); // 클래스 리스트에 c클래스 값을 제거
+
+      }
+      function d(){
+        let p1 = document.getElementsByTagName('p')[0];
+        let p1cl = p1.classList;
+        p1cl.toggle('d'); // 자동으로 class에 d값이 있다면 제거, 없다면 추가.
+        // if(p1cl.contains('d')){
+        //   p1cl.remove('d'); // 클래스 리스트에 d클래스 값을 제거
+        // }else{
+        //   p1cl.add('d'); // 클래스 리스트에 d클래스 값을 추가
+        // }
+       
+        
+      }
+
+      function remove(){
+        let p1 = document.getElementsByTagName('p')[0];
+        let p1cl = p1.classList;
+        
+        p1cl.remove('a'); // 클래스 리스트에 a클래스 값을 제거
+        p1cl.remove('b'); // 클래스 리스트에 b클래스 값을 제거
+        p1cl.remove('c'); // 클래스 리스트에 c클래스 값을 제거
+        p1cl.remove('d'); // 클래스 리스트에 d클래스 값을 제거
+
+      }
+
+  </script>
+</body>
+</html>
