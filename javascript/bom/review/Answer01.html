@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button type="button" onclick="ageInput()">입력</button>
+  <script>
+    let sum = 0;
+    let y;
+    let x;
+    function ageInput(){
+      x = window.setInterval(function(){
+        y = prompt('나이를 입력해 주세요');
+        if(y=='끝'){
+          window.clearInterval(x);
+          window.setTimeout(function(){
+            console.log('요금 : '+sum);
+          },5000)
+        }else{
+          if(60<=y){
+            console.log('60세 이상 무료');
+          }else if(20<=y&&y<60){
+            console.log('3000원');
+            sum+=3000;
+          }else if(13<=y&&y<20){
+            console.log('1000원');
+            sum+=1000;
+          }else if(y<13){
+            console.log('13세 미만 무료');
+          }else{
+            console.log('잘못 입력');
+          }
+        }
+      })
+    }
+
+  </script>
+</body>
+</html>

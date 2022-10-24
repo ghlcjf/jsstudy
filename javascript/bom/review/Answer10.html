@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button type="button" onclick="change()">눌러</button>
+  <button type="button" onclick="move()">눌러2</button>
+  <script>
+    let i=1;
+    let w;
+    function change(){
+      if(i==1){
+        w = window.open('','','width = 100px,height = 100px');
+      }else if(1<i&&i<4){
+        w.resizeBy(100,100);
+      }else{
+        i=1;
+        w.resizeTo(100,100);
+      }
+      i++;
+    }
+    let y=1;
+    
+    function move(){
+      if(y==1){
+        w.moveBy(-100,'');
+      }else if(y==2){
+        w.moveBy('',100);
+      }else if(y==3){
+        w.moveBy(100,'');
+      }else if(y==4){
+        w.moveBy('',-100);
+      }else{
+        w.moveBy(-100,'');
+        y=1;
+      }
+      y++;
+    }
+  </script>
+</body>
+</html>

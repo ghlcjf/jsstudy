@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button type="button" onclick="createAcc()">계좌 생성</button>
+  <button type="button" onclick="checkAcc()">예금 조회</button>
+  <button type="button" onclick="deposit()">입금</button>
+  <button type="button" onclick="withdraw()">출금</button>
+  
+
+  <script>
+    function Account(name,balance){
+     
+      this.name = name;
+      this.balance = balance;
+    }
+
+    function createAcc(){
+      let acc = prompt('계좌번호를 입력해 주세요');
+      if(acc in Account){
+        alert('중복된 계좌번호입니다.');
+      }else{
+        let name = prompt('성함을 입력해 주세요');
+        let balance = Number(prompt('초기 입금액을 입력해 주세요'));
+        Account[acc] = new Account(name,balance);
+        alert('계좌 생성이 완료되었습니다.')
+      }
+      
+    }
+
+    function checkAcc(){
+      let acc = prompt('계좌번호를 입력해 주세요');
+      if(acc in Account){
+        alert(Account[acc].name+'님의 잔액은 '+Account[acc].balance+'원입니다.');
+      }else{
+        alert('존재하지 않는 계좌번호입니다.\n확인 후 다시 입력해 주세요')
+      }
+    }
+
+    function deposit(){
+      let acc = prompt('계좌번호를 입력해 주세요');
+      if(acc in Account){
+        let money = Number(prompt('입금하실 금액을 입력해 주세요'));
+        Account[acc].balance+=money;
+        
+        alert(money+'원 입금되었습니다.\n'+Account[acc].name+'님의 잔액은 '+Account[acc].balance+'원입니다.');
+      }else{
+        alert('존재하지 않는 계좌번호입니다.\n확인 후 다시 입력해 주세요')
+      }
+    }
+    function withdraw(){
+      let acc = prompt('계좌번호를 입력해 주세요');
+      if(acc in Account){
+        let money = Number(prompt('출금하실 금액을 입력해 주세요'));
+        if(Account[acc].balance<money){
+          alert('잔액이 부족합니다.\n'+Account[acc].name+'님의 잔액은 '+Account[acc].balance+'원입니다.')
+        }else{
+          Account[acc].balance-=money;
+        alert(money+'원 출금되었습니다.\n'+Account[acc].name+'님의 잔액은 '+Account[acc].balance+'원입니다.');
+        }
+        
+      }else{
+        alert('존재하지 않는 계좌번호입니다.\n확인 후 다시 입력해 주세요')
+      }
+    }
+
+  </script>
+</body>
+</html>

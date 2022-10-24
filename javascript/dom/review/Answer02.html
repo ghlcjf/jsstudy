@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table{
+      border-collapse: collapse;
+      border: 1px solid black;
+      text-align: center;
+    }
+    th, td, tr {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+
+
+  <script>
+    document.write('<h2>구구단 출력하기</h2>');
+    document.write('<table>')
+      for(let i = 1;i<10;i++){
+        document.write('<tr><td>***'+i+'단***</td>');
+        for(let j = 1;j<10;j++){
+          document.write('<td>'+i+'X'+j+'='+(i*j)+'</td>');
+        }
+        document.write('</tr>');
+      }
+    document.write('</table>')
+    document.write('<br>');
+    document.write('<table>')
+      for(let i = 1;i<10;i++){
+        document.write('<td>***'+i+'단***<br>');
+        for(let j = 1;j<10;j++){
+          document.write(i+'X'+j+'='+(i*j)+'<br>');
+        }
+        document.write('</td>');
+      }
+    document.write('</table>')
+    document.write('<br>');
+    document.write('<table>')
+      for(let i = 1;i<10;i++){
+        document.write('<td>***'+i+'단***<br>');
+        for(let j = 1;j<10;j++){
+          document.write(i+'X'+j+'='+(i*j)+'<br>');
+        }
+        document.write('</td>');
+        if(i%3==0){
+          document.write('<tr></tr>');
+        }
+      }
+    document.write('</table>')
+  </script>
+  
+</body>
+</html>

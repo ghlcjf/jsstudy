@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button type="button" onclick="twoSec()">눌러</button>
+  <button type="button" onclick="closeTwo()">그만</button>
+  <script>
+    let w;
+    let x;
+    let i = 0;
+    function openWindow(){
+      x = window.open('','','width = 200px, height = 200px');
+    }
+    function closeWindow(){
+      x.close();
+    }
+    function twoSec(){
+      w = window.setInterval(function(){
+       if(i==0){
+        openWindow();
+        i=1;
+       }else{
+        closeWindow();
+        i=0;
+       }
+       
+      },2000);
+
+    }
+    function closeTwo(){
+      window.clearInterval(w);
+    }
+    
+  </script>
+  
+</body>
+</html>

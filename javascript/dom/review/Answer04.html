@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="#" id="frm1">
+    <h2>회원가입을 환영합니다.</h2>
+    이름 : <input type="text" name="name" id="name"><br>
+    아이디 : <input type="text" name="userId" id="userId"><br>
+    비밀번호 : <input type="text" name="userPw" id="userPw"><br>
+    <button type="button" onclick="signUp()">가입 완료</button><br>
+    <h2>로그인</h2>
+    아이디 : <input type="text" name="loginId" id="loginId">
+    비밀번호 : <input type="text" name="loginPw" id="loginPw">
+    <button type="button" onclick="signIn()">로그인</button>
+  </form>
+  <script>
+    function Member(name,password){
+      this.name = name;
+      this.password = password;
+    }
+    function signUp(){
+      let f = document.forms.frm1;
+      let id = f.userId.value;
+      if(id in Member){
+        alert('중복된 아이디입니다.');
+      }else{
+        let pw = f.userPw.value;
+        let name  = f.name.value;
+        Member[id] = new Member(name,pw);
+        f.userPw.value='';
+        f.name.value='';
+        f.userId.value='';
+        alert(Member[id].name+'님 환영합니다.');
+      }
+    }
+    function signIn(){
+      let f = document.forms.frm1;
+      let id = f.loginId.value;
+      let pw = f.loginPw.value;
+      if(id in Member && Member[id].password==pw){
+        f.loginId.value='';
+        f.loginPw.value='';
+        alert(Member[id].name+'님 환영합니다.');
+      }else{
+        alert('아이디와 비밀번호를 확인 후 다시 입력해주세요.');
+      }
+    }
+  </script>
+</body>
+</html>

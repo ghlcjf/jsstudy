@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button type="button" onclick="openWindow()">새창 열기</button>
+  <button type="button" onclick="modiWindow()">창 크기 변경</button>
+  <button type="button" onclick="moveWindow()">창 이동</button>
+  <button type="button" onclick="closeWindow()">창 5초</button>
+
+
+  <script>
+    let w;
+    function openWindow(){
+      w = window.open('','','width = 200px, height = 200px');
+    }
+    function modiWindow(){
+      w.resizeTo(300,300);
+    }
+    function moveWindow(){
+      w.moveBy(-100,150);
+    }
+    function closeWindow(){
+      window.setTimeout(function(){
+        w.close();
+      },5000);
+    }
+  </script>
+</body>
+</html>

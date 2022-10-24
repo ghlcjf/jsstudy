@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <h2>성적 관리 프로그램</h2>
+  <form action="#" id="frm1">
+    이름 : <input type="text" name="name" id="name"><br>
+    국어 : <input type="text" name="kor" id="kor"><br>
+    영어 : <input type="text" name="eng" id="eng"><br>
+    수학 : <input type="text" name="math" id="math"><br>
+    <button type="button" onclick="inputScore()">성적 입력</button><br>
+    <br>
+    <h2>성적 조회하기</h2>
+    이름 : <input type="text" name="checkName" id="checkName"><br>
+    <button type="button" onclick="checkScore()">성적 조회</button><br>
+    <div id="resultScore"></div>
+  </form>
+  
+  <script>
+    
+    function Student(kor,eng,math){
+      this.kor = kor;
+      this.eng = eng;
+      this.math = math;
+      this.sum = kor+eng+math;
+      this.avg = this.sum/3
+    }
+    function inputScore(){
+      let f = document.forms.frm1;
+      let name = f.name.value;
+      if(name in Student){
+        alert('중복된 이름입니다.\n다른 이름을 사용해 주세요');
+
+      }else{
+        let kor = Number(f.kor.value);
+        let eng = Number(f.eng.value);
+        let math = Number(f.math.value);
+        Student[name] = new Student(kor,eng,math);
+        console.log(Student[name]);
+      }
+    }
+
+    function checkScore(){
+      let f = document.forms.frm1;
+      let name = f.checkName.value;
+      if(name in Student){
+        let div = document.getElementById('resultScore');
+        let result = name+'님의 성적입니다.<br>';
+        result+='국어 점수는 '+Student[name].kor+'점입니다.<br>'
+        result+='영어 점수는 '+Student[name].eng+'점입니다.<br>'
+        result+='수학 점수는 '+Student[name].math+'점입니다.<br>'
+        result+='총점은 '+Student[name].sum+'점입니다.<br>'
+        result+='평균은 '+Student[name].avg+'점입니다.<br>'
+        div.innerHTML = result;
+      }else{
+        alert('입력하신 이름은 존재하지 않는 계정입니다.');
+      }
+    }
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body id="paper">
+  <button type="button" onclick="changeColor()">바꾸기</button>
+  <script>
+    let color = ['red','blue','green','yellow','gray'];
+    function changeColor(){
+      let i = Math.floor(Math.random()*color.length);
+      let c = document.getElementById('paper');
+      c.style.background = color[i];
+    }
+  </script>
+</body>
+</html>
