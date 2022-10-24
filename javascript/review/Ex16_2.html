@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      box-sizing: border-box;
+
+    }
+    .box{
+      display: inline-block;
+      position: absolute;
+      padding: 10px;
+      background-color: seagreen;
+      color: antiquewhite;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h2>박스 옮기기</h2>
+
+
+  <script>
+    // 마우스 이벤트 객체의 프로퍼티
+    // detail : 마우스 클릭 횟수
+    // button : 마우스 버튼 (0-왼쪽 / 1-휠 / 2-오른쪽)
+    // relatedTarget : mouseover, mouseout 마우스 커서가 움직인 노드
+
+    // screenX, screenY : 클릭한 위치의 모니터 좌표
+    // clientX, clientY : 클릭한 위치의 윈도우(브라우저) 좌표
+    // pageX, pageY : 클릭한 위치의 문서 좌표
+    // offsetX, offsetY : 이벤트가 발생한 요소에서의 마우스 좌표
+
+    window.onload = function(){
+      let box = document.createElement('div');
+      box.classList.add('box');
+      box.innerHTML = "plz,Move Me..";
+
+      document.body.appendChild(box);
+
+
+      let boxoffsetX, boxoffsetY;
+
+      box.addEventListener('mousedown',function(e){
+        // 마우스 눌렀을 때 발생하는 이벤트
+        
+        // 박스 요소의 마우스 커서 위치 파악
+        document.addEventListener('mousemove',boxMove,false);
+        boxoffsetX = e.offsetX; // 마우스가 눌리는 순간의 박스 위치를 기록
+        boxoffsetY = e.offsetY;
+        
+      },false);
+      box.addEventListener('mouseup',function(){
+        // 마우스 버튼을 눌렀다 뗏을 때
+        document.removeEventListener('mousemove',boxMove,false);
+
+
+      },false);
+
+      function boxMove(e){ // 마우스 이동 시 동작할 이벤트
+        box.style.left = e.pageX - boxoffsetX+'px'; // 박스의 왼쪽 상단 모서리 좌표
+        box.style.top = e.pageY - boxoffsetY+'px';  
+      }
+
+
+    }
+
+  </script>
+</body>
+</html>

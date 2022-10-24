@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .black{
+      color: aliceblue;
+      background-color: seagreen;
+    }
+  </style>
+</head>
+<body>
+
+  <button type="button" onclick="greeting1()">인사</button>
+  <h3 id="hello">인사</h3>
+  <p id="hello2">인사</p>
+  <button type="button" onclick="removeHello2()">이벤트 리스너 삭제</button>
+  <script>
+    // 웹 문서 : 브라우저를 이용해서 읽을 수 있는 문서
+    //    HTML   - 문서의 구조
+    //    CSS    - 문서의 스타일
+    //  jascript - 문서의 동적 반응
+    //  -> DOM 
+    //  -> 사용자의 액션에 반응하도록 만드는 '이벤트'
+    //  => 이벤트 주도형 프로그래밍
+
+    // [이벤트]
+    //  1) 어떤 이벤트가 있는가 >> 이벤트 종류
+    //  2) 이벤트 발생 시 어떤 동작을 하는가 >> 이벤트 처리기(함수)  
+
+    // 이벤트 처리기를 어떻게 이벤트에 등록하는가.
+    //  *- HTML 요소의 속성으로 등록하는 방법.
+    function greeting1 (){
+      alert('힘쎄고 강한 아침');
+    } // == 인사 버튼에 온클릭 이벤트로 붙이는(등록하는) 방법
+
+
+    //  *- DOM 노드의 프로퍼티로 등록하는 방법.
+    window.onload = function(){ 
+      // == 문서의 모든 태그 요소가 DOM 트리 구축을 완료했을 때
+      
+      let h = document.getElementById('hello');
+      h.onclick = greeting2;
+      // DOM 노드의 프로퍼티로써 이벤트는 기본으로 null이 배정됨
+      //  프로퍼티에 함수의 반환값을 붙이는 게 아님
+      //    함수 자체를 붙이는 것. ()를 쓰면 안됨
+      // 프로퍼티로써 이벤트에 null을 입력하면 이벤트가 제거된다.
+      // h.onclick = null을 입력하면 있던 이벤트도 사라짐
+
+      function greeting2(){
+        alert('요즘 날씨 춥죠?');
+      }
+
+      //--------------------------------------------------------------
+
+      // *- 이벤트 리스너를 등록하는 방법
+
+      let h2 = document.getElementById('hello2');
+      // h2.addEventListener(이벤트 유형,이벤트 처리기,이벤트 단계);
+      //  이벤트 유형 : 어떤 이벤트인가 (on은 빼고 작성)
+      
+      h2.addEventListener('click',greeting3,false);
+      h2.addEventListener('click',greeting4,false);
+
+      h2.addEventListener('click',function(e){ 
+        // 이름없이 이벤트에서만 동작하는 함수 : 콜백함수
+        // let h3 = document.getElementById('hello2');
+        // h3.classList.toggle('black');
+
+        // e : 이벤트가 발생 시 이벤트 객체 생성 => 이벤트 객체를 전달받은 변수
+        e.currentTarget.classList.toggle('black');
+        //   └ 이벤트가 발생한 대상(태그)
+      },false)
+      
+    }
+
+    function greeting3(e){
+        alert('밥은 먹고 다니냐?');
+    }
+      function greeting4(){
+        alert('반갑다');
+    }
+
+    function removeHello2(){ // 이미 작성된 이벤트 리스너 제거하는 방법
+      let h2 = document.getElementById('hello2');
+      h2.removeEventListener('click',greeting3,false);
+      h2.removeEventListener('click',greeting4,false);
+      // #h2를 클릭 시 동작할 greeting3를 제거해라
+    }
+
+    //=============================================================
+
+    // 이벤트 종류
+    // onclick        클릭
+    // ondbclick      더블클릭
+    // onmousedown    마우스 버튼 눌렀을 때
+    // onmouseup      마우스 버튼 뗏을 때
+    
+    // onmouseover    태그 요소 위에 마우스 커서가 올라 왔을 때
+    // onmouseenter   태그 요소 위에 마우스 커서가 올라 왔을 때
+    // onmousemove    태그 요소 위에 마우스가 움직일 때
+    // onmouseleave   태그 요소 위에 마우스가 벗어났을 때
+
+    // onkeydown      키보드를 눌렀을 때
+    // onkeyup        키보드를 뗏을 때
+    // onkeypress     키보드를 눌렀다 뗏을 때
+
+    // onload         HTML 문서가 전부 읽어 들여졌을 때
+    // onsubmit       form 제출 버튼이 눌렸을 때
+    // onfocus        input 요소에 포커스가 맞춰졌을 때
+    // onblur         input 요소에 포커스가 사라졌을 때
+    // onchange       input 요소에 값이 변했을 때
+    
+
+
+
+  </script>
+</body>
+</html>

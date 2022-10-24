@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="outter">
+    외부 박스
+    <div id="inner1">내부 박스</div>
+    <div id="inner2">내부 박스</div>
+  </div>
+
+
+  <script>
+    window.onload = function(){
+      let innerbox2 = document.getElementById('inner2');
+      let outterbox = document.getElementById('outter');
+      
+      
+      innerbox2.addEventListener('click',function(e){
+        console.log('내부 박스 클릭');
+      },false);
+
+      outterbox.addEventListener('click',function(e){
+        console.log('외부 박스 클릭 => 캡쳐링');
+      },false); // 나올 때 이벤트 제외, 들어갈 때 적용
+      outterbox.addEventListener('click',function(e){
+        console.log('외부 박스 클릭 => 버블링');
+      },true); // 들어갈 때 이벤트 제외, 나올 때 적용
+
+      let innerbox1 = document.getElementById('inner1');
+      innerbox1.addEventListener('click',function(e){
+        console.log('내부 박스1 클릭');
+        // e.stopPropagation();// 이벤트 전파 차단 
+        // 요소가 변경될 때 차단 -> 나올 때 부모 이벤트 발생(버블링)을 차단
+        //  => 이벤트 타겟에 붙은 여러 이벤트는 차단되지 않는다.
+
+        e.stopImmediatePropagation(); // 이벤트 전파 일시정지 
+        //  -> 이후에 발생할 모든 이벤트 차단 (나올 때 부모 이벤트(버블링) 차단)
+        //  => 이벤트 타겟에 붙은 여러 이벤트 차단 O
+        
+        
+      },false)
+
+
+    }
+  </script>
+</body>
+</html>

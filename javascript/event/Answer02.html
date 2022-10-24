@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="#" id="frm1">
+    아이디 : <input type="text" name="userId" id="userId">
+    <button type="button" onclick="inputId()">입력</button>
+    <p id="result"></p>
+  </form>
+  <script>
+    function inputId(){
+      let f = document.forms.frm1;
+      let str = f.userId.value;
+      console.log(str);
+      let str1 = str.length;
+
+      let resultLength = "문자열의 길이 : "+str1;
+
+      let x = document.getElementById('result');
+      x.innerHTML = resultLength;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2>키보드 이벤트 발생</h2>
+  <p id="p"></p>
+  <script>
+    // 이벤트 객체 
+    // 프로퍼티 
+    // e.type : 어떤 이벤트인가
+    // currentTarget : 처리를 담당할 이벤트 리스너가 등록된 요소 객체(태그)
+    // timestamp : 이벤트 발생 시간 (밀리초 단위 : 1970.1.1 0:0:0초 기준 정수)
+    
+
+    // 키보드 이벤트 객체 
+    // altKey   alt가 눌렸는지 판단하는 논리값
+    // ctrlKey  ctrl가 눌렸는지 판단하는 논리값
+    // shiftKry shift가 눌렸는지 판단하는 논리값
+    // metaKey  meta키가 눌렸는지 판단하는 논리값
+    // key      눌린 키의 DOMString (화면 상에 보여지는 값)
+    // code     눌린 키가 키보드에서 차지하는 물리적 위치
+    // keyCode  눌린 키의 키 코드 (A : 65)
+
+
+
+
+
+
+
+    window.onload = function(){
+      document.addEventListener('keydown',keyBoradEvent,false);
+      // 문서 자체에 이벤트 부여 : 키보드 눌림 이벤트 
+    }
+    function keyBoradEvent(e){ // 어떤 키가 눌렸는지 이벤트 객체를 통해 전달
+      let p = document.getElementById('p');
+      let spkey = ['altKey','ctrlKey','shiftKey','key','code','keyCode'];
+      let str = '';
+      for(let i in spkey){
+        str += "<br>"+spkey[i]+" : "+e[spkey[i]];
+      }
+
+      p.innerHTML = str;
+    }
+  </script>
+</body>
+</html>
