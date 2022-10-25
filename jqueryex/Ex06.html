@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./jquery/jquery-3.6.1.js"></script>
+  <style>
+    #box {
+      border: 1px solid black;
+      background-color: aquamarine;
+    }
+    #h{
+      border: 1px solid red;
+      background-color: darkblue;
+      color: antiquewhite;
+    }
+  </style>
+</head>
+<body>
+  <h2 id="move">태그가 움직여</h2>
+  <div id="box">
+    <h1>안녕하세요1</h1>
+    <h1>안녕하세요2</h1>
+    <h1 id="h">안녕하세요3</h1>
+    <h1>안녕하세요4</h1>
+    <h1>안녕하세요5</h1>
+
+  </div>
+
+
+  <script>
+    // [없는 문서 객체를 만들어 사용하는 방법]
+      // 1) 문서 객체 생성 => 화면에 출력되는 건 아님
+        $('<p></p>').html('배고파').css('color','red');
+
+
+
+      // 2) 만들어진 문서 객체를 화면에 출력
+        // 문서 객체 삽입
+        //  before('대상') : 대상의 형제 요소로써 앞부분 끼워넣기
+        // [대상<div>]-------------------------------------------------
+        //  prepand('대상') : 대상의 내부에 앞부분에 끼워넣기
+        // [내용물<h1>]-----------------------------------------------
+        //  append('대상') : 대상의 내부에 뒷부분에 끼워넣기
+        // [대상</div>]-------------------------------------------------
+        //  after('대상') : 대상의 형제 요소로써 뒷부분 끼워넣기
+
+        // 1)) 대상에 문서 객체를 끼워넣기 4가지
+          $('div').before('<p>반갑습니다 - before</p>');
+          $('div').prepend('<p>반갑습니다 - prepend</p>');
+          $('div').append('<p>반갑습니다 - append</p>');
+          $('div').after('<p>반갑습니다 - after</p>');
+          // ==> 잘 안 씀
+        // 2)) 문서 객체를 대상에 끼워넣기 4가지
+          $('<p></p>').html('안녕 못해 - insertBefore').insertBefore('div');
+          $('<p></p>').html('안녕 못해 - prependTo').prependTo('div');
+          $('<p></p>').html('안녕 못해 - appendTo').appendTo('div');
+          $('<p></p>').html('안녕 못해 - insertAfter').insertAfter('div');
+      
+      
+      // 3) 이미 있는 문서 객체를 이동하기
+        $('#move').insertAfter('div');
+
+
+      // 4) 문서 객체 제거하기
+      $('h1').first().remove();
+
+      // 5) 문서 객체 내부를 비우는 기능 empty();
+      $('#box').empty();
+  </script>
+</body>
+</html>

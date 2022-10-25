@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./jquery/jquery-3.6.1.js"></script>
+</head>
+<body>
+  <h1 id="header1" class="title">안녕하세요</h1>
+  <h1 id="header2" class="title">안녕하세요</h1>
+  <h1 id="header3" class="title">안녕하세요</h1>
+  <h1 id="header4" class="title">안녕하세요</h1>
+  <h1 id="header5" class="title">안녕하세요</h1>
+
+  <script>
+    // HTML의 기능을 사용하는 방법
+    //  1) 적용할 문서 객체를 선택하고
+    //  2) 선택한 문서 객체에 기능(효과) 적용
+
+
+    // [문서 객체 선택]
+    // jquery가 문서 객체를 선택하는 방법 => 선택자
+
+    // 1) 선택자를 이용한 방법
+    // $('선택자')
+    $('#header1');
+    $('h1'); // h1 태그를 가진 문서 객체의 배열형태로 저장됨
+    $('.title'); // title 클래스를 가진 문서 객체의 배열
+
+    // 2) javascript로 가져온 문서 객체를 이용하는 방법
+    let h = document.getElementById('header');
+    $(h);
+
+    //---------------------------------------------
+    // 제이쿼리 배열을 관리하는 방법
+    // - 일반 배열
+    let arr = ['red','green','blue','yellow','pink'];
+
+    // 1) $.each(배열,함수) => 배열에서 하나씩 요소를 꺼내서 함수 적용
+    $.each(arr,function(index,item){ // index: 배열의 index 번호 / item : 배열의 각 요소
+      alert(index+' : '+item);
+    });
+
+    // 2) $(배열).each(함수)
+    $(arr).each(function(index,item){
+      alert(index+' : '+item);
+    })
+
+    // 문서 객체 배열
+    // 문서 객체  => 각자 적용
+    $('h1').each(function(index,item){ // 배열 요소들에 순서대로 기능 동작
+      $(item).css('color',arr[index]);
+      // 0번째 h1에 arr배열의 0번째 색 적용
+      // 1번째 h1에 arr배열의 1번째 색 적용
+      // 2번째 h1에 arr배열의 2번째 색 적용
+      // 3번째 h1에 arr배열의 3번째 색 적용
+      // 4번째 h1에 arr배열의 4번째 색 적용
+    })
+
+
+    // 문서 객체 => 전부 같은 기능(효과)을 적용하고 싶을 때
+    $('h1').css('backgroundColor','gray');
+
+
+
+    // 문서 객체 => 특정 한 개만 효과 적용
+    $('h1').eq(2).css('fontSize','large');
+    // first()  last() find(선택자)
+
+    
+
+
+
+  </script>
+</body>
+</html>

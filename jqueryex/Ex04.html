@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./jquery/jquery-3.6.1.js"></script>
+</head>
+<body>
+  <h1>안녕하세요1</h1>
+  <h1>안녕하세요2</h1>
+  <h1>안녕하세요3</h1>
+  <hr>
+  <hr>
+  <img>
+  <img>
+  <img>
+  <hr>
+  <hr>
+  <p>안녕하세용</p>
+  <p>안녕하세용</p>
+  <p>안녕하세용</p>
+  <script>
+    // [선택된 문서 객체에 속성 관리]
+    // 값 지정 방법 ('속성이름','속성값');
+    // css
+    
+    // 1) ('문자열','문자열')
+    $('h1').eq(0).css('color','red');
+//================================================================
+    // 2) (객체)
+    // css 이름을 문자열로 처리
+    // $('h1').eq(0).css({
+    //   'color':'red',
+    //   'background-color':'orange', 
+    //   // css 이름을 정할 때 붙여써도 되고 하이픈을 붙여도 된다.
+    //   'textAlign':'center'
+    // });
+
+    // css 이름을 문자열이 아닌 값으로 처리 => 자바스크립트의 기본 문법으로 사용해야함
+      $('h1').eq(0).css({
+        color:'red',
+        backgroundColor:'orange', 
+        // css 이름을 정할 때 붙여써도 되고 하이픈을 붙여도 된다.
+        textAlign:'center'
+      });
+//================================================================
+    // 3) (함수)
+      let arrColor = ['red','blue','green'];
+      $('h1').css('color',function(index){
+        return arrColor[index];
+      })
+//==============================================================
+    // 4) (객체와 함수)
+    let arrBackColor = ['pink','aqua','lightgreen'];
+    let arrTextAlign = ['left','center','right'];
+
+    $('h1').css({
+      color:function(index){return arrColor[index]},
+      backgroundColor:function(index){return arrBackColor[index]},
+      textAlign:function(index){return arrTextAlign[index]}
+    })
+//================================================================
+    // attr('속성이름','속성값')
+    // $('img').attr('src','http://placeimg.com/150/150/any');
+    
+    // attr(객체)
+    // $('img').attr({
+    //   src:'http://placeimg.com/150/150/any',
+    //   alt:'테스트이미지'
+    // })
+    
+    // attr(함수)
+    // $('img').attr('src',function(index){
+    //   return 'http://placeimg.com/150/'+(index+1)*150+'/any';
+    // })
+    // $('img').attr('alt',function(index){
+    //   return '테스트이미지';
+    // })
+
+    // attr(객체 + 함수)
+    $('img').attr({
+      src : function(index){return 'http://placeimg.com/100/'+(index+1)*100+'/any'},
+      alt : function(index){return '테스트 이미지'}
+    })
+
+    //============================================================
+    // html('문자열')
+    $('p').html('반갑습니다.');
+    
+    // html(함수);
+    $('p').html(function(index){
+      return '수고하셨습니다 - '+index;
+    })
+
+
+    //============================================================
+    $('p').html('<img src="http://placeimg.com/100/100/any">뭘봐');
+    // html() => innetHTML과 같기 때문에 태그의 효과가 적용된다.
+    $('p').text('<img src="http://placeimg.com/100/100/any">뭘봐');
+    // text() => textContent와 같은 효과
+
+
+
+    //==========================================================
+    // [부가]
+    // getter => 여러 객체에서 값을 읽어올 때는 첫 번째 것을 읽어온다
+    let a1 = $('h1').css('color');
+    console.log(a1);
+
+    //-----------------------------------------------------------
+    // [부가 2] - 속성 제거
+
+    // 1) 속성값에 공백으로 처리 => 단점 : 속성값은 지워졌지만 속성은 남아있다.
+    $('img').attr('alt','');
+
+    // 2) removeAttr() 속성 제거
+    $('img').removeAttr('alt');
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./jquery/jquery-3.6.1.js"></script>
+  <style>
+    .text-red{
+      color: red;
+    }
+    .center{
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>안녕하세요</h1>
+
+  <script>
+    // [특이한 속성] - class
+    // 일반적인 속성 부여 attr('class','text-red')
+
+    // $('h1').attr('class','text-red');
+    // $('h1').attr('class','center');
+    // class 속성을 attr로 관리하면 한 번에 하나밖에 못 넣는다.
+
+    // class 속성을 이용하기 위한 함수
+    // 1) .addClass() : 클래스 속성 추가
+    $('h1').addClass('text-red');
+    $('h1').addClass('center');
+
+    // 2) .removeClass() : 클래스 속성 제거
+    setTimeout(function(){
+      $('h1').removeClass('center');
+    },4000)
+
+    // 3) .hasClass() : 클래스 속성이 있는지 판단하기 위한 목적 (T/F)
+    if($('h1').hasClass('text-red')){
+      console.log('글자가 빨갛습니다..')
+    }
+    if($('h1').hasClass('text-blue')){
+      console.log('글자가 파랗습니다..')
+    }
+
+
+    // 4) .toggleClass() : class 속성이 있다면 제거, 없다면 추가
+    setInterval(function(){
+      $('h1').toggleClass('text-red');
+    },2000)
+  </script>
+</body>
+</html>

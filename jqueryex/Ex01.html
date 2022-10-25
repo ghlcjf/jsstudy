@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./jquery/jquery-3.6.1.js"></script>
+  <!--스크립트를 외부파일로 가져올 때는 바디 윗부분에 쓰는 게 좋다-->
+  <!--제이쿼리 사용법 직접 다운받기 or cdn 주소 가져오기-->
+  <!-- <script
+  src="https://code.jquery.com/jquery-3.6.1.js"
+  integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+  crossorigin="anonymous"></script> -->
+  <!--주소 가져오기는 서버 용량을 조금이나마 줄일 수 있다 트래픽 발생도 줄일 수 있다
+  other CDN도 있음 
+  CDN을 가져오는 경우는 자동완성이 안됨-->
+</head>
+<body>
+  
+
+
+
+  <script>
+    // jquery를 본격적으로 사용하기에 앞서 jquery에서 제공되는 모든 기능은
+    // javascript와 동일.
+    // jquery가 제공하는 모든 함수는 기본적으로 jquery 객체를 통해서 사용해야 한다
+
+    window.onload = function(){ 
+      // HTML의 모든 노드가 생성되고 난 직후에 실행되는 함수
+      alert('[javascript]페이지가 열렸습니다.');
+    }
+
+    // jquery 객체 : jQuery(document) == $(document);
+    // window.onload와 같은 역할, 문서가 준비되면 function을 실행하라 : ready()
+    jQuery(document).ready(function(){
+      alert('[jquery] 페이지가 열렸습니다.')
+    });
+    
+    $(document).ready(function(){
+      alert('$==jQuery')
+    })
+
+  </script>
+</body>
+</html>

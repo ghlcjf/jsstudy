@@ -6,47 +6,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    input:checked[type=checkbox]{
-      text-decoration: line-through;
-    }
-    h1{
-      text-decoration: line-through;
-    }
     .b{
       text-decoration: line-through;
     }
   </style>
 </head>
 <body>
-  <h1>zzzzzzz</h1>
-  <form action="#" id="frm1">
+  <div>
+    <header>
+      <h1>TO DO LIST</h1>
+    </header>
 
-  
-  <button type="button" onclick="inputList()">할일 기록</button>
-  <div id="todoList">
+    <section>
+      <input type="text" name="userList" id="userList">
+      <button type="button" id="addButton">추가하기</button>
+
+      <div id="showList">
+
+      </div>
+      
+    </section>
 
   </div>
-    
-  </form>
   <script>
-    let work;
-    let result = '';
-    function inputList(){
-      work = prompt('할 일을 입력해 주세요.');
+    let userList = document.getElementById('userList');
+    let addButton = document.getElementById('addButton');
+    let showList = document.getElementById('showList');
 
-      let f = document.forms.frm1;
+    addButton.addEventListener('click',function(){
+      let list = document.createElement('li')
       
-      result += '<input type="checkbox" class="cancle">'+work+'<br>';
-      let list = document.getElementById('todoList');
-      list.innerHTML = result;
+      list.innerHTML = '<input type="checkbox">'+userList.value+'<button id="deleteList">X</button>';
+      showList.appendChild(list);
+      userList.value = '';
+
+      list.addEventListener('change',function(){
+        list.style.textDecoration = 'line-through'
+      })
       
-    }
-    window.onload = function(){
-      let f = document.forms.frm1;
-      if(f.cancle.checked){
-        
-      }
-    }
+    })
   </script>
 </body>
 </html>

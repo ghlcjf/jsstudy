@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,34 +7,9 @@
   <title>Document</title>
 </head>
 <body>
-  <img src="./bananas.jpg" alt="바나나">
-  <button type="button" onclick="change()">바꾸기</button>
-  <script>
-    let i = 0;
-    function change(){
-      window.setInterval(function(){
-        i++;
-        let fruit = document.getElementsByTagName('img')[0];
-        if(i==1){
-          fruit.setAttribute('src','./berry.jpg');
-          fruit.setAttribute('alt','베리')
-        }else if(i==2){
-          fruit.setAttribute('src','./cherries.jpg');
-          fruit.setAttribute('alt','체리')
-        }else if(i==3){
-          fruit.setAttribute('src','./pomegranate.jpg');
-          fruit.setAttribute('alt','석류');
-        }else if(i==4){
-          fruit.setAttribute('src','./strawberry.jpg')
-          fruit.setAttribute('alt','딸기')
-        }else{
-          fruit.setAttribute('src','./bananas.jpg')
-          fruit.setAttribute('alt','바나나')
-          i=0;
-        }
-      },3000);
-    }
-  </script>
   
+  <script>
+    
+  </script>
 </body>
 </html>
