@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0px;
+      padding: 0px;
+
+    }
+    #pannel{
+      background-color: azure;
+      width: 100vw; /*화면 상의 보이는 가로 길이의 100%*/ 
+      position : fixed; /*스크롤 내려도 고정*/
+      top: 0px;
+    }
+    #box{
+      width: 5000px;
+      height: 5000px;
+      background-color: burlywood;
+    }
+  </style>
+</head>
+<body>
+  <div id="pannel">
+    <button type="button" onclick="openWindow()">새창 열기</button>
+    <button type="button" onclick="moveWindow()">새창 이동</button>
+    <button type="button" onclick="resizeWindow()">크기 변경</button>
+    <button type="button" onclick="closeWindow()">창 닫기</button>
+    <br><br><br><br><br>
+
+    <button type="button" onclick="openInterval()">인터벌 켜기</button>
+    <button type="button" onclick="closeInterval()">인터벌 끄기</button>
+    <button type="button" onclick="openTimeout()">타임아웃 켜기</button>
+    <button type="button" onclick="closeTimeout()">타임아웃 끄기</button>
+    <button type="button" onclick="downScroll()">스크롤 아래로</button>
+    <button type="button" onclick="rightScroll()">스크롤 오른쪽으로</button>
+
+  </div>
+  <div id="box">
+
+  </div>
+  <script>
+    // ★★★★★ [DOM] : document object model = 문서 객체 모델
+
+    // [BOM] : browser object model = 브라우저 객체 모델
+    //  브라우저에서 웹문서를 읽기 위해서 어떤 작업이 필요한가
+    //    1) 브라우저를 켜고
+    //    2) 브라우저가 켜졌을 때 자동적으로 생성되는 개체 : window
+    //       브라우저에 포함된 객체
+    //       window - History : 사이트 방문 기록 제어
+    //              - Location : 주소 입력창 제어
+    //              - Screen : 화면 제어
+    //              - Navigator : 브라우저 정보
+    //              - Document 
+
+    //[window] 객체
+
+    // window.alert('원래 경고창은 이렇게 쓰는 것');
+    // window.console.log('원래 콘솔 출력은 이렇게 하는 것')
+    let w;
+    
+    function openWindow(){
+      w = window.open('','','width = 300px, height = 300px');
+    }
+
+    function moveWindow(){
+      // w.moveBy(10,10);
+      w.moveTo(1000,500);
+    }
+
+    function resizeWindow(){
+      // w.resizeBy(20,20);
+      w.resizeTo(300,300)
+    }
+
+    function closeWindow(){
+      w.close();
+    }
+
+    let i;
+    function openInterval(){
+      console.log('2초 뒤 인터벌 실행')
+      i = window.setInterval(function(){
+       console.log('2초마다 콘솔 출력1');
+      },2000);
+    }
+
+    function closeInterval(){
+      window.clearInterval(i);
+    }
+
+    let t;
+    function openTimeout(){
+      console.log('5초 뒤 타임아웃 실행');
+      t = window.setTimeout(function(){
+        console.log('타임아웃 실행')
+      },5000)
+    }
+
+    function closeTimeout(){
+      window.clearTimeout(t);
+      console.log('타임 아웃 종료');
+    }
+
+
+    function downScroll(){
+      window.scrollBy(0,1000);
+    }
+    function rightScroll(){
+      window.scrollBy(200,0);
+    }
+  </script>
+</body>
+</html>

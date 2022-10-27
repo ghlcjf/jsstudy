@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // [내장 객체] : 브라우저 내에 자바스크립트 엔진 안에 포함된 객체
+    // Math 수학 관련
+    // String 문자열 관련
+    // Array 배열 관련
+    // Date 날짜 관련
+    // 등등등....
+
+    // 내장 객체에 대한 정보
+    // 1) MDN
+    // 2) W3school
+
+
+    // ========================================================================
+    // [Math]
+    console.log(Math.floor(1.7)); // 내림
+    console.log(Math.round(1.7)); // 반올림
+
+    console.log(Math.random());
+
+    console.log(Math.floor((Math.random()*3)+15)); // 15~17
+    // (Math.random()*((최대값+1)-최소값))+최소값
+
+    // [Date]
+
+    let d = new Date();
+    console.log(d);
+
+    console.log(d.getFullYear()); // 메서드 호출
+    console.log(d.getDate());
+    console.log(d.getDay()); // 일요일이 0
+    console.log(d.getMonth()+1); // 1월이 0 반환 => 메서드 +1 해주면 해당 월 나옴
+
+    let d1 = new Date(1993,6,29,15,08,35); // 1월이 0부터 시작하기 때문에 6=>7월
+    console.log(d1);
+    console.log(d1.getFullYear());
+    console.log(d1.getDate());
+    console.log(d1.getDay());
+    console.log(d1.getMonth()+1);
+
+
+  </script>
+</body>
+</html>

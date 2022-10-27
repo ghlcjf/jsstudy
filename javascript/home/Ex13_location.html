@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button type="button" onclick="naver()">네이버 가기</button>
+
+  <button type="button" onclick="pageReload()">페이지 새로고침</button>
+  <button type="button" onclick="naverReplace()">네이버 이동</button>
+  <script>
+    // location 객체 : 주소창을 제어할 때 사용
+
+    function naver(){
+      location.href = 'https://www.naver.com';
+    }// 방문기록 남음
+    function pageReload(){
+      location.reload();
+    }
+    function naverReplace(){
+      location.replace ('https://www.naver.com');
+    }// 방문기록 안남음
+  </script>
+</body>
+</html>

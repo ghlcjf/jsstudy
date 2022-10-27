@@ -55,12 +55,17 @@
         boxoffsetY = e.offsetY;
         
       },false);
+
+
+      
       box.addEventListener('mouseup',function(){
         // 마우스 버튼을 눌렀다 뗏을 때
         document.removeEventListener('mousemove',boxMove,false);
 
 
       },false);
+
+
 
       function boxMove(e){ // 마우스 이동 시 동작할 이벤트
         box.style.left = e.pageX - boxoffsetX+'px'; // 박스의 왼쪽 상단 모서리 좌표

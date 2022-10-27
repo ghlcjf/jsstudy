@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // [함수]
+    // java : 메서드/ static 메서드 (함수라고 부르는 사람들이 있다.)
+    // javascript : 함수를 만들어 사용 가능
+
+    // 함수를 구성하는 3가지
+    //  1) 이름 : 호출해서 사용
+    //  2) 매개값(인자)
+    //  3) 반환값
+    //  **매개값과 반환값이 없을 수도 있음
+    //  java와의 차이점 : 매개변수, 반환값의 타입을 쓸 필요가 없다.
+
+    function adder(a,b){
+      return a+b;
+    }
+
+    let x=11;
+    let y=20;
+
+    let z = adder(x,y);
+    console.log(z);
+    console.log(adder(x,y));
+
+    if(adder(x,y)>30){
+      console.log('30보다 크다');
+    }
+
+    let i;
+    if(i=adder(x,y)){
+      console.log('합계 : '+i)
+    }
+
+  function fare(age){
+    if(60<=age){
+      return '노약자 무료';
+    }else if(19<=age){
+      return '일반 요금';
+    }else if(12<=age){
+      return '청소년 요금';
+    }else {
+      return '영유아 무료';
+    }
+  }
+
+  console.log(fare(25));
+  
+  ///-------------------------------------------------------
+  // 자바스크립트는 함수적 언어의 특징을 가지고 있다
+  // 함수가 데이터와 같기 때문에 변수에 담아서 사용할 수 있다.
+  let check = fare;
+
+  console.log(check);
+   
+  let result = check(18);
+  console.log(result);
+
+  // 이런 식으로 사용가능
+
+  let f = function(a){
+    console.log('나는 함수입니다.');
+    console.log('a : '+a);
+  }
+  f(12);
+  //---------------------------------------------------------------------------
+  // 변수의 범위
+
+  let a = 10;
+  let b = 20;
+
+  let f2 = function(){
+    let a = 20;
+    let d = 10;
+    console.log('a : '+a);
+    return a+b;
+  }
+
+  let c = f2();
+  console.log(a);
+  console.log(c);
+  // console.log(d); 지역변수 d는 메서드 밖에서 호출될 수 없다.
+
+
+
+
+  </script>
+</body>
+</html>

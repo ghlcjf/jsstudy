@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .a{
+      color: lime;
+    }
+    .b{
+      background-color: crimson;
+    }
+    .c{
+      font-size: xx-large;
+    }
+    .d{
+      background-color: black;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <button type="button" onclick="a()">A</button>
+  <button type="button" onclick="b()">B</button>
+  <button type="button" onclick="c()">C</button>
+  <button type="button" onclick="d()">D</button>
+  <button type="button" onclick="remove()">R</button>
+  
+  <p>안녕하세요1</p>
+  <p class="a">안녕하세요2</p>
+  <p class="b">안녕하세요3</p>
+  <p class="c">안녕하세요4</p>
+  <p class="a b">안녕하세요5</p>
+  <p class="a c">안녕하세요6</p>
+  <p class="b c">안녕하세요7</p>
+  <p class="a b c">안녕하세요8</p>
+  
+  <script>
+
+    // 자바스크립트로 CSS 효과 적용하기
+
+    // 1) 인라인 스타일 속성 적용
+    // let p1 = document.getElementsByTagName('p')[0];
+    // p1.style.color = 'red';
+    // p1.style.backgroundColor = 'aqua';
+
+
+    // 2) class 속성을 이용한 방법
+    function a(){
+      let p1 = document.getElementsByTagName('p')[0];
+      let p1cl = p1.classList;
+      p1cl.add('a'); // 클래스 리스트에 a 클래스 값을 추가
+      // setAttribute는 기존 속성값을 변경하지만 얘는 추가임
+    }
+
+    function b(){
+      let p1 = document.getElementsByTagName('p')[0];
+      let p1cl = p1.classList;
+      p1cl.add('b');
+    }
+
+    function c(){
+      let p1 = document.getElementsByTagName('p')[0];
+      let p1cl = p1.classList;
+      p1cl.add('c');
+    }
+    
+    function d(){
+      let p1 = document.getElementsByTagName('p')[0];
+      let p1cl = p1.classList;
+      // if(p1cl.contains('d')){
+      //   p1cl.remove('d');
+      // }else{
+      //   p1cl.add('d');
+      // }
+      p1cl.toggle('d');
+    }
+
+    function remove(){
+      let p1 = document.getElementsByTagName('p')[0];
+      let p1cl = p1.classList;
+      p1cl.remove('a');
+      p1cl.remove('b');
+      p1cl.remove('c');
+      p1cl.remove('d');
+    }
+
+  </script>
+  
+</body>
+</html>

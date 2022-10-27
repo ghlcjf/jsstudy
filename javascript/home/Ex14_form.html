@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="#" id="frm1">
+    이름 : <input type="text" name="username" id="username"><br>
+    취미 : <br>
+    <input type="checkbox" name="hobby" id="movie" value="movie">영화감상<br>
+    <input type="checkbox" name="hobby" id="game" value="game">게임<br>
+    <input type="checkbox" name="hobby" id="fishing" value="fishing">낚시<br>
+    성별 : <br>
+    <input type="radio" name="gender" id="male" value="male">남자<br>
+    <input type="radio" name="gender" id="female" value="female">여자<br>
+    직업 : <br>
+    <select name="job" id="job">
+      <option value="front">프론트엔드 개발자</option>
+      <option value="back">백엔드 개발자</option>
+      <option value="full">풀스택 개발자</option>
+    </select><br>
+    하고싶은말 : <br>
+    <textarea name="will" id="will" cols="30" rows="10"></textarea><br>
+    <button type="button" onclick="takeData()">데이터 읽어오기</button><br>
+    <button type="button" onclick="fillData()">데이터 불러오기</button>
+  </form>
+  <script>
+    let f = document.forms.frm1;
+
+    function takeData(){
+      // 이름 가져오기=================================================
+      let name = f.username.value;
+      console.log('이름 : '+name);
+
+      // 체크박스에서 
+      let ho = []; // 선택한 취미의 value값을 저장하기 위한 배열 준비
+      let ch = document.getElementsByName('hobby'); 
+      // 이름을 통해 체크박스 태그들의 집합 저장
+      // console.log(ch); 확인용
+
+      for(k in ch){ // 반복문 : 태그 집합들을 k변수에 하나씩 담기
+        if(ch[k].checked){ // 집합[k]가 checked 된다면
+          // console.log(k+'번째 ch : '+ch[k].value);
+          ho.push(ch[k].value); // ch[k]의 value를 ho 배열에 담기
+        }
+      }
+      console.log('취미 : '+ho);
+      
+      // 성별 체크하기
+      let gender;
+      let ge = document.getElementsByName('gender');
+      for(k in ge){
+        if(ge[k].checked){
+          gender = ge[k].value;
+        }
+        if(gender==null){
+          gender = '자웅동체';
+        }
+      }
+      console.log('성별 : '+gender);
+
+      // 직업 체크
+      let job = f.job.value;
+      console.log('직업 : '+job);
+
+      // 하고싶은말
+      let will = f.will.value;
+      console.log('하고싶은말 : '+will);
+    }
+    function fillData(){
+      f.username.value = '김회철';
+      f.game.checked = 1;
+      f.male.checked = 1;
+      f.job.selectedIndex = 1;
+      f.will.value = '뭘봐';
+    }
+
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .black{
+    color: aliceblue;
+    background-color: seagreen;
+  }
+</style>
+<body>
+  <button type="button" onclick="greeting1()">인사</button>
+
+  <h3 id="hello">인사</h3>
+  <p id="hello2">인사</p>
+  <p>배</p>
+  <p>고</p>
+  <p>파</p>
+  <button type="button" onclick="removeEvent()">이벤트 리스너 삭제</button>
+  <script>
+    // 웹 문서란 브라우저를 이용해서 읽을 수 있는 문서
+    //  HTML : 문서의 구조
+    //  CSS : 문서의 스타일
+    // javascript : 문서의 동적 반응
+
+    // DOM -> 사용자의 액션에 반응하도록 만드는 '이벤트'
+    // => 이벤트 주도형 프로그래밍
+
+    // 이벤트 처리기를 어떻게 이벤트에 등록하는가.
+    // - HTML 요소의 속성으로 등록하는 방법.
+    function greeting1(){
+      alert('치맥하고싶다');
+    } // => 인사 버튼에 온클릭 이벤트로 등록하는 방법
+
+
+
+    // - DOM 노드의 프로퍼티로 등록하는 방법
+    window.onload = function(){
+      let h = document.getElementById('hello');
+      h.onclick = greeting2;
+      // DOM 노드의 프로퍼티로써의 이벤트는 기본적으로 null값임
+      // 프로퍼티 이벤트는 함수의 반환값을 등록하는 게 아닌 함수 자체를 등록
+      // => ()를 쓰면 안됨 : h.onclick = greeting2(); X
+
+      // 프로퍼티로써의 이벤트에 null을 입력하면 이벤트가 제거된다.
+      // h.onclick = null 을 입력하면 있던 이벤트도 사라짐
+      function greeting2(){
+        alert('요즘 날씨 또 따뜻해지더라');
+      }
+      
+      // 제거해보기
+      let btn = document.getElementsByTagName('button')[0];
+      btn.onclick = null;
+      // 사라졌다..
+
+      //===================================================================
+      
+      let p1 = document.getElementById('hello2');
+      // p1.addEventListener('이벤트 유형',이벤트처리기,이벤트 단계);
+
+      p1.addEventListener('click',greeting3,false);
+      p1.addEventListener('click',greeting4,false);
+
+      //=================================================================
+      let p2 = document.getElementsByTagName('p');
+
+      for(k in p2){
+        p2[k].addEventListener('click',function(e){
+          e.currentTarget.classList.toggle('black')
+        },false)
+        // p2[k].addEventListener('click',function(e){
+        // e.currentTarget.classList.toggle('black');
+        // },false);
+      }
+
+      
+
+    }
+    function greeting3(){
+      alert('나는 다이어트 중입니다.');
+    }
+    function greeting4(){
+      alert('맥주 마시고 싶다');
+    }
+    function removeEvent(){
+      let p1 = document.getElementById('hello2');
+      p1.removeEventListener('click',greeting3,false);
+      p1.removeEventListener('click',greeting4,false);
+      p1.removeEventListener('click',function(e){
+          e.currentTarget.classList.toggle('black')
+        },false)
+      // 작성된 이벤트 리스너를 제거하는 방법
+      // 온로드 밖에 작성된 이벤트 제거 가능, 제거 메서드도 밖에 작성돼야 함
+    }
+  </script>
+  
+</body>
+</html>
