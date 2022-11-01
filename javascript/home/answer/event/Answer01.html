@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="#" id="frm">
+    주소 : <input type="text" name="inputUrl" id="inputUrl">
+    <button type="button" id="btn">바로가기</button>
+  </form>
+  <script>
+    // 특정 사이트 주소를 입력하고 바로가기 버튼을 누르면
+    // 해당 사이트로 이동하는 기능
+    window.onload = function(){
+      let btn = document.getElementById('btn');
+      btn.addEventListener('click',function(){
+        let f = document.forms.frm;
+        let u = f.inputUrl.value;
+        location.href = u;
+      },false);
+    }
+  </script>
+</body>
+</html>

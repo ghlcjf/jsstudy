@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2>회원가입을 환영합니다.</h2>
+  <form action="#" id="frm1">
+    이름 : <input type="text" name="userName" id="userName"><br>
+    아이디 : <input type="text" name="userId" id="userId"><br>
+    비밀번호 : <input type="text" name="userPw" id="userPw"><br>
+    <button type="button" onclick="takeData()">제출하기</button><br>
+  </form>
+  <h3>로그인페이지</h3>
+  <form action="#" id="frm2">
+    아이디 :  <input type="text" name="loginId" id="loginId">
+    비밀번호 : <input type="text" name="loginPw" id="loginPw">
+    <button type="button" onclick="login()">로그인</button>
+  </form>
+  <script>
+    // 생성자
+    function Member(name,password){
+      this.name = name;
+      this.password = password;
+    }
+    // 회원가입 : 이름 아이디 비밀번호 입력받아야 하고
+    function takeData(){
+      let f = document.forms.frm1;
+      let id = f.userId.value;
+      if(id in Member){
+        alert('중복된 아이디가 존재합니다.')
+      }else{
+        let name = f.userName.value;
+        let pw = f.userPw.value;
+        Member[id] = new Member(name,pw);
+        f.userId.value = '';
+        f.userName.value = '';
+        f.userPw.value = '';
+        alert('회원가입이 완료됐습니다.');
+      }
+    }
+
+
+    // 로그인 : 성공 시 ''님 환영합니다 출력
+
+    function login(){
+      let f = document.forms.frm2;
+      let id = f.loginId.value;
+      if(id in Member){
+        let pw = f.loginPw.value;
+        if(Member[id].password==pw){
+          alert(Member[id].name+'님 환영합니다!');
+          f.loginId.value = '';
+          f.loginPw.value = ''; 
+        }else{
+          alert('비밀번호가 틀렸습니다.')
+          f.loginPw.value = ''; 
+        }
+      }else{
+        alert('입력하신 아이디를 찾을 수 없습니다.')
+        f.loginId.value = '';
+      }
+    }
+  </script>
+  
+</body>
+</html>

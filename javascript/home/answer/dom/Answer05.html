@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <h1>성적 관리 프로그램</h1>
+    <form action="#" id="frm1">
+      이름 : <input type="text" name="name" id="name"><br>
+      국어 : <input type="text" name="kor" id="kor"><br>
+      영어 : <input type="text" name="eng" id="eng"><br>
+      수학 : <input type="text" name="math" id="math"><br>
+      <button type="button" onclick="inputData()">제출하기</button>
+      <br>
+      이름 : <input type="text" name="checkName" id="checkName">
+      <button type="button" onclick="checkScore()">성적 조회</button>
+      
+    </form>
+    
+  </div>
+  
+
+  <script>
+    // 학생 이름과 국어,영어,수학 점수를 입력받아서 저장
+    // 생성자
+    function Score(kor,eng,math){
+      this.kor = kor;
+      this.eng = eng;
+      this.math = math;
+      this.sum = function(){
+        return this.kor+this.eng+this.math;
+      }
+      this.avg = function(){
+        return this.sum()/3
+      }
+    }
+
+    function inputData(){
+      let f = document.forms.frm1;
+      let name = f.name.value;
+      if(name in Score){
+        alert('이미 등록하셨습니다.')
+      }else{
+        let kor = Number(f.kor.value);
+        let eng = Number(f.eng.value);
+        let math = Number(f.math.value);
+        Score[name] = new Score(kor,eng,math);
+        alert(name+'님 성적 등록이 완료됐습니다.');
+        f.name.value = '';
+        f.kor.value = '';
+        f.eng.value = '';
+        f.math.value = '';
+      }
+    }
+    // 성적 조회 버튼을 누르면 학생 이름을 입력받고 이름과 국영수, 총점, 평균을 화면에 
+    // 출력하는 프로그램
+    function checkScore(){
+      let f = document.forms.frm1;
+      let name = f.checkName.value;
+      if(name in Score){
+        let p1 = document.createElement('p')
+        p1.innerHTML= '';
+        p1.innerHTML += name+'님의 성적입니다.<br>';
+        p1.innerHTML += '국어 점수 : '+Score[name].kor+'<br>';
+        p1.innerHTML += '영어 점수 : '+Score[name].eng+'<br>';
+        p1.innerHTML += '수학 점수 : '+Score[name].math+'<br>';
+        p1.innerHTML += '총    점 : '+Score[name].sum()+'<br>';
+        p1.innerHTML += '평    균 : '+Score[name].avg()+'<br>';
+
+        let d = document.getElementsByTagName('div')[0];
+        d.appendChild(p1);
+        f.checkName.value = '';
+
+      }else{
+        alert('성적 입력을 먼저 해주세요')
+      }
+    }
+  </script>
+</body>
+</html>

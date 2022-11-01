@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button type="button" onclick="createAcc()">계좌 생성하기</button>
+  <button type="button" onclick="checkAcc()">계좌 조회하기</button>
+  <button type="button" onclick="deposit()">계좌 입금하기</button>
+  <button type="button" onclick="withdraw()">계좌 출금하기</button>
+
+  <script>
+    // 계좌번호, 예금주, 초기입금액을 입력받아서 계좌를 생성하는 버튼을 만들어 보세요
+    // 조회 버튼을 누르면 계좌번호를 입력받고 잔액을 출력하는 버튼을 만들어 보세요
+    // 입금 버튼을 누르면 계좌번호를 입력받고 입금액을 입력받은 후 잔액을 출력하는 버튼
+    // 출금 버튼을 누르면 계좌번호를 입력받고, 출금액을 입력 받은 후 
+    // 잔액이 부족하면 '잔액부족', 충분하면 출금 후 잔액을 출력하는 버튼
+    function Account(name,balance){
+      this.name = name;
+      this.balance = balance;
+    }
+
+    function createAcc(){
+      let acc = prompt('계좌번호를 입력해 주세요');
+      if(acc in Account){
+        alert('중복된 계좌번호가 존재합니다.');
+      }else{
+        let name = prompt('이름을 입력해 주세요');
+        let balance = parseInt(prompt('초기 입금액을 입력해 주세요.'));
+        Account[acc] = new Account(name,balance);
+        alert('계좌 생성이 완료되었습니다.')
+      }
+    }
+
+    function checkAcc(){
+      let acc = prompt('계좌번호를 입력해 주세요.')
+      if(acc in Account){
+        alert(Account[acc].name+'님의 잔액은 '+Account[acc].balance+'원입니다.')
+      }else{
+        alert('해당 계좌를 찾을 수 없습니다.\n확인 후 다시 입력해 주세요.')
+      }
+    }
+
+    function deposit(){
+      let acc = prompt('계좌번호를 입력해 주세요.')
+      if(acc in Account){
+        let money = parseInt(prompt('입금하실 금액을 입력해 주세요.'));
+        Account[acc].balance+=money;
+        alert(Account[acc].name+'님의 잔액은 '+Account[acc].balance+'원입니다.')
+      }else{
+        alert('해당 계좌를 찾을 수 없습니다.\n확인 후 다시 입력해 주세요.')
+      }
+    }
+
+    function withdraw(){
+      let acc = prompt('계좌번호를 입력해 주세요.')
+      if(acc in Account){
+        let money = parseInt(prompt('출금하실 금액을 입력해 주세요.'));
+        if(money>Account[acc].balance){
+          alert('잔액이 부족합니다.')
+        }else{
+          Account[acc].balance-=money;
+          alert(Account[acc].name+'님의 잔액은 '+Account[acc].balance+'원입니다.')
+        }
+        
+      }else{
+        alert('해당 계좌를 찾을 수 없습니다.\n확인 후 다시 입력해 주세요.')
+      }
+    }
+
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <img src="" alt="" width="300px" height="300px">
+  <button type="button" id="btn">시작</button>
+  <button type="button" id="forward">＜＜</button>
+  <button type="button" id="backward">＞＞</button>
+  <script>
+    // 이미지 5개를 준비해 3초마다 이미지가 순서대로 교체되도록
+    // 위 문제에서 [<<][>>] 버튼을 추가한 뒤 해당 버튼을 누르면
+    // 이미지가 교체되도록 만들어 보세요.
+    let images = ['bananas.jpg','berry.jpg','cherries.jpg','pomegranate.jpg','strawberry.jpg']
+    let imgInfo = ['바나나','베리','체리','석류','딸기']
+    let image = document.getElementsByTagName('img')[0];
+    window.onload = function(){
+      let btn = document.getElementById('btn');
+      let forward = document.getElementById('forward');
+      let backward = document.getElementById('backward');
+      let i=0;
+      btn.addEventListener('click',function(){
+        window.setInterval(function(){
+          image.setAttribute('src','../../../event/'+images[i]);
+          image.setAttribute('alt',imgInfo[i]);
+          i++;
+          if(i>4){
+            i=0;
+          }
+        },3000)
+      },false)
+
+      forward.addEventListener('click',function(){
+        if(i==0){
+          alert('첫번째 사진입니다.')
+        }else{
+          i--;
+          image.setAttribute('src','../../../event/'+images[i]);
+          image.setAttribute('alt',imgInfo[i]);
+        }
+      },false)
+
+      backward.addEventListener('click',function(){
+        if(i==4){
+          alert('마지막 사진입니다.')
+        }else{
+          i++;
+          image.setAttribute('src','../../../event/'+images[i]);
+          image.setAttribute('alt',imgInfo[i]);
+        }
+      },false)
+
+    }
+  </script>
+  
+</body>
+</html>

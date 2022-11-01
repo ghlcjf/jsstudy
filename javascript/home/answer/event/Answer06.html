@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="#" id="frm">
+    아이디 : <input type="text" name="inputId" id="inputId"><br>
+    비밀번호 : <input type="text" name="inputPw" id="inputPw"><br>
+    <button type="button" id="btn">로그인</button>
+  </form>
+
+
+  <script>
+    // 입력 폼에 아이디 비밀번호를 입력하고 로그인 기능
+    // 입력 없이 로그인 버튼을 누를 경우 '아이디를 입력해 주세요', '비밀번호를 입력해 주세요'
+    // 출력하고 해당 위치에 커서가 가도록
+
+    window.onload = function(){
+      let btn = document.getElementById('btn');
+      btn.addEventListener('click',function(){
+        let f = document.forms.frm;
+        let userId = '';
+        userId = f.inputId.value;
+        let userPw = '';
+        userPw = f.inputPw.value;
+        if(userId==''){
+          alert('아이디를 입력해 주세요.');
+          f.inputId.focus();
+        }else{
+          if(userPw==''){
+            alert('비밀번호를 입력해 주세요');
+            f.inputPw.focus();
+          }
+          else{
+            console.log('아이디 : '+userId);
+            console.log('비밀번호 : '+userPw);
+          }
+        }
+      },false)
+    }
+
+
+
+  </script>
+  
+</body>
+</html>

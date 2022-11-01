@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button type="button" onclick="inputAge()">요금 계산하기</button>
+  <script>
+    // 나이를 입력받으면 5초 후에 다음 조건의 요금이 계산되어서 콘솔로 출력되는 프로그램
+    // 단 나이를 반복적으로 입력 받아야 하고 '끝'을 입력하면 요금의 합계가 출력되어야 합니다.
+    let s;
+    let money=0;
+    function inputAge(){
+      s = window.setInterval(function(){
+       let age = prompt('나이를 입력해 주세요.'); 
+       if(60<=age){
+        console.log('60세 이상 무료');
+       }else if(20<=age&&age<60){
+        console.log('3000원');
+        money+=3000;
+       }else if(13<=age&&age<20){
+        console.log('1000원');
+        money+=1000;
+       }else if(1<=age&&age<13){
+        console.log('13세 미만 무료');
+       }else if(age=='끝'){
+        window.clearInterval(s);
+        window.setTimeout(function(){
+          console.log('요금의 총 합계 : '+money);
+        },5000);
+       }else{
+        console.log('똑바로 입력하세요')
+       }
+      });
+    }
+
+
+  </script>
+</body>
+</html>

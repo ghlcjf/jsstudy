@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="#" id="frm">
+    아이디 : <input type="text" name="userId" id="userId">
+  </form>
+  <p id="result"></p>
+  <script>
+    //  입력폼에 아이디를 입력하면 글자수를 보여주는 기능
+
+    window.onload = function(){
+      document.addEventListener('keydown',function(){
+        let f = document.forms.frm;
+        let l = f.userId.value;
+
+        let out = document.getElementById('result');
+        out.innerHTML = l.length+1;
+      },false)
+    }
+  </script>
+</body>
+</html>

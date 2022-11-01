@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button type="button" onclick="loopWindow()">버튼</button>
+  <button type="button" onclick="loopWindow2()">이동버튼</button>
+  <button type="button" onclick="loopWindow3()">열고닫기</button>
+  <button type="button" onclick="loopClose()">끝내기</button>
+
+
+  <script>
+    // 누를 때마다 새로 열린 창의 크기를 처음엔 200,200 두번째는 300,300
+    // 세번째는 400,400 네번째는 원래대로 돌아오는 버튼(계속 반복)
+
+    // 누를 때마다 한 번은 왼쪽으로, 두 번째는 아래로, 세 번째는 오른쪽으로, 네 번째는 위로
+    // 100px씩 이동해서 제자리로 돌아로는 버튼
+    let w;
+    let i=0;
+    function loopWindow(){
+      i++;
+      if(i==1){
+        w = window.open('','','width=200px,height=200px')
+      }else if(i==2){
+        w.resizeTo(300,300);
+      }else if(i==3){
+        w.resizeTo(400,400);
+      }else{
+        w.resizeTo(200,200);
+        i=1;
+      }
+    }
+
+    let j=0;
+    function loopWindow2(){
+      j++;
+      if(j==1){
+        w.moveBy(-100,'');
+      }else if(j==2){
+        w.moveBy('',100);
+      }else if(j==3){
+        w.moveBy(100,'');
+      }else if(j==4){
+        w.moveBy('',-100);
+        j=0;
+      }
+    }
+
+    // 한 번 클릭하면 2초 후에 새창이 열리고 다시 2초후에 열린 창이 닫히기를 반복하는 버튼
+    let w2;
+    let run = 1;
+    let l;
+    function loopWindow3(){
+      l = window.setInterval(function(){
+          if(run==1){
+            w2 = window.open('','','width=200px,height=200px')
+            run = 2;
+          }else{
+            w2.close();
+            run = 1;
+          }
+        },2000)
+    }
+
+    // 인터벌 닫는 버튼 만들기
+    function loopClose(){
+      window.clearInterval(l);
+    }
+  </script>
+</body>
+</html>

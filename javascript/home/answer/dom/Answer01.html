@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button type="button" onclick="change()">색 바꾸기</button>
+  <script>
+    // 배열에 색상 문자열을 입력한 뒤 버튼 클릭 시 웹 페이지의 배경 색을
+    // 임의로 바꾸는 함수를 만들어서 버튼에 적용
+
+    let color = ['red','green','blue','yellow','black','pink','gray','aqua'];
+
+    function change(){
+      let b = document.body;
+      let c = Math.floor(Math.random()*8);
+      b.style.backgroundColor = color[c];
+    }
+
+
+  </script>
+</body>
+</html>
