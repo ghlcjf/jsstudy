@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    h1[abc]{ /* == h1 태그에 abc 속성이 있다면 */
+      color: white;
+      background-color: darkgreen;
+    }
+  </style>
+  <script src="./jquery/jquery-3.6.1.js"></script>
+</head>
+<body>
+  <h1>더워</h1>
+  <a href="https://www.naver.com">네이버</a>
+  <script>
+    // 일반적인 이벤트 연결 방식
+    // $('h1').on('click',function(){});
+
+    // 보다 직관적인 이벤트 연결 방식
+    $('h1').click(function(e){
+      $(this).attr('abc','def');
+    });
+
+    // 이벤트 전파 방지
+    $('a').click(function(e){
+      $(this).html('카카오');
+      $(this).css({
+        "color" : "yellow",
+        'backgroundColor':'black'
+      })
+      e.preventDefault(); // 태그의 기본 기능 차단 : a 태그의 링크 기능
+      e.stopPropagation(); // 이벤트 전파 방지
+    });
+
+
+  </script>
+  
+</body>
+</html>

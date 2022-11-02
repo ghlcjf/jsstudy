@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./jquery/jquery-3.6.1.js"></script>
+  <style>
+    body{
+      height: 500px;
+    }
+  </style>
+</head>
+<body>
+  <h1>배고파요..(origin)</h1>
+
+  <script>
+    // =>> 실행할 때 화면에 이미 있는 태그에만 이벤트가 적용된다.
+    // $('h1').on('click',function(e){ // h1 태그에 클릭 이벤트
+    //   $('<h1></h1>').html('너무 고파요..').appendTo('body');
+    //   새로운 h1 태그를 만들어서 문자열을 넣고 바디에 끼워넣기
+    //   새롭게 추가된 태그에는 이벤트가 적용되지 않는다.
+    // });
+
+    // =>> 새롭게 추가된 태그에도 이벤트가 적용되게끔
+    //  1. body(h1을 감싸는 태그)에 이벤트를 붙이는 방법 (=편법)
+    // $('body').on('click','h1',function(e){
+    //   // 이벤트는 바디에 적용하나 이벤트 작동 대상은 h1
+    //   $('<h1></h1>').html('너무 고파요..').appendTo('body');
+    // });
+    
+    //  2. 이벤트 핸들러를 미리 만들어두고 각각의 h1 태그에 이벤트 핸들러를 붙이는 방법
+    //  -> 재귀함수
+
+    let handler = function(){
+      $('<h1></h1>').html('너무 고파요..').appendTo('body').click(handler);
+      // 새로 생길 h1 태그에 클릭 handler 이벤트 적용
+    }
+    $('h1').on('click',handler); // 기존에 있는 h1 태그에도 이벤트 적용
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>영어 단어장 만들기 -list </title>
+</head>
+<body>
+  <h1>영어 단어장 만들기 - feat.List</h1>
+  <button type="button" onclick="addWord()">단어 등록</button>
+  <button type="button" onclick="removeLastWord()">마지막 단어 삭제</button>
+  <button type="button" onclick="removeNumberWord()">선택한 번호의 단어 삭제</button>
+  <button type="button" onclick="removeEngWord()">입력한 단어 삭제</button>
+
+
+  <ol id="wordList">
+    <!--입력한 영어 단어가 들어올 ol 태그 내부-->
+    <li>water:물</li>
+    <li>sample1:샘플1</li>
+    <li>sample2:샘플2</li>
+    <li>sample3:샘플3</li>
+  </ol>
+  <script>
+
+    function removeEngWord(){
+      // 아주 먼 힌트 : "water:물" => 여기에서 어떻게 water를 꺼낼 것인가
+      // 두 번째 힌트 : String 객체의 split 메서드
+      let lists = document.getElementsByTagName('li');
+      let flag = -1
+      if(!lists[0]){ // lists.length==0 이렇게도 쓸 수 있다.
+        alert('삭제할 단어가 없습니다.');
+      }else{
+        let selectWord = prompt('삭제할 단어를 입력해 주세요.');
+        for(let i=0;i<lists.length;i++){
+          let engWord = lists[i] // <li>영단어:한글뜻</li>
+                                .innerHTML // 영단어:한글뜻
+                                .split(':')[0].trim(); // ['영단어','한글뜻']
+                                                // trim() => 공백 제거해 주는 기능
+            // 영단어만 추출되서 engWord에 저장
+          // let engWord = lists[i].innerHTML.split(':')[0].trim();
+          if(engWord==selectWord){
+            lists[i].remove();
+            flag=i;
+            break;
+          }
+        }
+        if(flag==-1){
+          alert('입력하신 단어를 찾을 수 없습니다.')
+        }
+      }
+    }
+
+    // let str = 'a:b,c:d,e:f,g:h,i:j';
+    // str.split(','); => ['a:b','c:d','e:f','g:h','i:j']
+    // str.split(';'); => ['a','b,c','d,e','f,g','h,i','j']
+
+    function removeNumberWord(){
+      let lists = document.getElementsByTagName('li');
+      if(!lists[0]){ // lists.length==0 이렇게도 쓸 수 있다.
+        alert('삭제할 단어가 없습니다.');
+      }else{ // 삭제할 요소가 있는 경우
+        let num = parseInt(prompt('삭제할 단어의 번호를 입력해 주세요'));
+        if(num<1 || num >lists.length){ // 숫자를 잘못 입력했을 경우
+          alert('번호를 잘못 입력했습니다.')
+        }else{
+          lists[num-1].remove();
+        }
+        
+
+      }
+    }
+
+    function removeLastWord(){
+      let lists = document.getElementsByTagName('li');
+      // li 태그 요소들로 이루어진 노드 객체의 배열
+      if(!lists[0] /*(=>lists의 0번째 요소가 없다면)*/){ // lists.length==0 이렇게도 쓸 수 있다.
+        alert('삭제할 단어가 없습니다.');
+      }else{
+        lists[lists.length-1].remove();
+      }
+      
+
+    }
+
+    function addWord(){
+      let engWord = prompt('영어 단어를 입력해 주세요.');
+      let korWord = prompt('영어 단어의 한글 뜻을 입력해 주세요.');
+
+      let li = document.createElement('li'); // li 태그가 만들어 진 것임
+      li.innerHTML = engWord+' : '+korWord; // 만든 li 태그 안에 문자열 넣기
+
+      let ol = document.getElementById('wordList'); // 끼워넣을 태그 가지고 오기
+      // 가지고 온 태그에 만든 li 태그를 끼워넣기
+      ol.appendChild(li);
+
+    }
+
+
+    
+  </script>
+  
+</body>
+</html>

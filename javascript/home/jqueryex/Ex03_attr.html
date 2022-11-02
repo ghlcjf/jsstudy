@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./jquery/jquery-3.6.1.js"></script>
+</head>
+<body>
+  <h1>attr 속성 부여하기</h1>
+  <h1>html 문자열 변경하기</h1>
+  <h1>css 스타일 지정하기</h1>
+  <script>
+    // 1) setter : 속성 부여하거나 변경
+    $('h1').eq(0).attr('id','header');
+    $('h1').eq(1).html('html 문자열 변경 완료');
+    $('h1').eq(2).css('color','brown');
+
+    // 2) getter : 속성값 읽어오기
+    let a1 = $('h1').eq(0).attr('id');
+    console.log("attr('속성')으로 가져온 속성값 : "+a1);
+    let a2 = $('h1').eq(1).html();
+    console.log("html()으로 가져온 문자열 : "+a2);
+    let a3 = $('h1').eq(2).css('color');
+    console.log("css('속성')으로 가져온 속성값 : "+a3);
+    let a4 = $('h1').css('color');
+    console.log('h1 태그가 여러개 있고 eq()로 값 지정을 안해주면 제일 첫번째 태그의 것을 읽어옴 '+a4);
+  </script>
+</body>
+</html>
