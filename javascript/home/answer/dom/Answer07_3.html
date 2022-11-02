@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table, td, th {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>✨</th>
+        <td><button type="button" onclick="addWord()">단어 추가</button></td>
+        <td><button type="button" onclick="removeLastWord()">마지막 단어 삭제</button></td>
+        <td><button type="button" onclick="removeNumWord()">번호로 단어 삭제</button></td>
+        <td><button type="button" onclick="removeWord()">입력한 단어 삭제</button></td>
+      </tr>
+    </thead>
+    <tbody id="myWord">
+      <tr>
+        <th>🏆</th>
+        <th colspan="2">영단어</th>
+        <th colspan="2">한글의미</th>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <script>
+    let num = 1;
+    let words = document.getElementsByTagName('tr');
+    function addWord(){
+      let engWord = prompt('영어 단어를 입력해 주세요');
+      let korWord = prompt('한글 뜻을 입력해 주세요');
+      let tr = document.createElement('tr');
+      let th = document.createElement('th');
+      th.innerHTML = num;
+      num++;
+      let engTd = document.createElement('td');
+      let korTd = document.createElement('td');
+      engTd.setAttribute('colspan','2');
+      engTd.innerHTML = engWord;
+      korTd.setAttribute('colspan','2');
+      korTd.innerHTML = korWord;
+      tr.appendChild(th);
+      tr.appendChild(engTd);
+      tr.appendChild(korTd);
+      let myWord = document.getElementById('myWord');
+      myWord.appendChild(tr);
+    }
+
+
+    function removeLastWord(){
+      if(words.length>2){
+        // 단어 등록 후
+        words[words.length-1].remove();
+        num--;
+      }else{  
+        // 단어 등록 전
+        alert('삭제할 단어가 없습니다.')
+      }
+    }
+
+    function removeNumWord(){
+      if(words.length>2){
+        // 단어 등록 후
+        let selNum = prompt('삭제하실 단어의 번호를 입력해 주세요.');
+        let flag = -1;
+        for(let i=2;i<words.length;i++){
+          let num = words[i].firstChild;
+          let wordNum = num.innerHTML;
+          if(selNum==wordNum){
+            words[i].remove();
+            flag=i;
+            break;
+          }
+        }
+        if(flag==-1){
+          alert('입력하신 번호를 찾을 수 없습니다.');
+        }
+      }else{  
+        // 단어 등록 전
+        alert('삭제할 단어가 없습니다.')
+      }
+    }
+
+    function removeWord(){
+      if(words.length>2){
+        // 단어 등록 후
+        let userWord = prompt('삭제하실 단어를 입력해 주세요');
+        let flag = -1;
+        for(let i=2;i<words.length;i++){
+          let word = words[i].childNodes;
+          let engWord = word[2].innerHTML;
+          if(userWord==engWord){
+            words[i].remove();
+            flag=i;
+            break;
+          }
+        }
+        if(flag==-1){
+          alert('입력하신 단어를 찾을 수 없습니다.')
+        }
+      }else{  
+        // 단어 등록 전
+        alert('삭제할 단어가 없습니다.')
+      }
+    }
+  </script>
+  
+</body>
+</html>
