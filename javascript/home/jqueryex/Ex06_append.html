@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./jquery/jquery-3.6.1.js"></script>
+  <style>
+    #box{
+      border: 1px solid black;
+      background-color: aqua;
+      width: 400px;
+    }
+    #h{
+      border: 1px solid black;
+      color: beige;
+      background-color: darkgreen;
+    }
+  </style>
+</head>
+<body>
+  <h2 id="move">기준 바로 밑에 들어갈거임</h2>
+  <div id="box">
+    
+    <h1>나는 사라질 거야</h1>
+    <h1 id="h">나는 기준</h1>
+    
+  </div>
+  <div id="box2">
+    <h1>나는 <span>정말</span> 집에 가고싶어</h1>
+    
+  </div>
+
+  <script>
+    // 제이쿼리를 이용해 없는 문서 객체를 만드는 방법
+    $('<p></p>').html('안녕?나 새로운 문서 객체').css('color','red');
+    // 만들기만 하고 화면에 출력되는 건 아님
+
+    // 문서 객체를 만들어서 끼워넣는 방법
+    $('<p></p>').html("insertBefore('대상 노드')를 사용").insertBefore('#box');
+    // 대상 노드 바로 위
+    $('<p></p>').html("insertAfter('대상 노드')를 사용").insertAfter('#box');
+    // 대상 노드 바로 아래
+    $('<p></p>').html("appendTo('대상 노드')를 사용").appendTo('#box');
+    // 대상 노드 안 가장 마지막
+    $('<p></p>').html("prependTo('대상 노드')를 사용").prependTo('#box');
+    // 대상 노드 안 가장 처음
+
+    // 이미 있는 문서 객체 이동하기
+    $('#move').insertAfter('#h');
+
+    // 문서 객체 제거하기
+    $('h1').first().remove();
+
+    // 문서 객체 내부를 비우는 기능 : empty();
+    $('span').empty();
+    // span 태그 자체는 남아 있지만 그 안의 내용이 비워짐
+  </script>
+</body>
+</html>

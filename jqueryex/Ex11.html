@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./jquery/jquery-3.6.1.js"></script>
+</head>
+<body>
+  <button type="button" id="hideBtn">축소 : hide()</button>
+  <button type="button" id="showBtn">확대 : show()</button>
+  <button type="button" id="slideDownBtn">슬라이드 다운 : slidedown()</button>
+  <button type="button" id="slideUpBtn">슬라이드 업 : slideup()</button>
+  <button type="button" id="fadeToggleBtn">페이드 토글 : fadetoggle()</button>
+  <div class="page">
+    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, dolorem sit in quod incidunt,</h1>
+    <p>quisquam architecto hic quis labore qui dolor tempora atque molestiae dicta reiciendis reprehenderit nobis. Architecto, hic.</p>
+    <!--lolem : 테스트용 입숨, 별 의미없는 문자열. 한글 로렘 입숨은 검색하세요^-^-->
+  </div>
+
+  <script>
+    // 이펙트 (효과)
+    // 제이쿼리가 제공하는 시각효과를 보여주는 함수.
+
+
+    // 기본 제공 3가지 동작
+    // 1. 문서 객체의 확대, 축소 : show(). hide()   => toggle()
+    // 2. 슬라이드 효과 : slidedown(), slideup()    => slidetoggle()
+    // 3. 페이드 효과 : fadein(), fadeout()         => fadetoggle()
+    // 
+
+
+
+    // $('button#hideBtn').click(function(e){
+    //   $('div.page').hide();
+    // })
+    // $('button#showBtn').click(function(e){
+    //   $('div.page').show();
+    // })
+
+    // 기본 제공 3가지 동작에 매개값을 넣어서 더 많은 효과를 줄 수 있다.
+    // hide('진행속도','함수','전환효과')
+    // 첫번째 : 진행 속도 : slow, normal, fast, 밀리초
+    // 두번째 : 함수 : function(){}
+    // 세번째 : 전환효과 : easing >> 다양한 효과 검색해서 사용해보세요
+    $('button#hideBtn').click(function(e){
+      $('div.page').hide('slow',function(){
+        alert('어디 갔지!?');
+      });
+    });
+    $('button#showBtn').click(function(e){
+      $('div.page').show('slow',function(){
+        alert('짠');
+      });
+    });
+
+    $('button#slideUpBtn').click(function(e){
+      $('div.page').slideUp('slow');
+    });
+
+    $('button#slideDownBtn').click(function(e){
+      $('div.page').slideDown('slow');
+    });
+
+    $('button#fadeToggleBtn').click(function(e){
+      $('div.page').fadeToggle('slow')
+    });
+
+  </script>
+</body>
+</html>

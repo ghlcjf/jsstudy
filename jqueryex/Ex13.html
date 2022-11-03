@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이미지 슬라이더</title>
+  <script src="./jquery/jquery-3.6.1.js"></script>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    h1{
+      text-align: center;
+    }
+    /*animation_canvas 보여줄 캔버스*/
+    #animation_canvas{
+      margin: 0 auto;
+      width: 600px;
+      height: 400px;
+      position: relative;
+      overflow: hidden; 
+      /* 영역 밖의 것들은 숨기겠다  */
+    }
+    /*slider_panel 이미지 패널*/
+    .slider_panel{
+      width: 3000px;
+      height: 400px;
+      /*width는 (600px*사진 갯수)*/
+      position: relative;
+    }
+    .slider_image{
+      width: 600px;
+      height: 400px;
+      /*캔버스 사이즈와 동일하게 해야 함.*/
+      float: left;
+      /*이미지를 가로로 정렬하기 위해*/ 
+    }
+    /*slider_text_panel 텍스트 패널*/
+    .slider_text_panel{
+      position: absolute;
+      top: 250px;
+      left: 50px;
+    }
+    .slider_text{
+      position: absolute;
+      width: 250px;
+      height: 150px;
+      color: red;
+    }
+    /*control_panel 버튼, 컨트롤 패널*/
+    .control_panel{
+      position: absolute;
+      top: 380px;
+      left: 270px;
+      height: 13px;
+      overflow: hidden;
+    }
+    .control_btn{
+      width: 12px;
+      height: 46px;
+      position: relative;
+      float: left;
+      background-image: url(./image/point_button.png);
+      cursor: pointer;
+
+    }
+    .control_btn:hover{
+      top: -16px;
+    }
+    .control_btn:active{
+      top: -31px;
+    }
+    .active{
+      top:-31px;
+    }
+  </style>
+</head>
+<body>
+  <h1>이미지 슬라이더</h1>
+  <div id="animation_canvas"><!--캔버스-->
+
+    <div class="slider_panel"><!--이미지 패널-->
+      <img class="slider_image" src="./image/spider1.jpg" alt="거미 사진1">
+      <img class="slider_image" src="./image/spider2.jpg" alt="거미 사진2">
+      <img class="slider_image" src="./image/spider3.jpg" alt="거미 사진3">
+      <img class="slider_image" src="./image/spider4.jpg" alt="거미 사진4">
+      <img class="slider_image" src="./image/spider5.jpg" alt="거미 사진5">
+    </div><!--이미지 패널-->
+
+    <div class="slider_text_panel"><!--텍스트 패널-->
+      <div class="slider_text">
+        <h1>Lorem ipsum 1</h1>
+        <p>Repellendus ratione expedita, iure est</p>
+      </div>
+      <div class="slider_text">
+        <h1>Lorem ipsum 2</h1>
+        <p>Repellendus ratione expedita, iure est</p>
+      </div>
+      <div class="slider_text">
+        <h1>Lorem ipsum 3</h1>
+        <p>Repellendus ratione expedita, iure est</p>
+      </div>
+      <div class="slider_text">
+        <h1>Lorem ipsum 4</h1>
+        <p>Repellendus ratione expedita, iure est</p>
+      </div>
+      <div class="slider_text">
+        <h1>Lorem ipsum 5</h1>
+        <p>Repellendus ratione expedita, iure est</p>
+      </div>
+    </div><!--텍스트 패널-->
+
+    <div class="control_panel"><!--컨트롤 패널-->
+      <div class="control_btn"></div>
+      <div class="control_btn"></div>
+      <div class="control_btn"></div>
+      <div class="control_btn"></div>
+      <div class="control_btn"></div>
+    </div><!--컨트롤 패널-->
+
+  </div><!--캔버스-->
+
+  <script>
+    $(document).ready(function(){
+
+      // 텍스트 위치 결정
+      // 초기 텍스트 위치 지정 및 인덱스 할당
+      $('.slider_text').css('left',-300) // 모든 텍스트를 캔버스 밖으로 밀어버림, 300 = 텍스트 패널 left+텍스트 width
+                       .each(function(index){ // 각 slider_text마다
+                        $(this).attr('idx',index) // idx 속성으로 인덱스 값 부여
+                       })
+      
+      // 컨트롤 버튼에 인덱스 부여
+      $('.control_btn').each(function(index){
+        $(this).attr('idx',index) // 각 버튼마다 idx 속성/ 속성값 index 부여
+      }).click(function(){
+        let i = $(this).attr('idx'); // 클릭되는 버튼의 idx 속성값을 읽어온다
+        moveSlider(i);
+      });
+
+      // 이미지를 이동시킬 함수 (+동시에 텍스트 이동과 버튼 활성화가 같이 동작해야 함)
+      function moveSlider(i){ // 이미지 번호를 매개값으로 전달
+
+        // 1. 이미지 이동
+        let moveLeft = -(i*600); // 600은 캔버스 width
+        $('.slider_panel').animate({
+          left:moveLeft
+        },'slow')
+
+        // 2. 텍스트 보여주기
+        $('.slider_text[idx='+i+']').show().animate({
+          left:0
+        },'slow')
+
+        // 2-1. 텍스트 사라지기 - 인덱스 대상이 아니게 된 것
+        $('.slider_text[idx!='+i+']').hide('slow',function(e){
+          $(this).css('left',-300)
+        })
+
+
+        // 3. 버튼 활성화 - 인덱스 대상
+        $('.control_btn[idx='+i+']').addClass('active');
+
+        // 3-1. 
+        $('.control_btn[idx!='+i+']').removeClass('active');
+
+
+      }
+
+      // 최초 페이지 열릴 때 보여줄 위치는 랜덤으로 결정
+      let randomIndex = Math.floor(Math.random()*5); // 0~4
+      moveSlider(randomIndex);
+
+
+      setInterval(function(){
+        let randomIndex = Math.floor(Math.random()*5); // 0~4
+        moveSlider(randomIndex);
+      },2500);
+
+
+    
+
+
+    })
+  
+
+  </script>
+</body>
+</html>

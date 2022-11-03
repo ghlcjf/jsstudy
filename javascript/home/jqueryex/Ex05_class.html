@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./jquery/jquery-3.6.1.js"></script>
+  <style>
+    .text_red{
+      color: red;
+    }
+    .center{
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 id="a">addClass() 함수를 이용한 클래스 추가하기</h1>
+  <h2 id="b" class="center">removeClass() 함수를 사용한 클래스 삭제하기(3초 뒤 삭제될 것임)</h2>
+  <h3 id="c">toggleClass() 함수를 사용한 클래스 제어</h3>
+  <button type="button" onclick="checkCenter()">hasClass() 함수를 이용해 center 클래스가 있는지 확인하기</button>
+  <script>
+    // 클래스 추가
+    $('#a').addClass('text_red');
+    $('#a').addClass('center');
+
+    // 클래스 삭제
+    setTimeout(function(){
+      $('#b').removeClass('center');
+    },3000);
+
+    // 클래스 속성이 있는지 확인하기 
+    function checkCenter(){
+      if($('#b').hasClass('center')){
+        alert('아직 살아있구나');
+      }else{
+        alert('3초가 지났군')
+      }
+    }
+
+    // toggleClass() 함수를 사용한 클래스 제어
+    setInterval(function(){
+      $('#c').toggleClass('text_red').toggleClass('center');
+    },300);
+
+
+  </script>
+  
+</body>
+</html>

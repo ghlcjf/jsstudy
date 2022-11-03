@@ -4,47 +4,58 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>ToDoList</title>
   <style>
-    .b{
+    .line{
       text-decoration: line-through;
     }
   </style>
 </head>
 <body>
-  <div>
-    <header>
-      <h1>TO DO LIST</h1>
-    </header>
+  <h1>To Do List</h1>
+  <button type="button" onclick="addList()">할 일 추가</button>
+  <ol id="toDoList">
+    <!-- <li>
+            <input type="checkbox">
+            <span>자바 공부하기</span>
+            <img src="../../jqueryex/image/x_button.png" alt="취소 사진" width="15px" height="15px">
+        <li> -->
+  </ol>
 
-    <section>
-      <input type="text" name="userList" id="userList">
-      <button type="button" id="addButton">추가하기</button>
-
-      <div id="showList">
-
-      </div>
-      
-    </section>
-
-  </div>
   <script>
-    let userList = document.getElementById('userList');
-    let addButton = document.getElementById('addButton');
-    let showList = document.getElementById('showList');
 
-    addButton.addEventListener('click',function(){
-      let list = document.createElement('li')
-      
-      list.innerHTML = '<input type="checkbox">'+userList.value+'<button id="deleteList">X</button>';
-      showList.appendChild(list);
-      userList.value = '';
+    function addList(){
+      let ol = document.getElementById('toDoList');
 
-      list.addEventListener('change',function(){
-        list.style.textDecoration = 'line-through'
+      let li = document.createElement('li');
+
+      let chkbox = document.createElement('input');
+      chkbox.setAttribute('type','checkbox');
+      chkbox.setAttribute('onchange','line(this)');
+
+      let span = document.createElement('span');
+      let toDo = prompt('할 일을 입력해 주세요.');
+      span.innerHTML= toDo+' ';
+
+      let img = document.createElement('img');
+      img.setAttribute('src','../../jqueryex/image/x_button.png');
+      img.setAttribute('alt','취소 사진');
+      img.setAttribute('width','15px');
+      img.setAttribute('height','15px');
+      // img.setAttribute('onclick','delList(this)');
+      img.addEventListener('click',function(e){
+        e.currentTarget.parentNode.remove();
       })
-      
-    })
+      li.appendChild(chkbox);
+      li.appendChild(span);
+      li.appendChild(img);
+      ol.appendChild(li);
+    }
+
+    function line(chkbox){
+      chkbox.nextElementSibling.classList.toggle('line');
+    }
+
   </script>
 </body>
 </html>
