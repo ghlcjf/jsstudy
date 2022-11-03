@@ -36,6 +36,7 @@
       /*캔버스 사이즈와 동일하게 해야 함.*/
       float: left;
       /*이미지를 가로로 정렬하기 위해*/ 
+      
     }
     /*slider_text_panel 텍스트 패널*/
     .slider_text_panel{
@@ -135,7 +136,7 @@
       // 컨트롤 버튼에 인덱스 부여
       $('.control_btn').each(function(index){
         $(this).attr('idx',index) // 각 버튼마다 idx 속성/ 속성값 index 부여
-      }).click(function(){
+      }).click(function(){ // 인덱스 부여한 버튼에 클릭 이벤트
         let i = $(this).attr('idx'); // 클릭되는 버튼의 idx 속성값을 읽어온다
         moveSlider(i);
       });

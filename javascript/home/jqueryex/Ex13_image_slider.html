@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./jquery/jquery-3.6.1.js"></script>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+
+    }
+    h1{
+      text-align: center;
+    }
+    /*이건 그냥 기본 CSS*/
+
+    /*사용자에게 보여질 canvas CSS*/
+    #animation_canvas{
+      margin: 0 auto; /*화면 중앙에 위치*/
+      width: 600px;
+      height: 400px; /*가로 600*세로 400 크기의 canvas*/
+      position: relative; /*자식 요소들의 기준*/
+      overflow: hidden; /* canvas 크기를 넘어가는 것들은 보이지 않게*/
+    }
+    
+    /*이미지 패널 CSS*/
+    .slider_panel{
+      width: 3000px; /*canvas 너비 * 사진 갯수*/
+      height: 400px;
+      position: relative; /*후에 함수로 이동시키기 위해 absolute 사용 가능*/
+    }
+    /*이미지 CSS*/
+    .slider_image{
+      width: 600px;
+      height: 400px; /*canvas 가로세로 크기와 동일하게 지정*/
+      float: left; /*사진 정렬을 가로로 하기 위해*/
+    }
+    /*텍스트 패널 CSS*/
+    .slider_text_panel{
+      position: absolute; /*부모 요소를 기준으로 위치 지정하기 위해*/ 
+      top: 250px;
+      left: 50px;
+      /*부모 요소를 기준으로 위에서 250px, 왼쪽에서 50px 떨어진 곳에 배치*/
+    }
+    /*텍스트 CSS*/
+    .slider_text{
+      position: absolute; /*후에 함수로 부모 요소를 기준으로 이동시키기 위해*/
+      width: 250px;
+      height: 150px; /*그냥 텍스트 박스*/
+      color: fuchsia;
+      /*이미지 패널과 동일하게 텍스트 패널도 설정 가능하다*/
+      /*그럴 때는 텍스트 패널도 박스 크기를 정해주고 오버플로우 히든 줘야함*/
+      /*마찬가지로 텍스트는 플롯 레프트?해야할듯 어쨋든 가로로?디스플레이?*/
+      /*나중에 한번 해볼 것*/
+    }
+    /*컨트롤 패널 CSS*/
+    .control_panel{
+      position: absolute;
+      top: 380px;
+      left: 270px; 
+      /*absolute를 이용해 패널 위치를 
+      부모 요소의 top로부터 380, left에서 270px 떨어지게 위치 지정*/
+      height: 13px;
+      overflow: hidden;
+      /*버튼들이 위아래로 움직일 건데 영역 밖의 것은 안 보여주기 위해*/
+    }
+    /*버튼 CSS*/
+    .control_btn{
+      width: 12px;
+      height: 46px;
+      position: relative; /*밑에 CSS로 부모를 기준으로 움직일 것임*/
+      float: left; /*div 태그들을 가로로 정렬하기 위해*/
+      background-image: url(./image/point_button.png); 
+      /*url()을 이용해 div 태그에 배경으로 버튼 사진 지정*/
+      cursor: pointer;
+      /*마우스 커서 변경*/
+    }
+
+    /*control_btn에 마우스 CSS*/
+    .control_btn:hover{
+      top: -16px; 
+      /*기본은 첫번째 버튼, 두번째 버튼을 보여주기 위해 부모를 기준으로
+      -16px 이동 */
+    }
+    .control_btn:active{
+      top: -31px;
+    }
+
+    /*밑의 함수에서 사용할 클래스*/
+    .active{
+      top: -31px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>이미지 슬라이더 만들기</h1>
+
+  <div id="animation_canvas"><!--캔버스 시작-->
+
+    <div class="slider_panel"><!--이미지 패널 시작-->
+      <img class="slider_image" src="./image/spider1.jpg" alt="거미 사진1">
+      <img class="slider_image" src="./image/spider2.jpg" alt="거미 사진2">
+      <img class="slider_image" src="./image/spider3.jpg" alt="거미 사진3">
+      <img class="slider_image" src="./image/spider4.jpg" alt="거미 사진4">
+      <img class="slider_image" src="./image/spider5.jpg" alt="거미 사진5">
+    </div><!--이미지 패널 끝-->
+
+    <div class="slider_text_panel"><!--텍스트 패널 시작-->
+      <div class="slider_text"> 
+        <h1>거미 사진1</h1>
+        <p>대충 거미 사진 설명 대충 거미 사진 설명 대충 거미 사진 설명 대충 거미 사진 설명
+          대충 거미 사진 설명
+        </p>
+      </div>
+      <div class="slider_text"> 
+        <h1>거미 사진2</h1>
+        <p>대충 거미 사진 설명 대충 거미 사진 설명 대충 거미 사진 설명 대충 거미 사진 설명
+          대충 거미 사진 설명
+        </p>
+      </div>
+      <div class="slider_text"> 
+        <h1>거미 사진3</h1>
+        <p>대충 거미 사진 설명 대충 거미 사진 설명 대충 거미 사진 설명 대충 거미 사진 설명
+          대충 거미 사진 설명
+        </p>
+      </div>
+      <div class="slider_text"> 
+        <h1>거미 사진4</h1>
+        <p>대충 거미 사진 설명 대충 거미 사진 설명 대충 거미 사진 설명 대충 거미 사진 설명
+          대충 거미 사진 설명
+        </p>
+      </div>
+      <div class="slider_text"> 
+        <h1>거미 사진5</h1>
+        <p>대충 거미 사진 설명 대충 거미 사진 설명 대충 거미 사진 설명 대충 거미 사진 설명
+          대충 거미 사진 설명
+        </p>
+      </div>
+    </div><!--텍스트 패널 끝-->
+
+    <div class="control_panel"><!--컨트롤 패널 시작-->
+      <div class="control_btn"></div>
+      <div class="control_btn"></div>
+      <div class="control_btn"></div>
+      <div class="control_btn"></div>
+      <div class="control_btn"></div>
+    </div><!--컨트롤 패널 끝-->
+
+  </div><!--캔버스 끝-->
+  
+
+  <script>
+    $(document).ready(function(){ // 모든 문서 트리 구축이 완료되면 실행
+      let aa=0;
+      // 1. 텍스트 위치 지정 및 인덱스 부여
+      // 텍스트들을 우선 캔버스 패널 밖으로 다 밀어서 안보이게끔 해야 한다
+
+      $('.slider_text').css('left',-300) // 캔버스 밖으로 
+                        .each(function(i){ // slider_text 각각 함수 실행 
+                          $(this).attr('idx',i) // idx 속성 i(index) 속성값 부여
+                        });
+          
+      // 컨트롤 버튼에 인덱스 부여
+      $('.control_btn').each(function(i){ // 각각의 버튼에
+        $(this).attr('idx',i) // 인덱스 부여
+      }).click(function(){ // 후 클릭 이벤트
+        let num = $(this).attr('idx'); // 클릭한 버튼의 idx 속성값을 추출 후
+        aa=num;
+        moveSlider(num); // moveSlider 매개값으로 준 함수 실행
+      })
+
+
+      // 버튼을 클릭해서 이미지를 이동시킬 함수 (+ 동시에 텍스트 이동과 버튼 활성화)
+      function moveSlider(num){
+        
+        // 1. 이미지 이동
+        let moveLeft = -(num*600); // 이미지는 왼쪽으로부터 마이너스로 이동해야 다음 사진이 보인다는 걸 잊으면 안 됨
+        // 함수 실행하면서 받은 인덱스 값에 600을 곱해 거리를 저장
+        $('.slider_panel').animate({
+          left:moveLeft
+        },'slow')
+
+        // 2. 매개값과 동일한 idx 텍스트 보여주기
+        $('.slider_text[idx='+num+']').show().animate({
+          left:0
+        },'slow')
+        // show()를 통해 보여주고 왼쪽으로 밀어놨던 텍스트 가져오기
+
+        // 2-1. 매개값과 다른 idx 숨기기
+        $('.slider_text[idx!='+num+']').hide('slow',function(e){
+          $(this).css('left',-300)
+        })
+
+        // 3. 이미지 순서에 맞는 버튼 활성화
+        $('.control_btn[idx='+num+']').addClass('active');
+        // 3-1. 이미지에서 벗어나면 버튼 비활성화
+        $('.control_btn[idx!='+num+']').removeClass('active');
+      }
+
+      // 최초 페이지 열릴 때 보여줄 위치 
+      moveSlider(0);
+      // 0번으로 시작해서
+      
+      setInterval(function(){
+        if(aa>4){
+          aa=0;
+        }
+        moveSlider(aa);
+        aa++;
+      },3000);
+
+
+    });
+  </script>
+</body>
+</html>
