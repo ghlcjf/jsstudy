@@ -132,7 +132,7 @@
       width: 200px;
       height: 200px;
     }
-    .bestImageDiv p{
+    .bestImageDiv p, .newProductDiv p{
       font-size: 13px;
     }
     .through{
@@ -154,8 +154,7 @@
       margin: auto;
       width: 1200px;
       height: 450px;
-      background-color: beige;
-      border: 1px solid gray;
+      padding: 10px;
     }
     .newProductDiv{
       float: left;
@@ -174,16 +173,39 @@
     #brandBanner{
       margin: auto;
       width: 1200px;
-      height: 450px;
-      background-color: beige;
-      border: 1px solid gray;
+      height: 350px;
+      margin-bottom: 60px;
+    }
+    .brandImageDiv{
+      position: relative;
+      display: inline;
+      margin: 5px auto;
+      top: 25px;
     }
     #reviewContainer{
+      position: relative;
       margin: auto;
       width: 1200px;
       height: 450px;
-      background-color: beige;
-      border: 1px solid gray;
+
+      border: 1px solid rgba(128, 128, 128, 0.5);
+    }
+    #reviewTitle{
+      position: absolute;
+      top: 10px;
+      left: 20px;
+    }
+    #reviewMore{
+      position: absolute;
+      top: 10px;
+      right: 20px;
+    }
+    .reviewImageDiv{
+      margin: 10px;
+      border: 1px solid rgba(128, 128, 128, 0.5);
+      position: relative;
+      display: inline-block;
+      top: 40px;
     }
     #instagram{
       margin: auto;
@@ -195,17 +217,53 @@
     /*foorer CSS*/
     #awards{
       margin: auto;
+      padding: 10px;
       width: 1000px;
       height: 100px;
-      background-color: azure;
-      border: 1px solid gray;
+
     }
     #info{
       margin: auto;
       width: 1000px;
       height: 350px;
-      background-color: azure;
-      border: 1px solid gray;
+
+    }
+    .small{
+      font-size: small;
+    }
+    .csImage {
+      width: 480px;
+      float: left;
+    }
+    #csBtn{
+      position: relative;
+      width: 100px;
+      float: left;
+      left: 20px;
+      top: 5px;
+    }
+    #utilMenu{
+      clear: both;
+      position: relative;
+      
+    }
+    .infoText{
+      clear: both;
+      font-size: smaller;
+      color: gray;
+      text-align: left;
+    }
+    .black{
+      color: black;
+    }
+    #footerImg{
+      position: absolute;
+      left: 2px;
+      bottom: -100px;
+    }
+    .utilList{
+      float: left;
+      margin: 10px;
     }
   </style>
 </head>
@@ -389,27 +447,106 @@
       </div>
     </div>
     <div id="brandBanner">
+      <div class="brandImageDiv">
+        <img src="./image/brand1.jpg" alt="브랜드배너이미지">
+      </div>
+      <div class="brandImageDiv">
+        <img src="./image/brand2.jpg" alt="브랜드배너이미지">
+      </div>
+      <div class="brandImageDiv">
+        <img src="./image/brand3.jpg" alt="브랜드배너이미지">
+      </div>
 
     </div>
 
     <div id="reviewContainer">
-      <hr>
-      <h2>REVIEW</h2>
+      <div id="reviewTitle">
+        <h2><a href="#">REVIEW</a></h2>
+      </div>
+      <div id="reviewMore">
+        <p><a href="#">more+</a></p>
+      </div>
+      <div class="reviewImageDiv">
+        <a href="#">
+          <img src="./image/review1.jpg.png" alt="리뷰이미지">
+      </a>
+      </div>
+      <div class="reviewImageDiv">
+        <a href="#">
+          <img src="./image/review2.jpg.png" alt="리뷰이미지">
+      </a>
+      </div>
+      <div class="reviewImageDiv">
+        <a href="#">
+          <img src="./image/review3.jpg.png" alt="리뷰이미지">
+      </a>
+      </div>
+      <div class="reviewImageDiv">
+        <a href="#">
+          <img src="./image/review4.jpg.png" alt="리뷰이미지">
+      </a>
+      </div>
     </div>
-    <hr>
-    <div id="instagram">
+    
 
+    <div id="instagram">
+      <h1>개노답</h1>
     </div>
   </main>
   <footer>
     <hr>
     <div id="awards">
-
+      <div>
+        <img src="./image/icon01.png" alt="아이콘">
+        <img src="./image/icon02.png" alt="아이콘">
+        <img src="./image/icon03.png" alt="아이콘">
+        <img src="./image/icon04.png" alt="아이콘">
+        <img src="./image/icon05.png" alt="아이콘">
+      </div>
     </div>
     <hr>
     <div id="info">
-      <div id="footerCs"></div>
-      <div id="utilMenu"></div>
+      <div id="footerCs">
+        <div class="csImage">
+          <p>
+            📞
+            <img src="./image/tel1.png" alt="전화번호">
+            <span class="bold">080.869.8999</span><span class="small">평일 9:00 ~ 18:00 | 점심 11:30 ~ 13:00</span>
+          </p>
+          <p>
+            📞
+            <img src="./image/tel2.png" alt="전화번호">
+            <span class="bold">080.023.7007</span><span class="small">평일 9:00 ~ 17:30 | 점심 12:00 ~ 13:00</span>
+          </p>
+        </div>
+        <div class="csImage">
+          <a href="#"><img src="./image/pc_1con.png" alt="상담" id="csBtn"></a>
+        </div>
+      </div>
+      
+      <div id="utilMenu">
+       <ul>
+        <li><a class="black utilList" href="#">회사소개</a></li>
+        <li><a class="black utilList" href="#">이용약관</a></li>
+        <li><a class="black utilList" href="#">개인정보처리방침</a></li>
+        <li><a class="black utilList" href="#">이용안내</a></li>
+       </ul>
+       <p class="infoText">
+        법인명(상호) <span class="black">(주)엘지생활건강</span> 대표자 <span class="black">차석용</span> 
+        사업자 등록번호 안내 <span class="black">[107-81-98143]</span> 
+        통신판매업 신고 <span class="black">제2011-서울종로-0190호</span>
+        <button type="button">[사업자정보확인]</button>
+        <button type="button">결제정보 보안확인</button><br>
+        전화 <span class="black">080-869-8999</span> 
+        팩스 주소 <span class="black">03184 서울특별시 종로구 새문안로 58 (신문로2가) LG광화문빌딩</span><br>
+        개인정보관리책임자 <a href="#" class="black">주범석(privacy@lghnh.com)</a> 
+        Contact for more information. Copyright © 2020 (주)엘지생활건강. All rights reserved.Hosting by 카페24(주)
+       </p>
+       <p class="infoText">
+        ※ 모든 제작물의 저작권은 당사에 있으며, 무단 복제나 도용은 저작권법(97조 5항)에 의해 금지되어 있습니다. 이를 위반시 처벌을 받을 수 있습니다. 
+       </p>
+       <img src="./image/PG.jpg" alt="보안" id="footerImg">
+      </div>
     </div>
   </footer>
   <script>
