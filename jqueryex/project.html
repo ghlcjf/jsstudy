@@ -92,47 +92,96 @@
       margin: auto;
       width: 1200px;
       height: 400px;
-      background-color: beige;
-      border: 1px solid gray;
+      /* background-color: beige;
+      border: 1px solid gray; */
     }
     #best_canvas{
       position: relative;
-      left: 150px;
-      top: 50px;
-      width: 900px;
-      height: 300px;
+      padding-top: 5px;
+      margin: auto;
+      width: 1200px ;
+      height: 400px;
       background-color: aqua;
       /* overflow: hidden; */
     }
-    .best_slider div {
-      /* float: left; */
-      width: 210px;
-      margin: 10px;
+    #best_panel{
+      width: 2400px;
     }
     .best_slider{
+      float: left;
+    }
+    .bestBtn{
       position: relative;
-      border: 1px solid gray;
-      
-      /* float: left; */
+      float: left;
       left: 10px;
+      top: 130px;
+      margin: 15px;
+    }
+    
+    .bestImageDiv{
+      position: relative;
+      float: left;
+      padding: 5px;
+      width: 230px;
+      height: 300px;
+      margin: 10px;
+      /* border: 2px solid black; */
+      /* background-color: rgb(205, 205, 241); */
     }
     .bestImage{
       width: 200px;
       height: 200px;
     }
-    /*사진 그냥 한 div 박스에 다 넣고 4개씩 보여주면 될듯
-    집에가서 할 것*/
+    .bestImageDiv p{
+      font-size: 13px;
+    }
+    .through{
+      text-decoration: line-through;
+    }
+    .bold{
+      font-weight: bold;
+    }
+    
     #mainImage{
       margin: auto;
+      width: auto;
+      height: 400px;
+      background-image: url(./image/middlebanner.png);
+      background-repeat: round;
+      /* border: 1px solid gray; */
+    }
+    #newProduct{
+      margin: auto;
       width: 1200px;
-      height: 350px;
+      height: 450px;
+      background-color: beige;
+      border: 1px solid gray;
+    }
+    .newProductDiv{
+      float: left;
+      position: relative;
+      margin: auto;
+      top: 50px;
+      left: 50px;
+      width: 220px;
+      height: 300px;
+    }
+    .newProductImage{
+      
+      width: 200px;
+      height: 200px;
+    }
+    #brandBanner{
+      margin: auto;
+      width: 1200px;
+      height: 450px;
       background-color: beige;
       border: 1px solid gray;
     }
     #reviewContainer{
       margin: auto;
       width: 1200px;
-      height: 350px;
+      height: 450px;
       background-color: beige;
       border: 1px solid gray;
     }
@@ -200,41 +249,88 @@
     <div id="best_container">
       <div id="best_canvas">
         <h2>피지오겔 베스트</h2>
-        <div class="best_slider">
-          <div>
-            <img src="./image/best1.jpg" alt="베스트" class="bestImage">
-            <p>피지오겔 데일리뮨 대용량 앰플 50ml 특별구성</p>
+        <div id="best_panel">
+          <div class="best_slider">
+            <div class="bestBtn">
+              <img src="./image/left.png" alt="왼쪽">
+            </div>
+            <div class="bestImageDiv">
+              <img src="./image/best1.jpg" alt="베스트 상품" class="bestImage">
+              <img src="./image/best_icon.png" alt="베스트">
+              <img src="./image/new_icon.png" alt="신상">
+              <p>피지오겔 데일리뮨 대용량 앰플 50ml 특별 구성<br>
+                <span class="bold">86,000원</span>
+              </p>
+            </div>
+            <div class="bestImageDiv">
+              <img src="./image/best2.jpg" alt="베스트 상품" class="bestImage">
+              <img src="./image/best_icon.png" alt="베스트">
+              <p>피지오겔 DMT 페이셜크림 150ml + 10ml + 5ml + AI 크림 5ml<br>
+                <span class="through">47,500원</span><br>
+                <span class="bold">26,900원</span>
+              </p>
+            </div>
+            <div class="bestImageDiv">
+              <img src="./image/best3.jpg" alt="베스트 상품" class="bestImage">
+              <img src="./image/best_icon.png" alt="베스트">
+              <p>피지오겔 AI 바디로션 400ml*2<br>
+                <span class="through">73,000원</span><br>
+                <span class="bold">64,800원</span>
+              </p>
+            </div>
+            <div class="bestImageDiv">
+              <img src="./image/best4.jpg" alt="베스트 상품" class="bestImage">
+              <img src="./image/best_icon.png" alt="베스트">
+              <img src="./image/new_icon.png" alt="신상">
+              <p>피지오겔 데일리뮨 앰플 세럼 30ml 특별구성 SET<br>
+                <span class="bold">58,000원</span>
+              </p>
+            </div>
+            <div class="bestBtn">
+              <img src="./image/right.png" alt="오른쪽">
+            </div>
           </div>
-          <div>
-            <img src="./image/best2.jpg" alt="베스트" class="bestImage">
-            <p>피지오겔 DMT페이셜크림 150ml + 10ml + 5ml + AI크림 5ml</p>
-          </div>
-          <div>
-            <img src="./image/best3.jpg" alt="베스트" class="bestImage">
-            <p>피지오겔 AI 바디로션 * 2개</p> 
-          </div>
-          <div>
-            <img src="./image/best4.jpg" alt="베스트" class="bestImage">
-            <p>피지오겔 데일리뮨 앰플 세럼 30ml 특별구성 SET</p>
-          </div>
-  
-        </div>
-        <div class="best_slider">
-          <div>
-            <img src="./image/best5.jpg" alt="베스트" class="bestImage">
-            <p>피지오겔 AI 크림 더블 진정 세트</p>
-          </div>
-          <div>
-            <img src="./image/best6.jpg" alt="베스트" class="bestImage">
-            <p>피지오겔 DMT 바디로션 400ml * 2</p>
-          </div>
-          <div>
-            <img src="./image/best7.jpg" alt="베스트" class="bestImage">
-            <p>AI 선크림 본품 40ml + 특가구성(+AI 선크림 5ml)</p>
-          </div>
-          <div>
-            <img src="./image/best8.jpg" alt="베스트" class="bestImage">
-            <p>피지오겔 DMT 수분로션 200ml + DMT 크림 5ml AI 크림 5ml * 2 증정</p>
+          <div class="best_slider">
+            <div class="bestBtn">
+              <img src="./image/left.png" alt="왼쪽">
+            </div>
+            <div class="bestImageDiv">
+              <img src="./image/best5.jpg" alt="베스트 상품" class="bestImage">
+              <img src="./image/best_icon.png" alt="베스트">
+              <p>피지오겔 AI 크림 더블 진정 세트<br>
+                <span class="through">54,000원</span><br>
+                <span class="bold">41,900원</span>
+              </p>
+            </div>
+            <div class="bestImageDiv">
+              <img src="./image/best6.jpg" alt="베스트 상품" class="bestImage">
+              <img src="./image/best_icon.png" alt="베스트">
+              <p>피지오겔 DMT 바디로션 400ml*2<br>
+                <span class="through">67,000원</span><br>
+                <span class="bold">54,900원</span>
+              </p>
+            </div>
+            <div class="bestImageDiv">
+              <img src="./image/best7.jpg" alt="베스트 상품" class="bestImage">
+              <img src="./image/best_icon.png" alt="베스트">
+              <img src="./image/new_icon.png" alt="신상">
+              <p>AI 선크림 본품 40ml + 특가 구성 (+AI선크림 5ml)<br>
+                <span class="through">33,000원</span><br>
+                <span class="bold">25,200원</span>
+              </p>
+            </div>
+            <div class="bestImageDiv">
+              <img src="./image/best8.jpg" alt="베스트 상품" class="bestImage">
+              <img src="./image/best_icon.png" alt="베스트">
+              <img src="./image/new_icon.png" alt="신상">
+              <p>피지오겔 DMT 수분로션 200ml + DMT 크림 5ml*2 + AI 크림 5ml*2 증정<br>
+                <span class="through">35,500원</span><br>
+                <span class="bold">21,900원</span>
+              </p>
+            </div>
+            <div class="bestBtn">
+              <img src="./image/right.png" alt="오른쪽">
+            </div>
           </div>
         </div>
       </div>
@@ -243,8 +339,54 @@
     <div id="mainImage">
 
     </div>
+    <!--dddd-->
     <div id="newProduct">
-
+      <h2>피지오겔 신제품</h2>
+      <div class="newProductDiv">
+        <img src="./image/new1.jpg" alt="신상품" class="newProductImage">
+        <img src="./image/best_icon.png" alt="베스트">
+        <img src="./image/new_icon.png" alt="신상">
+        <p>
+          피지오겔 DMT 마일드 립밥 더블 기획 (4.2gX2)<br>
+          <span class="bold">19,800원</span>
+        </p>
+      </div>
+      <div class="newProductDiv">
+        <img src="./image/new2.jpg" alt="신상품" class="newProductImage">
+        <img src="./image/best_icon.png" alt="베스트">
+        <img src="./image/new_icon.png" alt="신상">
+        <p>
+          피지오겔 DMT 핸드크림 더블 기획 (30mlX2)<br>
+          <span class="bold">15,900원</span>
+        </p>
+      </div>
+      <div class="newProductDiv">
+        <img src="./image/new3.jpg" alt="신상품" class="newProductImage">
+        <img src="./image/best_icon.png" alt="베스트">
+        <img src="./image/new_icon.png" alt="신상">
+        <p>
+          피지오겔 데일리 모이스쳐 테라피 인텐시브 립 에센스<br>
+          <span class="bold">14,900원</span>
+        </p>
+      </div>
+      <div class="newProductDiv">
+        <img src="./image/new4.jpg" alt="신상품" class="newProductImage">
+        <img src="./image/best_icon.png" alt="베스트">
+        <img src="./image/new_icon.png" alt="신상">
+        <p>
+          피지오겔 레드수딩 AI 젠틀포밍젤 180ml<br>
+          <span class="bold">27,500원</span>
+        </p>
+      </div>
+      <div class="newProductDiv">
+        <img src="./image/new5.jpg" alt="신상품" class="newProductImage">
+        <img src="./image/best_icon.png" alt="베스트">
+        <img src="./image/new_icon.png" alt="신상">
+        <p>
+          피지오겔 데일리뮨 앰플 쿠션 21호/23호 + DMT 크림 10ml*2개 증정<br>
+          <span class="bold">40,000원</span>
+        </p>
+      </div>
     </div>
     <div id="brandBanner">
 
