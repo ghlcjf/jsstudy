@@ -170,17 +170,48 @@
       width: 200px;
       height: 200px;
     }
+    .whitebox{
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background-color: rgba(255, 255, 255, 0.226);
+      top: 0px;
+      left: 10px;
+    }
+    .whitebox img{
+      position: relative;
+      top: 160px;
+    }
     #brandBanner{
       margin: auto;
       width: 1200px;
       height: 350px;
       margin-bottom: 60px;
+      border: 1px solid black;
     }
     .brandImageDiv{
       position: relative;
-      display: inline;
-      margin: 5px auto;
+      display: inline-block;
+      margin: auto;
       top: 25px;
+    }
+    .blackbox{
+      position: absolute;
+      background-color: rgba(0, 0, 0, 0.726);
+      
+      width: 383px;
+      height: 300px;
+      top: 0px;
+      
+    }
+    .blackboxText{
+      position: relative;
+      color: white;
+      width: 200px;
+      text-align: right;
+      top: 30px;
+      left: 150px;
+      font-size: 16px;
     }
     #reviewContainer{
       position: relative;
@@ -309,7 +340,7 @@
         <h2>피지오겔 베스트</h2>
         <div id="best_panel">
           <div class="best_slider">
-            <div class="bestBtn">
+            <div class="bestBtn leftBtn">
               <img src="./image/left.png" alt="왼쪽">
             </div>
             <div class="bestImageDiv">
@@ -344,12 +375,12 @@
                 <span class="bold">58,000원</span>
               </p>
             </div>
-            <div class="bestBtn">
+            <div class="bestBtn rightBtn">
               <img src="./image/right.png" alt="오른쪽">
             </div>
           </div>
           <div class="best_slider">
-            <div class="bestBtn">
+            <div class="bestBtn leftBtn">
               <img src="./image/left.png" alt="왼쪽">
             </div>
             <div class="bestImageDiv">
@@ -386,7 +417,7 @@
                 <span class="bold">21,900원</span>
               </p>
             </div>
-            <div class="bestBtn">
+            <div class="bestBtn rightBtn">
               <img src="./image/right.png" alt="오른쪽">
             </div>
           </div>
@@ -408,6 +439,12 @@
           피지오겔 DMT 마일드 립밥 더블 기획 (4.2gX2)<br>
           <span class="bold">19,800원</span>
         </p>
+        <div class="whitebox">
+          <img src="./image/heart.png" alt="하트">
+          <img src="./image/bucket.png" alt="바구니">
+          <img src="./image/search.png" alt="검색">
+          <img src="./image/like.png" alt="좋아요">
+        </div>
       </div>
       <div class="newProductDiv">
         <img src="./image/new2.jpg" alt="신상품" class="newProductImage">
@@ -417,6 +454,12 @@
           피지오겔 DMT 핸드크림 더블 기획 (30mlX2)<br>
           <span class="bold">15,900원</span>
         </p>
+        <div class="whitebox">
+          <img src="./image/heart.png" alt="하트">
+          <img src="./image/bucket.png" alt="바구니">
+          <img src="./image/search.png" alt="검색">
+          <img src="./image/like.png" alt="좋아요">
+        </div>
       </div>
       <div class="newProductDiv">
         <img src="./image/new3.jpg" alt="신상품" class="newProductImage">
@@ -426,6 +469,12 @@
           피지오겔 데일리 모이스쳐 테라피 인텐시브 립 에센스<br>
           <span class="bold">14,900원</span>
         </p>
+        <div class="whitebox">
+          <img src="./image/heart.png" alt="하트">
+          <img src="./image/bucket.png" alt="바구니">
+          <img src="./image/search.png" alt="검색">
+          <img src="./image/like.png" alt="좋아요">
+        </div>
       </div>
       <div class="newProductDiv">
         <img src="./image/new4.jpg" alt="신상품" class="newProductImage">
@@ -435,6 +484,12 @@
           피지오겔 레드수딩 AI 젠틀포밍젤 180ml<br>
           <span class="bold">27,500원</span>
         </p>
+        <div class="whitebox">
+          <img src="./image/heart.png" alt="하트">
+          <img src="./image/bucket.png" alt="바구니">
+          <img src="./image/search.png" alt="검색">
+          <img src="./image/like.png" alt="좋아요">
+        </div>
       </div>
       <div class="newProductDiv">
         <img src="./image/new5.jpg" alt="신상품" class="newProductImage">
@@ -444,17 +499,46 @@
           피지오겔 데일리뮨 앰플 쿠션 21호/23호 + DMT 크림 10ml*2개 증정<br>
           <span class="bold">40,000원</span>
         </p>
+        <div class="whitebox">
+          <img src="./image/heart.png" alt="하트">
+          <img src="./image/bucket.png" alt="바구니">
+          <img src="./image/search.png" alt="검색">
+          <img src="./image/like.png" alt="좋아요">
+        </div>
       </div>
     </div>
     <div id="brandBanner">
       <div class="brandImageDiv">
         <img src="./image/brand1.jpg" alt="브랜드배너이미지">
+        <div class="blackbox">
+          <p class="blackboxText">
+            스티펠사가 개발한<br>
+            170년 전통 독일 피부 과학<br>
+            No.1 보습크림 브랜드<br>
+            피지오겔<br>
+          </p>
+        </div>
       </div>
       <div class="brandImageDiv">
         <img src="./image/brand2.jpg" alt="브랜드배너이미지">
+        <div class="blackbox">
+          <p class="blackboxText">
+            세계 각국의<br>
+            병의원에서 판매 중인<br>
+            피부 전문가<br>
+            브랜드 피지오겔<br>
+          </p>
+        </div>
       </div>
       <div class="brandImageDiv">
         <img src="./image/brand3.jpg" alt="브랜드배너이미지">
+        <div class="blackbox">
+          <p class="blackboxText">
+            피부 지질 유사 성분을<br>
+            함유햔 피지오겔의<br>
+            바이오미믹 테크놀로지<br>
+          </p>
+        </div>
       </div>
 
     </div>
@@ -551,6 +635,59 @@
   </footer>
   <script>
 
+    $(document).ready(function(){
+      $('.blackbox').hide();
+      $('.blackbox').each(function(index){ 
+        $(this).attr('idx',index)
+      })
+
+      $('.whitebox').hide();
+      $('.whitebox').each(function(index){
+        $(this).attr('idx',index)
+      })
+
+
+      $('.rightBtn').click(function(){
+        $('#best_panel').animate({
+          left:-500
+        },'slow')
+      })
+
+
+      $('.newProductDiv').each(function(index){
+        $(this).attr('idx',index) // 각 버튼마다 idx 속성/ 속성값 index 부여
+      }).hover(function(){ // 인덱스 부여한 버튼에 클릭 이벤트
+        let i = $(this).attr('idx'); // 클릭되는 버튼의 idx 속성값을 읽어온다
+        whitebox(i);
+      });
+
+      
+
+      $('.brandImageDiv').each(function(index){
+        $(this).attr('idx',index) // 각 버튼마다 idx 속성/ 속성값 index 부여
+      }).hover(function(){ // 인덱스 부여한 버튼에 클릭 이벤트
+        let i = $(this).attr('idx'); // 클릭되는 버튼의 idx 속성값을 읽어온다
+        blackbox(i);
+      });
+
+
+
+
+
+
+
+
+      function blackbox(i){
+        $('.blackbox[idx='+i+']').fadeToggle(10)
+      }
+      function whitebox(i){
+        $('.whitebox[idx='+i+']').fadeToggle(10)
+      }
+
+    })
+
+    
+    
   </script>
   
 </body>
