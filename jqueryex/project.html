@@ -38,19 +38,58 @@
       margin: auto;
       width: 1200px;
       height: 100px;
-    }
-    .headMenuList{
-      position: relative;
-      float: left;
-      margin: 15px;
-      bottom: -30px;
-      font-size: 20px;
-      color: black;
-      /* border: 1px solid black; */
+      
     }
     .mainLogo{
       position: relative;
       top: -30px;
+    }
+    .headMenuList{
+      position: relative;
+      float: left;
+      width: 130px;
+      height: 55px;
+      top: 45px;
+      font-size: 17px;
+      color: black;
+      
+    }
+    .headMenuList:hover{
+      border-bottom: 1px solid gray;
+    }
+    #foldMenu{
+      position: absolute;
+      float: left;
+      
+      width: 100%;
+      height: 400px;
+      top: 100px;
+      border-top: 1px solid gray;
+    }
+    .foldMenuUl{
+      position: relative;
+      float: left;
+      border-left: 1px solid gray;
+      width: 130px;
+      height: 370px;
+      padding-top: 20px;
+      left: 450px;
+    }
+    .foldMenuUl:last-of-type{
+      border-right: 1px solid gray;
+    }
+    .foldMenuLi{
+      margin-top: 10px;
+      font-size: 13px;
+    }
+    .foldMenuLi a:hover{
+      color: darkgray;
+    }
+
+    .mainLogo{
+      position: relative;
+      float: left;
+      top: -5px;
     }
     .headMenuList a {
       color: black;
@@ -84,9 +123,48 @@
 
     /*main CSS*/
     #main_canvas{
-      width: 100%;
-      height: 350px;
-      background-color: aquamarine;
+      position: relative;
+      width: 1900px;
+      height: 500px;
+      margin: auto;
+      background-color: rgba(0, 0, 0, 0.103);
+    }
+    .controlPanel{
+      position: absolute;
+      top: 470px;
+      left: 900px;
+      height: 14px;
+      overflow: hidden;
+    }
+    .control_btn{
+      width: 12px;
+      height: 46px;
+      position: relative;
+      float: left;
+      background-image: url(./image/point_button.png);
+      cursor: pointer;
+
+    }
+    .control_btn:hover{
+      top: -16px;
+    }
+    .control_btn:active{
+      top: -31px;
+    }
+    .active{
+      top:-31px;
+    }
+    .mainImagePanel{
+      position: absolute;
+      float: left;
+      width: 1900px;
+      overflow: hidden;
+    }
+    .mainImage{
+      position: absolute;
+      float: left;
+      width: 1900px;
+      height: 500px;
     }
     #best_container{
       margin: auto;
@@ -101,10 +179,11 @@
       margin: auto;
       width: 1200px ;
       height: 400px;
-      background-color: aqua;
-      /* overflow: hidden; */
+      /* background-color: aqua; */
+      overflow: hidden;
     }
     #best_panel{
+      position: relative;
       width: 2400px;
     }
     .best_slider{
@@ -116,6 +195,7 @@
       left: 10px;
       top: 130px;
       margin: 15px;
+      cursor: pointer;
     }
     
     .bestImageDiv{
@@ -187,7 +267,7 @@
       width: 1200px;
       height: 350px;
       margin-bottom: 60px;
-      border: 1px solid black;
+      
     }
     .brandImageDiv{
       position: relative;
@@ -318,9 +398,10 @@
         </form>
       </div>
     </div>
+    
     <div id="headMenu">
       <ul>
-        <li class="headMenuList mainLogo"><a href="#"><img src="./image/logo.gif" alt="로고이미지"></a></li>
+        <li class="mainLogo"><a href="#"><img src="./image/logo.gif" alt="로고이미지"></a></li>
         <li class="headMenuList"><a href="#">브랜드소개</a></li>
         <li class="headMenuList"><a href="#">쿠폰/멤버십</a></li>
         <li class="headMenuList"><a href="#">사용단계별</a></li>
@@ -329,11 +410,65 @@
         <li class="headMenuList"><a href="#">병의원전용</a></li>
         <li class="headMenuList"><a href="#">커뮤니티</a></li>
       </ul>
+      <div id="foldMenu">
+        <ul class="foldMenuUl">
+          <li class="foldMenuLi"><a href="#">클렌징</a></li>
+          <li class="foldMenuLi"><a href="#">앰플,세럼</a></li>
+          <li class="foldMenuLi"><a href="#">토너,로션</a></li>
+          <li class="foldMenuLi"><a href="#">크림</a></li>
+          <li class="foldMenuLi"><a href="#">바디,핸드,립,샴푸</a></li>
+          <li class="foldMenuLi"><a href="#">마스크</a></li>
+          <li class="foldMenuLi"><a href="#">쿠션,파운데이션</a></li>
+          <li class="foldMenuLi"><a href="#">썬케어</a></li>
+        </ul>
+        <ul class="foldMenuUl">
+          <li class="foldMenuLi"><a href="#">DMT</a></li>
+          <li class="foldMenuLi"><a href="#">AI</a></li>
+          <li class="foldMenuLi"><a href="#">사이언수티컬즈</a></li>
+          <li class="foldMenuLi"><a href="#">시카밸런스</a></li>
+          <li class="foldMenuLi"><a href="#">DMT 베이비</a></li>
+          <li class="foldMenuLi"><a href="#">맨즈</a></li>
+        </ul>
+        <ul class="foldMenuUl">
+          <li class="foldMenuLi"><a href="#">피지오겔</a></li>
+        </ul>
+        <ul class="foldMenuUl">
+          <li class="foldMenuLi"><a href="#">PRO 라인</a></li>
+          <li class="foldMenuLi"><a href="#">병의원 찾기</a></li>
+        </ul>
+        <ul class="foldMenuUl">
+          <li class="foldMenuLi"><a href="#">이벤트</a></li>
+          <li class="foldMenuLi"><a href="#">FAQ</a></li>
+          <li class="foldMenuLi"><a href="#">사용후기</a></li>
+          <li class="foldMenuLi"><a href="#">1:1문의</a></li>
+        </ul>
+      </div>
     </div>
   </header>
   <main>
     <div id="main_canvas">
-
+      <div class="mainImagePanel"><!--이미지 패널-->
+        <img src="./image/main1.jpg" alt="메인 배너 이미지" class="mainImage">
+        <img src="./image/main2.jpg" alt="메인 배너 이미지" class="mainImage">
+        <img src="./image/main3.jpg" alt="메인 배너 이미지" class="mainImage">
+        <img src="./image/main4.jpg" alt="메인 배너 이미지" class="mainImage">
+        <img src="./image/main5.jpg" alt="메인 배너 이미지" class="mainImage">
+        <img src="./image/main6.jpg" alt="메인 배너 이미지" class="mainImage">
+        <img src="./image/main7.jpg" alt="메인 배너 이미지" class="mainImage">
+        <img src="./image/main8.jpg" alt="메인 배너 이미지" class="mainImage">
+        <img src="./image/main9.png" alt="메인 배너 이미지" class="mainImage">
+      </div><!--이미지 패널-->
+      <div class="controlPanel"><!--컨트롤 패널-->
+      <div class="control_btn"></div>
+      <div class="control_btn"></div>
+      <div class="control_btn"></div>
+      <div class="control_btn"></div>
+      <div class="control_btn"></div>
+      <div class="control_btn"></div>
+      <div class="control_btn"></div>
+      <div class="control_btn"></div>
+      <div class="control_btn"></div>
+      </div><!--컨트롤 패널-->
     </div>
     <div id="best_container">
       <div id="best_canvas">
@@ -574,7 +709,7 @@
     
 
     <div id="instagram">
-      <h1>개노답</h1>
+      <h1>인스타</h1>
     </div>
   </main>
   <footer>
@@ -649,10 +784,20 @@
 
       $('.rightBtn').click(function(){
         $('#best_panel').animate({
-          left:-500
+          left:-1200
         },'slow')
       })
+      $('.leftBtn').click(function(){
+        $('#best_panel').animate({
+          left: 0
+        },'slow')
+      })
+      
 
+      $('#foldMenu').hide();
+      $('#headMenu').hover(function(){
+        $('#foldMenu').slideToggle(50)
+      })
 
       $('.newProductDiv').each(function(index){
         $(this).attr('idx',index) // 각 버튼마다 idx 속성/ 속성값 index 부여
@@ -671,18 +816,34 @@
       });
 
 
-
-
-
-
-
-
       function blackbox(i){
         $('.blackbox[idx='+i+']').fadeToggle(10)
       }
       function whitebox(i){
         $('.whitebox[idx='+i+']').fadeToggle(10)
       }
+
+
+      $('.control_btn').each(function(index){
+        $(this).attr('idx',index) // 각 버튼마다 idx 속성/ 속성값 index 부여
+      }).click(function(){ // 인덱스 부여한 버튼에 클릭 이벤트
+        let i = $(this).attr('idx'); // 클릭되는 버튼의 idx 속성값을 읽어온다
+        moveSlider(i);
+      });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     })
 
