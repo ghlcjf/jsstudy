@@ -58,12 +58,11 @@
       border-bottom: 1px solid gray;
     }
     #foldMenu{
-      position: absolute;
+      position: relative;
       float: left;
-      
       width: 100%;
       height: 400px;
-      top: 100px;
+      top: -4px;
       border-top: 1px solid gray;
     }
     .foldMenuUl{
@@ -126,46 +125,10 @@
       position: relative;
       width: 1900px;
       height: 500px;
-      margin: auto;
-      background-color: rgba(0, 0, 0, 0.103);
+      margin-top: 500px;
+      border: 1px solid black;
     }
-    .controlPanel{
-      position: absolute;
-      top: 470px;
-      left: 900px;
-      height: 14px;
-      overflow: hidden;
-    }
-    .control_btn{
-      width: 12px;
-      height: 46px;
-      position: relative;
-      float: left;
-      background-image: url(./image/point_button.png);
-      cursor: pointer;
-
-    }
-    .control_btn:hover{
-      top: -16px;
-    }
-    .control_btn:active{
-      top: -31px;
-    }
-    .active{
-      top:-31px;
-    }
-    .mainImagePanel{
-      position: absolute;
-      float: left;
-      width: 1900px;
-      overflow: hidden;
-    }
-    .mainImage{
-      position: absolute;
-      float: left;
-      width: 1900px;
-      height: 500px;
-    }
+    
     #best_container{
       margin: auto;
       width: 1200px;
@@ -447,28 +410,7 @@
   </header>
   <main>
     <div id="main_canvas">
-      <div class="mainImagePanel"><!--이미지 패널-->
-        <img src="./image/main1.jpg" alt="메인 배너 이미지" class="mainImage">
-        <img src="./image/main2.jpg" alt="메인 배너 이미지" class="mainImage">
-        <img src="./image/main3.jpg" alt="메인 배너 이미지" class="mainImage">
-        <img src="./image/main4.jpg" alt="메인 배너 이미지" class="mainImage">
-        <img src="./image/main5.jpg" alt="메인 배너 이미지" class="mainImage">
-        <img src="./image/main6.jpg" alt="메인 배너 이미지" class="mainImage">
-        <img src="./image/main7.jpg" alt="메인 배너 이미지" class="mainImage">
-        <img src="./image/main8.jpg" alt="메인 배너 이미지" class="mainImage">
-        <img src="./image/main9.png" alt="메인 배너 이미지" class="mainImage">
-      </div><!--이미지 패널-->
-      <div class="controlPanel"><!--컨트롤 패널-->
-      <div class="control_btn"></div>
-      <div class="control_btn"></div>
-      <div class="control_btn"></div>
-      <div class="control_btn"></div>
-      <div class="control_btn"></div>
-      <div class="control_btn"></div>
-      <div class="control_btn"></div>
-      <div class="control_btn"></div>
-      <div class="control_btn"></div>
-      </div><!--컨트롤 패널-->
+
     </div>
     <div id="best_container">
       <div id="best_canvas">
@@ -796,9 +738,10 @@
 
       $('#foldMenu').hide();
       $('#headMenu').hover(function(){
-        $('#foldMenu').slideToggle(50)
+        $('#foldMenu').slideToggle()
+        
       })
-
+     
       $('.newProductDiv').each(function(index){
         $(this).attr('idx',index) // 각 버튼마다 idx 속성/ 속성값 index 부여
       }).hover(function(){ // 인덱스 부여한 버튼에 클릭 이벤트
