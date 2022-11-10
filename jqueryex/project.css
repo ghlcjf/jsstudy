@@ -1,0 +1,374 @@
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  text-align: center;
+}
+ul{
+  list-style: none;
+}
+a{
+  color: gray;
+  font-weight: bold;
+  text-decoration: none;
+}
+header{
+  position: relative;
+}
+/*header CSS*/
+#topBanner{
+  background-color: pink;
+  width: 100%;
+  height: 60px;
+  cursor: pointer;
+}
+
+#headMenu{
+  position: relative;
+  margin: auto;
+  width: 1200px;
+  height: 100px;
+}
+.mainLogo{
+  position: relative;
+  top: -30px;
+}
+.headMenuList{
+  position: relative;
+  float: left;
+  width: 130px;
+  height: 55px;
+  top: 45px;
+  font-size: 17px;
+  color: black;
+  
+}
+.headMenuList:hover{
+  border-bottom: 1px solid gray;
+}
+#foldMenu{
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 400px;
+  top: -4px;
+  border-top: 1px solid gray;
+}
+.foldMenuUl{
+  position: relative;
+  float: left;
+  border-left: 1px solid gray;
+  width: 130px;
+  height: 370px;
+  padding-top: 20px;
+  left: 450px;
+}
+.foldMenuUl:last-of-type{
+  border-right: 1px solid gray;
+}
+.foldMenuLi{
+  margin-top: 10px;
+  font-size: 13px;
+}
+.foldMenuLi a:hover{
+  color: darkgray;
+}
+
+.mainLogo{
+  position: relative;
+  float: left;
+  top: -5px;
+}
+.headMenuList a {
+  color: black;
+}
+#loginList{
+  margin: auto;
+  width: 1200px;
+  height: 80px;
+}
+#search{
+  position: relative;
+  clear: both;
+  float: left;
+  left: 950px;
+  margin-top: 10px;
+}
+#search input[type=text]{
+  position: relative;
+  border: 1px solid white;
+  border-bottom: 1px solid gray;
+  top: -5px;
+}
+.loginMenu{
+  float: left;
+  position: relative;
+  left: 900px;
+  margin: 6px;
+  font-size: 11px;
+  color: gray;
+}
+
+/*main CSS*/
+#main_canvas{
+  clear: both;
+  position: relative;
+  width: 1900px;
+  height: 500px;
+  /* margin-top: 500px; */
+  overflow: hidden;
+}
+.mainImagePanel{
+  width: 17100px;
+  height: 500px;
+  position: relative;
+}
+.mainSliderImage{
+  width: 1900px;
+  height: 500px;
+  float: left;
+}
+.mainControlPanel{
+  position: absolute;
+  top: 460px;
+  left: 900px;
+  height: 13px;
+  overflow: hidden;
+}
+.mainControlBtn{
+  width: 12px;
+  height: 46px;
+  position: relative;
+  float: left;
+  background-image: url(./image/point_button.png);
+  cursor: pointer;
+}
+.mainControlBtn:hover{
+  top: -16px;
+}
+.mainControlBtn:active{
+  top: -31px;
+}
+.active{
+  top:-31px;
+}
+
+#best_container{
+  margin: auto;
+  width: 1200px;
+  height: 400px;
+}
+#best_canvas{
+  position: relative;
+  padding-top: 5px;
+  margin: auto;
+  width: 1200px ;
+  height: 400px;
+  overflow: hidden;
+}
+#best_panel{
+  position: relative;
+  width: 2400px;
+}
+.best_slider{
+  float: left;
+}
+.bestBtn{
+  position: relative;
+  float: left;
+  left: 10px;
+  top: 130px;
+  margin: 15px;
+  cursor: pointer;
+}
+
+.bestImageDiv{
+  position: relative;
+  float: left;
+  padding: 5px;
+  width: 230px;
+  height: 300px;
+  margin: 10px;
+}
+.bestImage{
+  width: 200px;
+  height: 200px;
+}
+.bestImageDiv p, .newProductDiv p{
+  font-size: 13px;
+}
+.through{
+  text-decoration: line-through;
+}
+.bold{
+  font-weight: bold;
+}
+
+#mainImage{
+  margin: auto;
+  width: auto;
+  height: 400px;
+  background-image: url(./image/middlebanner.png);
+  background-repeat: round;
+}
+#newProduct{
+  margin: auto;
+  width: 1200px;
+  height: 450px;
+  padding: 10px;
+}
+.newProductDiv{
+  float: left;
+  position: relative;
+  margin: auto;
+  top: 50px;
+  left: 50px;
+  width: 220px;
+  height: 300px;
+}
+.newProductImage{
+  
+  width: 200px;
+  height: 200px;
+}
+.whitebox{
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-color: rgba(255, 255, 255, 0.226);
+  top: 0px;
+  left: 10px;
+}
+.whitebox img{
+  position: relative;
+  top: 160px;
+}
+#brandBanner{
+  margin: auto;
+  width: 1200px;
+  height: 350px;
+  margin-bottom: 60px;
+  
+}
+.brandImageDiv{
+  position: relative;
+  display: inline-block;
+  margin: auto;
+  top: 25px;
+}
+.blackbox{
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.726);
+  
+  width: 383px;
+  height: 300px;
+  top: 0px;
+  
+}
+.blackboxText{
+  position: relative;
+  color: white;
+  width: 200px;
+  text-align: right;
+  top: 30px;
+  left: 150px;
+  font-size: 16px;
+}
+#reviewContainer{
+  position: relative;
+  margin: auto;
+  width: 1200px;
+  height: 450px;
+
+  border: 1px solid rgba(128, 128, 128, 0.5);
+}
+#reviewTitle{
+  position: absolute;
+  top: 10px;
+  left: 20px;
+}
+#reviewMore{
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+.reviewImageDiv{
+  margin: 10px;
+  border: 1px solid rgba(128, 128, 128, 0.5);
+  position: relative;
+  display: inline-block;
+  top: 40px;
+}
+#instagram{
+  position: relative;
+  margin: auto;
+  width: 1200px;
+  
+  background-color: beige;
+  border: 1px solid gray;
+}
+#instaBtn{
+  position: absolute;
+  width: 1200px;
+  
+  display: block;
+  margin: auto;
+  bottom: 0px;
+  background-color: rgb(8, 8, 8);
+  color: white;
+}
+.shadow{
+  
+}
+
+/*foorer CSS*/
+#awards{
+  margin: auto;
+  padding: 10px;
+  width: 1000px;
+  height: 100px;
+
+}
+#info{
+  margin: auto;
+  width: 1000px;
+  height: 350px;
+
+}
+.small{
+  font-size: small;
+}
+.csImage {
+  width: 480px;
+  float: left;
+}
+#csBtn{
+  position: relative;
+  width: 100px;
+  float: left;
+  left: 20px;
+  top: 5px;
+}
+#utilMenu{
+  clear: both;
+  position: relative;
+  
+}
+.infoText{
+  clear: both;
+  font-size: smaller;
+  color: gray;
+  text-align: left;
+}
+.black{
+  color: black;
+}
+#footerImg{
+  position: absolute;
+  left: 2px;
+  bottom: -100px;
+}
+.utilList{
+  float: left;
+  margin: 10px;
+}

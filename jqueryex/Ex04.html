@@ -72,18 +72,18 @@
     // })
     
     // attr(함수)
-    // $('img').attr('src',function(index){
-    //   return 'http://placeimg.com/150/'+(index+1)*150+'/any';
-    // })
-    // $('img').attr('alt',function(index){
-    //   return '테스트이미지';
-    // })
+    $('img').attr('src',function(index){
+      return 'http://placeimg.com/150/'+(index+1)*150+'/any';
+    })
+    $('img').attr('alt',function(index){
+      return '테스트이미지';
+    })
 
     // attr(객체 + 함수)
-    $('img').attr({
-      src : function(index){return 'http://placeimg.com/100/'+(index+1)*100+'/any'},
-      alt : function(index){return '테스트 이미지'}
-    })
+    // $('img').attr({
+    //   src : function(index){return 'http://placeimg.com/100/'+(index+1)*100+'/any'},
+    //   alt : function(index){return '테스트 이미지'}
+    // })
 
     //============================================================
     // html('문자열')
