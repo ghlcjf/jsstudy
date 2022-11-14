@@ -38,55 +38,57 @@
     if(i=adder(x,y)){
       console.log('합계 : '+i)
     }
+    let ii = adder(x,y);
+    console.log('합계 : '+ii);
 
-  function fare(age){
-    if(60<=age){
-      return '노약자 무료';
-    }else if(19<=age){
-      return '일반 요금';
-    }else if(12<=age){
-      return '청소년 요금';
-    }else {
-      return '영유아 무료';
-    }
-  }
+  // function fare(age){
+  //   if(60<=age){
+  //     return '노약자 무료';
+  //   }else if(19<=age){
+  //     return '일반 요금';
+  //   }else if(12<=age){
+  //     return '청소년 요금';
+  //   }else {
+  //     return '영유아 무료';
+  //   }
+  // }
 
-  console.log(fare(25));
+  // console.log(fare(25));
   
-  ///-------------------------------------------------------
-  // 자바스크립트는 함수적 언어의 특징을 가지고 있다
-  // 함수가 데이터와 같기 때문에 변수에 담아서 사용할 수 있다.
-  let check = fare;
+  // ///-------------------------------------------------------
+  // // 자바스크립트는 함수적 언어의 특징을 가지고 있다
+  // // 함수가 데이터와 같기 때문에 변수에 담아서 사용할 수 있다.
+  // let check = fare;
 
-  console.log(check);
+  // console.log(check);
    
-  let result = check(18);
-  console.log(result);
+  // let result = check(18);
+  // console.log(result);
 
-  // 이런 식으로 사용가능
+  // // 이런 식으로 사용가능
 
-  let f = function(a){
-    console.log('나는 함수입니다.');
-    console.log('a : '+a);
-  }
-  f(12);
-  //---------------------------------------------------------------------------
-  // 변수의 범위
+  // let f = function(a){
+  //   console.log('나는 함수입니다.');
+  //   console.log('a : '+a);
+  // }
+  // f(12);
+  // //---------------------------------------------------------------------------
+  // // 변수의 범위
 
-  let a = 10;
-  let b = 20;
+  // let a = 10;
+  // let b = 20;
 
-  let f2 = function(){
-    let a = 20;
-    let d = 10;
-    console.log('a : '+a);
-    return a+b;
-  }
+  // let f2 = function(){
+  //   let a = 20;
+  //   let d = 10;
+  //   console.log('a : '+a);
+  //   return a+b;
+  // }
 
-  let c = f2();
-  console.log(a);
-  console.log(c);
-  // console.log(d); 지역변수 d는 메서드 밖에서 호출될 수 없다.
+  // let c = f2();
+  // console.log(a);
+  // console.log(c);
+  // // console.log(d); 지역변수 d는 메서드 밖에서 호출될 수 없다.
 
 
 
