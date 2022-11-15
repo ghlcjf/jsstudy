@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <div id="inputScore">
+    <form action="#">
+      <label for="kor">국어점수</label>
+      <input type="number" name="kor" id="kor" max="100" min="0" step="1">
+      <label for="kor">영어점수</label>
+      <input type="number" name="eng" id="eng" max="100" min="0" step="1">
+      <label for="kor">수학점수</label>
+      <input type="number" name="math" id="math" max="100" min="0" step="1">
+      <button type="button" onclick="result()">결과출력</button>
+    </form>
+  </div>
+  <div id="outputScore">
+    <table border="1">
+      <tr>
+        <th>국어점수</th>
+        <td>
+          <p class="score">점</p>
+        </td>
+      </tr>
+      <tr>
+        <th>영어점수</th>
+        <td>
+          <p class="score">점</p>
+        </td>
+      </tr>
+    </table>
+  </div>
+  
+
+  <script>
+    function result(){
+      let kor = parseInt(document.getElementById('kor').value);
+      let eng = parseInt(document.getElementById('eng').value);
+      let math = parseInt(document.getElementById('math').value);
+      
+      let sum = function(){
+        return kor+eng+math;
+      }
+      let avg = function(){
+        return sum()/3;
+      }
+
+      let kScore = document.getElementsByClassName('score')[0];
+      let eScore = document.getElementsByClassName('score')[1];
+      kScore.innerHTML=kor+'점'
+      eScore.innerHTML=eng+'점'
+      console.log(sum());
+      console.log(avg());
+    }
+
+  </script>
+</body>
+</html>
